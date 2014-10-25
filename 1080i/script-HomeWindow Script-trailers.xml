@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="window">
+    <defaultcontrol always="true">8002</defaultcontrol>
+    <controls>
+        <control type="button" id="5016">
+            <include>HiddenObject</include>
+            <texturenofocus>-</texturenofocus>
+            <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
+            <onfocus>SetProperty(WidgetType,onlinemovie,home)</onfocus>
+            <onfocus>SetFocus(8002)</onfocus>
+            <onfocus>ActivateWindow(1165)</onfocus>
+        </control>
+        <control type="image">
+            <texture>diffuseoverlay.png</texture>
+            <include>FullscreenDimensions</include>
+            <animation effect="fade" time="200">WindowOpen</animation>
+            <animation effect="fade" time="200">WindowClose</animation>
+            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+        </control>
+        <control type="group">
+            <animation effect="slide" start="3242,0" end="0,0" time="920" tween="quadratic">WindowOpen</animation>
+            <animation effect="slide" end="1242,0" time="320" tween="quadratic">WindowClose</animation>
+            <posx>729</posx>
+            <control type="image">
+                <width>1192</width>
+                <height>1080</height>
+                <texture>info/info_rightpanelbottom.png</texture>
+                <visible>IsEmpty(ListItem.Art(fanart))</visible>
+            </control>
+            <control type="image">
+                <width>1192</width>
+                <height>1080</height>
+                <texture>info/info_rightpaneltop.png</texture>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            </control>
+            <control type="image">
+                <posx>470</posx>
+                <posy>365</posy>
+                <width>234</width>
+                <height>338</height>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+            </control>
+            <control type="group">
+                <posy>360</posy>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007) | Control.HasFocus(8006)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005) | Control.HasFocus(8004)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005) | Control.HasFocus(8004) | Control.HasFocus(8003)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005) | Control.HasFocus(8004) | Control.HasFocus(8003) | Control.HasFocus(8002)" reversible="true">Conditional</animation>
+                <control type="wraplist" id="8001">
+                    <posy>0</posy>
+                    <focusposition>2</focusposition>
+                    <width>1150</width>
+                    <height>360</height>
+                    <aligny>center</aligny>
+                    <scrolltime>200</scrolltime>
+                    <onup>8007</onup>
+                    <ondown>8002</ondown>
+                    <onleft>8001</onleft>
+                    <onright>8001</onright>
+                    <orientation>horizontal</orientation>
+                    <include>PosterWallLayout</include>
+                    <content>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</content>
+                </control>
+                <control type="wraplist" id="8002">
+                    <posy>360</posy>
+                    <focusposition>2</focusposition>
+                    <width>1600</width>
+                    <height>360</height>
+                    <aligny>center</aligny>
+                    <scrolltime>200</scrolltime>
+                    <onup>8001</onup>
+                    <ondown>8003</ondown>
+                    <onleft>8002</onleft>
+                    <onright>8002</onright>
+                    <orientation>horizontal</orientation>
+                    <include>PosterWallLayout</include>
+                    <content>plugin://script.extendedinfo?info=upcoming</content>
+                </control>
+                <control type="wraplist" id="8003">
+                    <focusposition>2</focusposition>
+                    <posy>720</posy>
+                    <width>1200</width>
+                    <height>360</height>
+                    <aligny>center</aligny>
+                    <scrolltime>200</scrolltime>
+                    <onup>8002</onup>
+                    <ondown>8004</ondown>
+                    <onleft>8003</onleft>
+                    <onright>8003</onright>
+                    <orientation>horizontal</orientation>
+                    <include>PosterWallLayout</include>
+                    <content>plugin://script.extendedinfo?info=toprentals</content>
+                </control>
+                <control type="wraplist" id="8004">
+                    <posy>1080</posy>
+                    <focusposition>2</focusposition>
+                    <width>1200</width>
+                    <height>360</height>
+                    <aligny>center</aligny>
+                    <scrolltime>200</scrolltime>
+                    <onup>8003</onup>
+                    <ondown>8005</ondown>
+                    <onleft>8002</onleft>
+                    <orientation>horizontal</orientation>
+                    <include>PosterWallLayout</include>
+                    <content>plugin://script.extendedinfo?info=popularmovies</content>
+                </control>
+                <control type="wraplist" id="8005">
+                    <posy>1440</posy>
+                    <width>1300</width>
+                    <focusposition>2</focusposition>
+                    <height>360</height>
+                    <aligny>center</aligny>
+                    <scrolltime>200</scrolltime>
+                    <onup>8004</onup>
+                    <ondown>8006</ondown>
+                    <onleft>8002</onleft>
+                    <orientation>horizontal</orientation>
+                    <include>PosterWallLayout</include>
+                    <content>plugin://script.extendedinfo?info=intheaters</content>
+                </control>
+                <control type="wraplist" id="8006">
+                    <posy>1800</posy>
+                    <width>1400</width>
+                    <height>360</height>
+                    <focusposition>2</focusposition>
+                    <orientation>horizontal</orientation>
+                    <onleft>5051</onleft>
+                    <onright>5051</onright>
+                    <preloaditems>2</preloaditems>
+                    <scrolltime>200</scrolltime>
+                    <ondown>8007</ondown>
+                    <onup>8005</onup>
+                    <include>PosterWallLayout</include>
+                    <content>plugin://script.extendedinfo?info=topratedmovies</content>
+                </control>
+                <control type="wraplist" id="8007">
+                    <posy>2160</posy>
+                    <width>1400</width>
+                    <height>360</height>
+                    <orientation>horizontal</orientation>
+                    <focusposition>2</focusposition>
+                    <onleft>5052</onleft>
+                    <onright>5052</onright>
+                    <onup>8006</onup>
+                    <preloaditems>2</preloaditems>
+                    <scrolltime>200</scrolltime>
+                    <ondown>8001</ondown>
+                    <include>PosterWallLayout</include>
+                    <content>plugin://script.extendedinfo?info=incinemas</content>
+                </control>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <height>430</height>
+                <width>1200</width>
+                <texture flipy="true">home/nowplaying_shadow.png</texture>
+                <colordiffuse>black</colordiffuse>
+            </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>100</posy>
+                <width>1200</width>
+                <height>38</height>
+                <align>center</align>
+                <label>$VAR[1159TitleVar]</label>
+                <font>Font_MainClassic</font>
+                <shadowcolor>black</shadowcolor>
+                <textcolor>white3</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>650</posy>
+                <height>430</height>
+                <width>1200</width>
+                <texture>home/nowplaying_shadow.png</texture>
+                <colordiffuse>black</colordiffuse>
+            </control>
+            <control type="image">
+                <posx>470</posx>
+                <posy>365</posy>
+                <width>234</width>
+                <height>338</height>
+                <texture border="6">views/addonwall_select.png</texture>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+            </control>
+        </control>
+        <control type="group">
+            <animation effect="slide" start="-2029,0" end="0,0" time="920" tween="quadratic">WindowOpen</animation>
+            <animation effect="slide" end="-729,0" time="320" tween="quadratic">WindowClose</animation>
+            <control type="image">
+                <width>729</width>
+                <height>1080</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <texture background="true" fallback="info/movieinfogradient.png">$VAR[1159PosterVar]</texture>
+            </control>
+            <control type="image">
+                <posx>709</posx>
+                <width>40</width>
+                <height>1080</height>
+                <texture>common/topbar_down.png</texture>
+                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <include>TopbarPulseAnimationRight</include>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+            </control>
+        </control>
+    </controls>
+</window>

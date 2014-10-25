@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="1131" type="dialog">
+    <defaultcontrol>12</defaultcontrol>
+    <zorder>4</zorder>
+    <coordinates>
+        <posx>0</posx>
+        <posy>0</posy>
+        <system>1</system>
+    </coordinates>
+    <include>Animation_DialogPopupOpenClose</include>
+    <onload>Notification($LOCALIZE[31902],$LOCALIZE[31913])</onload>
+    <onunload>SetProperty(activewindow,home,home)</onunload>
+    <onunload>ActivateWindow(1141)</onunload>
+    <controls>
+        <control type="group">
+                                <posx>0</posx>
+                    <posy>0</posy>
+            <control type="button" id="11">
+            <posy>460</posy>
+            <width>1920</width>
+            <height>60</height>
+            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
+            <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturenofocus>
+            <include>Animation_VisibleChange200</include>
+            <animation effect="fade" start="100" end="0" time="320" condition="!Control.HasFocus(11)">Conditional</animation>
+            <animation effect="fade" start="100" end="25" time="320" condition="Window.IsActive(1130)">Conditional</animation>
+            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation effect="slide" end="0,-474" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation effect="slide" end="0,-812" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                <onleft>10</onleft>
+                <onright>10</onright>
+                <onup>13</onup>
+                <ondown>12</ondown>
+                <onback>Dialog.Close(1131)</onback>
+                <onclick>SetProperty(actualItem,LibraryStats,1130)</onclick>
+                <onclick>ActivateWindow(1130)</onclick>
+            </control>
+            <control type="button" id="12">
+            <posy>505</posy>
+            <width>1920</width>
+            <height>115</height>
+            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
+            <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturenofocus>
+            <animation effect="slide" end="0,68" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation effect="zoom" end="100,80" center="960,520" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+            <animation effect="fade" start="100" end="0" time="320" condition="!Control.HasFocus(12)">Conditional</animation>
+            <animation effect="fade" start="100" end="25" time="320" condition="Window.IsActive(1130)">Conditional</animation>
+            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                <onleft>11</onleft>
+                <onright>10</onright>
+                <onclick>SetProperty(actualItem,MainMenu,1130)</onclick>
+                <onclick>ActivateWindow(1130)</onclick>
+                <onup>11</onup>
+                <ondown>13</ondown>
+                <onback>Dialog.Close(1131)</onback>
+            </control>
+            <control type="button" id="13">
+            <posy>604</posy>
+            <width>1920</width>
+            <height>60</height>
+            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
+            <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturenofocus>
+            <animation effect="fade" start="100" end="0" time="320" condition="!Control.HasFocus(13)">Conditional</animation>
+            <animation effect="fade" start="100" end="25" time="320" condition="Window.IsActive(1130)">Conditional</animation>
+            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation effect="slide" end="0,-20" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
+            <animation effect="slide" end="0,416" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation effect="slide" end="0,100" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                <onleft>11</onleft>
+                <onright>10</onright>
+                <onclick>SetProperty(actualItem,RSS,1130)</onclick>
+                <onup>12</onup>
+                <ondown>12</ondown>
+                <onback>Dialog.Close(1131)</onback>
+                <onclick>ActivateWindow(1130)</onclick>
+            </control>
+        </control>
+    </controls>
+</window>

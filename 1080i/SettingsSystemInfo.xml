@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+    <defaultcontrol always="true">95</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
+    <animation type="WindowOpen" reversible="false" condition="!Window.Previous(settings)">
+        <effect type="zoom" start="150" end="100" center="960,540" time="720" tween="cubic" />
+        <effect type="fade" end="100" time="720" />
+    </animation>
+    <animation type="WindowClose" reversible="false" condition="!Window.Next(settings)">
+        <effect type="fade" start="100" end="0" time="240" />
+        <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
+    </animation>
+    <controls>
+        <include>CommonSettingsBackground</include>
+        <include>CommonMediaPlayingBackground</include>
+        <include>Furniture_SettingsFloor</include>
+        <control type="group">
+            <animation effect="zoom" end="91" center="960,360" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
+            <include>Furniture_SettingsBackPanel2</include>
+            <control type="image">
+                <posx>34</posx>
+                <posy>34</posy>
+                <width>1850</width>
+                <height>1010</height>
+                <texture background="true">settings/settings_intframe_bottom.png</texture>
+            </control>
+            <control type="image">
+                <posx>498</posx>
+                <posy>87</posy>
+                <width>1260</width>
+                <height>708</height>
+                <texture background="true">special://skin/backgrounds/system/systeminfo.jpg</texture>
+            </control>
+            <control type="image">
+                <posx>498</posx>
+                <posy>87</posy>
+                <width>1260</width>
+                <height>708</height>
+                <texture>common/bgcolor.png</texture>
+                <animation effect="fade" start="95" end="60" time="4000" pulse="true" condition="true">conditional</animation>
+            </control>
+            <control type="grouplist" id="7000">
+                <posx>63</posx>
+                <posy>180</posy>
+                <width>434</width>
+                <height>1080</height>
+                <onup>7000</onup>
+                <ondown>7000</ondown>
+                <onleft>ActivateWindow(1121)</onleft>
+                <control type="button" id="95">
+                    <width>434</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                    <texturenofocus>-</texturenofocus>
+                    <label>20037</label>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <focusedcolor>white2</focusedcolor>
+                </control>
+                <control type="button" id="94">
+                    <width>434</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                    <texturenofocus>-</texturenofocus>
+                    <label>13277</label>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <focusedcolor>white2</focusedcolor>
+                </control>
+                <control type="button" id="96">
+                    <width>434</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                    <texturenofocus>-</texturenofocus>
+                    <label>13279</label>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <focusedcolor>white2</focusedcolor>
+                </control>
+                <control type="button" id="97">
+                    <width>434</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                    <texturenofocus>-</texturenofocus>
+                    <label>13280</label>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <focusedcolor>white2</focusedcolor>
+                </control>
+                <control type="button" id="98">
+                    <width>434</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                    <texturenofocus>-</texturenofocus>
+                    <label>13281</label>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <focusedcolor>white2</focusedcolor>
+                </control>
+                <control type="button" id="99">
+                    <width>434</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                    <texturenofocus>-</texturenofocus>
+                    <label>19191</label>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <focusedcolor>white2</focusedcolor>
+                </control>
+            </control>
+            <control type="grouplist">
+                <posx>510</posx>
+                <posy>195</posy>
+                <control type="label" id="2">
+                    <width>1125</width>
+                    <height>53</height>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="label" id="3">
+                    <width>1125</width>
+                    <height>53</height>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="label" id="4">
+                    <width>1425</width>
+                    <height>53</height>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="label" id="5">
+                    <width>1275</width>
+                    <height>53</height>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="label" id="6">
+                    <width>1125</width>
+                    <height>53</height>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="label" id="7">
+                    <width>1125</width>
+                    <height>53</height>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="label" id="8">
+                    <width>1125</width>
+                    <height>53</height>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="label" id="9">
+                    <width>1125</width>
+                    <height>53</height>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="label" id="10">
+                    <width>1125</width>
+                    <height>53</height>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="label" id="11">
+                    <width>1125</width>
+                    <height>53</height>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="label" id="52">
+                    <posy>0</posy>
+                    <width>1050</width>
+                    <height>33</height>
+                    <aligny>top</aligny>
+                    <label>144</label>
+                    <font>Font_Reg26</font>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
+                </control>
+                <control type="label">
+                    <posy>0</posy>
+                    <width>1050</width>
+                    <height>55</height>
+                    <aligny>top</aligny>
+                    <label>144</label>
+                    <font>Font_Reg26</font>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
+                    <info>System.ProfileName</info>
+                </control>
+                <control type="label">
+                    <posy>0</posy>
+                    <width>525</width>
+                    <height>38</height>
+                    <label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="progress">
+                    <posy>764</posy>
+                    <width>480</width>
+                    <height>21</height>
+                    <info>System.CPUUsage</info>
+                </control>
+                <control type="label">
+                    <posx>530</posx>
+                    <posy>720</posy>
+                    <width>525</width>
+                    <height>38</height>
+                    <label>$LOCALIZE[31309] $INFO[system.memory(used.percent)]</label>
+                    <font>Font_Reg32</font>
+                    <textcolor>white3</textcolor>
+                </control>
+                <control type="progress">
+                    <posx>530</posx>
+                    <posy>764</posy>
+                    <width>480</width>
+                    <height>21</height>
+                    <info>system.memory(used)</info>
+                </control>
+            </control>
+            <control type="image">
+                <posx>34</posx>
+                <posy>34</posy>
+                <width>1850</width>
+                <height>1010</height>
+                <texture>settings/settings_intframe_top.png</texture>
+            </control>
+            <control type="label">
+                <posx>358</posx>
+                <posy>110</posy>
+                <height>60</height>
+                <width>1491</width>
+                <align>center</align>
+                <label>$LOCALIZE[130]$INFO[System.FriendlyName, - ]</label>
+                <font>Font_ShowcaseMainLabel2</font>
+            </control>
+        </control>
+        <control type="group">
+            <include>Animation_HideBreadCrumbs</include>
+            <include>Breadcrumbs_BackBar</include>
+            <include>BreadcrumbsContent</include>
+            <include>Breadcrumbs_Furniture</include>
+        </control>
+        <include>Furniture_NowPlayingWidget</include>
+    </controls>
+</window>

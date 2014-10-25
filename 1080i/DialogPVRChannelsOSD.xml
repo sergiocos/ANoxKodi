@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+    <defaultcontrol always="true">11</defaultcontrol>
+    <coordinates>
+        <top>0</top>
+        <system>1</system>
+    </coordinates>
+    <include>Animation_ListSlideRight</include>
+    <include>Animation_DialogZoom</include>
+    <onload>NextChannelGroup</onload>
+    <onload>PreviousChannelGroup</onload>
+    <onunload>RunScript(script.pvrosd,close_page)</onunload>
+    <controls>
+        <control type="group"> <!-- Extended channel list (center) -->
+			<visible>!Window.IsActive(fullscreeninfo) + Skin.HasSetting(alternatetvosd)</visible>
+            <include condition="Skin.HasSetting(alternatetvosd) + VideoPlayer.Content(LiveTV)">ChannelOSDExtended</include>
+        </control>
+		
+        <control type="group"> <!-- Mini channel list (right side) - original -->
+            <visible>!Window.IsActive(fullscreeninfo) + !Skin.HasSetting(alternatetvosd)</visible>
+            <include condition="!Skin.HasSetting(alternatetvosd) + VideoPlayer.Content(LiveTV)">ChannelOSDStandard</include>
+        </control>
+    </controls>
+</window>
