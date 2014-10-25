@@ -355,8 +355,7 @@
                                     <width>894</width>
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
-                                    <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Art(tvshow.fanart)]</texture>
-                                    <animation effect="fade" time="480">Focus</animation>
+                                    <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Art(fanart)]</texture>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="894" height="550">
@@ -364,11 +363,11 @@
                                     <width>894</width>
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
-                                    <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Art(tvshow.fanart)]</texture>
+                                    <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Art(fanart)]</texture>
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </focusedlayout>
-                            <content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</content>
+                            <content>plugin://script.extendedinfo?info=trendingmovies</content>
                         </control>
                         <control type="image">
                             <posy>510</posy>
@@ -404,8 +403,7 @@
                             <onleft>5009</onleft>
                             <onright>6010</onright>
                             <ondown>Control.Move(5003,1)</ondown>
-                            <onfocus>SetProperty(WidgetType,watchlistmovies,home)</onfocus>
-                            <onclick>SetFocus(5014)</onclick>
+                            <onclick>RunScript(script.metadata.actors,$INFO[Container(5003).Listitem.Label])</onclick>
                         </control>
                         <control type="wraplist" id="5003">
                             <width>366</width>
@@ -421,7 +419,6 @@
                                     <height>550</height>
                                     <aspectratio>scale</aspectratio>
                                     <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Art(poster)]</texture>
-                                    <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="366" height="550">
@@ -433,7 +430,7 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </focusedlayout>
-                            <content>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</content>
+                            <content>plugin://script.extendedinfo?info=popularpeople</content>
                         </control>
                         <control type="image">
                             <posy>510</posy>
@@ -541,7 +538,6 @@
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
                                     <texture background="true" fallback="DefaulTVShows.png">$INFO[ListItem.Art(fanart)]</texture>
-                                    <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="894" height="550">
@@ -553,7 +549,7 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </focusedlayout>
-                            <content>plugin://service.library.data.provider?type=recentmovies&amp;reload=10&amp;limit=10</content>
+                            <content>special://skin/extras/Playlists/recentmovies8.xsp</content>
                         </control>
                         <control type="image">
                             <posy>510</posy>
@@ -606,7 +602,6 @@
                                     <height>550</height>
                                     <aspectratio>scale</aspectratio>
                                     <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Art(poster)]</texture>
-                                    <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="366" height="550">
@@ -726,7 +721,6 @@
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
                                     <texture background="true" fallback="DefaulTVShows.png">$INFO[ListItem.Art(fanart)]</texture>
-                                    <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="894" height="550">
@@ -738,7 +732,7 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </focusedlayout>
-                            <content>plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</content>
+                            <content>plugin://script.extendedinfo?info=topratedtvshows</content>
                         </control>
                         <control type="image">
                             <posy>510</posy>
@@ -785,7 +779,7 @@
                                     <width>376</width>
                                     <height>190</height>
                                     <aspectratio aligny="center">scale</aspectratio>
-                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Art(fanart)]</texture>
                                     <bordersize>5</bordersize>
                                 </control>
                                 <control type="image">
@@ -810,7 +804,7 @@
                                     <width>360</width>
                                     <height>45</height>
                                     <textoffsetx>15</textoffsetx>
-                                    <label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]: $INFO[ListItem.Label]</label>
+                                    <label>$INFO[ListItem.Season]$INFO[ListItem.Episode,x,: ]$INFO[ListItem.Label]</label>
                                     <font>Font_Reg25</font>
                                     <textcolor>white</textcolor>
                                     <scroll>true</scroll>
@@ -821,7 +815,7 @@
                                     <width>376</width>
                                     <height>190</height>
                                     <aspectratio aligny="center">scale</aspectratio>
-                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Art(fanart)]</texture>
                                     <bordersize>5</bordersize>
                                 </control>
                                 <control type="image">
@@ -846,7 +840,7 @@
                                     <width>360</width>
                                     <height>45</height>
                                     <textoffsetx>15</textoffsetx>
-                                    <label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]: $INFO[ListItem.Label]</label>
+                                    <label>$INFO[ListItem.Season]$INFO[ListItem.Episode,x,: ]$INFO[ListItem.Label]</label>
                                     <font>Font_Reg25</font>
                                     <textcolor>white</textcolor>
                                     <scroll>true</scroll>
@@ -862,7 +856,7 @@
                                     <visible>Control.HasFocus(7003)</visible>
                                 </control>
                             </focusedlayout>
-                            <content>plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</content>
+                            <content>plugin://script.extendedinfo?info=onairtvshows</content>
                         </control>
                     </control>
                     <control type="image">
@@ -885,7 +879,7 @@
                     </control>
                 </control>
             </control>
-            <!--Albums-->
+            <!--Festivals-->
             <control type="group" id="8000">
                 <width>2325</width>
                 <height>825</height>
@@ -905,7 +899,7 @@
                     <onright>9012</onright>
                     <onleft>7012</onleft>
                     <ondown>8001</ondown>
-                    <onclick>ActivateWindow(musiclibrary,Albums,return)</onclick>
+                    <onclick>RunScript(script.maps.browser)</onclick>
                 </control>
                 <control type="group" id="8001">
                     <posx>450</posx>
@@ -919,8 +913,7 @@
                             <onleft>7003</onleft>
                             <onright>8003</onright>
                             <ondown>Control.Move(8002,1)</ondown>
-                            <onfocus>SetProperty(WidgetType,randomalbums,home)</onfocus>
-                            <onclick>SetFocus(5014)</onclick>
+                            <onclick>RunScript(script.maps.browser,eventid=$INFO[Container(8002).ListItem.Property(event_id)])</onclick>
                         </control>
                         <control type="wraplist" id="8002">
                             <width>550</width>
@@ -936,7 +929,6 @@
                                     <width>550</width>
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
-                                    <animation effect="fade" time="480">Focus</animation>
                                     <info>ListItem.Icon</info>
                                 </control>
                             </itemlayout>
@@ -950,7 +942,7 @@
                                     <info>ListItem.Icon</info>
                                 </control>
                             </focusedlayout>
-                            <content>plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10</content>
+                            <content>plugin://script.extendedinfo?info=nearevents&amp;&amp;festivalsonly=true</content>
                         </control>
                         <control type="image">
                             <posy>510</posy>
@@ -1015,7 +1007,7 @@
                                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                 </control>
                             </focusedlayout>
-                            <content>plugin://service.library.data.provider?type=recommendedalbums&amp;reload=10&amp;limit=10</content>
+                            <content>plugin://script.extendedinfo?info=nearevents</content>
                         </control>
                     </control>
                     <control type="image">
@@ -1089,7 +1081,6 @@
                                     <width>550</width>
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
-                                    <animation effect="fade" time="480">Focus</animation>
                                     <info>ListItem.Icon</info>
                                 </control>
                             </itemlayout>
@@ -1103,7 +1094,7 @@
                                     <info>ListItem.Icon</info>
                                 </control>
                             </focusedlayout>
-                            <content>special://skin/extras/playlists/randomartists8.xsp</content>
+                            <content>plugin://script.extendedinfo?info=hypedartists</content>
                         </control>
                         <control type="image">
                             <posy>510</posy>
@@ -1168,7 +1159,7 @@
                                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                 </control>
                             </focusedlayout>
-                            <content>plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10</content>
+                            <content>plugin://script.extendedinfo?info=topartists</content>
                         </control>
                     </control>
                     <control type="image">
@@ -1256,7 +1247,7 @@
                         <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(7000).HasFocus">Conditional</animation>
                     </control>
                     <control type="label">
-                        <label>$LOCALIZE[132]</label>
+                        <label>Concerts</label>
                         <include>FeaturedTopLabel</include>
                         <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(8012)">Conditional</animation>
                         <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(8000).HasFocus">Conditional</animation>

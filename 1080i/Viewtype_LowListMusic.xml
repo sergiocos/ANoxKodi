@@ -160,8 +160,8 @@
                         <width>1440</width>
                         <height>60</height>
                         <align>center</align>
-                        <label>$INFO[ListItem.Album]</label>
-                        <font>Font_Bold46_Caps</font>
+                        <label>[B][UPPERCASE]$INFO[ListItem.Album][/B][/UPPERCASE]</label>
+                        <font>Font_Bold46</font>
                         <textcolor>white3</textcolor>
                         <visible>Container.Content(songs)</visible>
                     </control>
@@ -171,8 +171,8 @@
                         <width>1440</width>
                         <height>60</height>
                         <align>center</align>
-                        <label>$INFO[ListItem.Artist]</label>
-                        <font>Font_Bold46_Caps</font>
+                        <label>[B][UPPERCASE]$INFO[ListItem.Artist][/B][/UPPERCASE]</label>
+                        <font>Font_Bold46</font>
                         <textcolor>white3</textcolor>
                         <visible>Container.Content(albums)</visible>
                     </control>
@@ -545,7 +545,7 @@
                         <visible>Skin.HasSetting(lowlistmusicwidelist)</visible>
                     </control>
                     <control type="label">
-                        <posx>52</posx>
+                        <posx>15</posx>
                         <width>75</width>
                         <height>66</height>
                         <align>center</align>
@@ -575,7 +575,7 @@
                     <control type="group">
                         <animation effect="slide" end="500,0" time="0" condition="Skin.HasSetting(lowlistmusicwidelist)">Conditional</animation>
                         <control type="label">
-                            <posx>730</posx>
+                            <posx>80</posx>
                             <width>650</width>
                             <height>66</height>
                             <align>right</align>
@@ -585,7 +585,7 @@
                             <visible>Container.Content(albums)</visible>
                         </control>
                         <control type="label">
-                            <posx>838</posx>
+                            <posx>765</posx>
                             <posy>4</posy>
                             <width>146</width>
                             <height>33</height>
@@ -596,7 +596,7 @@
                             <visible>!Container.Content(albums)</visible>
                         </control>
                         <control type="label">
-                            <posx>838</posx>
+                            <posx>765</posx>
                             <width>146</width>
                             <height>33</height>
                             <align>center</align>
@@ -606,7 +606,7 @@
                             <visible>Container.Content(albums)</visible>
                         </control>
                         <control type="label">
-                            <posx>838</posx>
+                            <posx>765</posx>
                             <width>146</width>
                             <height>66</height>
                             <align>center</align>
@@ -665,7 +665,7 @@
                         </control>
                     </control>
                     <control type="label">
-                        <posx>52</posx>
+                        <posx>15</posx>
                         <width>75</width>
                         <height>66</height>
                         <align>center</align>
@@ -728,7 +728,7 @@
                     <control type="group">
                         <animation effect="slide" end="500,0" time="0" condition="Skin.HasSetting(lowlistmusicwidelist)">Conditional</animation>
                         <control type="label">
-                            <posx>730</posx>
+                            <posx>80</posx>
                             <width>650</width>
                             <height>33</height>
                             <align>right</align>
@@ -737,7 +737,7 @@
                             <visible>Container.Content(albums)</visible>
                         </control>
                         <control type="label">
-                            <posx>838</posx>
+                            <posx>765</posx>
                             <width>146</width>
                             <height>33</height>
                             <align>center</align>
@@ -746,7 +746,7 @@
                             <visible>Container.Content(albums)</visible>
                         </control>
                         <control type="label">
-                            <posx>838</posx>
+                            <posx>765</posx>
                             <posy>4</posy>
                             <width>146</width>
                             <height>33</height>
@@ -776,7 +776,7 @@
                             <visible>Container.Content(albums) | Container.Content(songs)</visible>
                         </control>
                         <control type="label">
-                            <posx>838</posx>
+                            <posx>765</posx>
                             <width>146</width>
                             <height>66</height>
                             <align>center</align>

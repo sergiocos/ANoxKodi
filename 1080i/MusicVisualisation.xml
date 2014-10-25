@@ -20,6 +20,7 @@
             <animation effect="fade" end="100" time="0" delay="2400" reversible="false">Visible</animation>
         </control>
         <control type="group">
+            <include>Animation_WindowFade200</include>
             <animation effect="fade" start="100" end="40" time="0" condition="Skin.HasSetting(FadeVizBG)">Conditional</animation>
             <control type="multiimage">
                 <imagepath fallback="special://skin/backgrounds/music/" background="true">$VAR[MusicVizBackgroundVar]</imagepath>
@@ -28,7 +29,6 @@
             </control>
             <control type="group">
                 <include>Animation_VisibleChange400</include>
-                <include>Animation_WindowFade200</include>
                 <visible>StringCompare(Skin.String(MusicViz.MultiFanart),artistfanart)</visible>
                 <control type="multiimage">
                     <imagepath fallback="special://skin/backgrounds/music/">$INFO[Player.Art(fanart)]</imagepath>
@@ -63,7 +63,6 @@
             <control type="group">
                 <visible>StringCompare(Skin.String(MusicViz.MultiFanart),artistslideshow)</visible>
                 <include>Animation_VisibleChange400</include>
-                <include>Animation_WindowFade200</include>
                 <control type="image">
                     <texture>common/bgcolor.png</texture>
                     <include>FullscreenDimensions</include>
@@ -480,7 +479,7 @@
                         <height>90</height>
                         <aspectratio>keep</aspectratio>
                         <texture>flags/music/rating/$INFO[Player.StarRating]</texture>
-                        <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                        <colordiffuse>white</colordiffuse>
                     </control>
                     <control type="group">
                         <visible>!Window.IsActive(musicosd)</visible>
@@ -491,7 +490,7 @@
                             <width>50</width>
                             <height>15</height>
                             <texture>arrowdown.png</texture>
-                            <colordiffuse>white</colordiffuse>
+                            <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                         </control>
                         <control type="image">
                             <posx>1106</posx>
@@ -499,7 +498,7 @@
                             <width>50</width>
                             <height>15</height>
                             <texture flipy="true">arrowdown.png</texture>
-                            <colordiffuse>white</colordiffuse>
+                            <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                         </control>
                     </control>
                     <control type="image" id="8669">
@@ -919,7 +918,7 @@
                     <preloaditems>2</preloaditems>
                     <itemlayout width="614" height="30">
                         <control type="label">
-                            <posx>425</posx>
+                            <posx>125</posx>
                             <width>300</width>
                             <height>34</height>
                             <align>right</align>
@@ -930,7 +929,7 @@
                     </itemlayout>
                     <focusedlayout width="614" height="30">
                         <control type="label">
-                            <posx>425</posx>
+                            <posx>125</posx>
                             <width>300</width>
                             <height>34</height>
                             <align>right</align>

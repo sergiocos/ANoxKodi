@@ -19,15 +19,12 @@
     <include file="Viewtype_Episode.xml" />
     <include file="Viewtype_Stripshow.xml" />
     <include file="Viewtype_Shift.xml" />
-    <include file="Viewtype_Panel.xml" />
     <include file="Includes_MediaFlags.xml" />
     <include file="Includes_Animations.xml" />
-    <include file="Includes_ContainerItems.xml" />
     <include file="Includes_MediaMenu.xml" />
     <include file="Includes_Music.xml" />
     <include file="Includes_WidgetLayout.xml" />
     <include file="Includes_Backgrounds.xml" />
-    <include file="Includes_Visualization.xml" />
     <include file="Includes_Breadcrumbs.xml" />
     <include file="Includes_MainMenu.xml" />
     <include file="Includes_PVR.xml" />
@@ -274,9 +271,9 @@
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="1">settings/listselect_nf.png</texturenofocus>
+        <texturenofocus border="5">settings/listselect_nf.png</texturenofocus>
         <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</alttexturefocus>
-        <alttexturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="1">settings/listselect_nf.png</alttexturenofocus>
+        <alttexturenofocus border="5">settings/listselect_nf.png</alttexturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
         <focusedcolor>white6</focusedcolor>
@@ -292,9 +289,9 @@
         <textoffsety>23</textoffsety>
         <aligny>top</aligny>
         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus colordiffuse="grey" border="3">settings/listselect_nf2.png</texturenofocus>
+        <texturenofocus border="5">settings/listselect_nf2.png</texturenofocus>
         <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</alttexturefocus>
-        <alttexturenofocus colordiffuse="grey">settings/listselect_nf2.png</alttexturenofocus>
+        <alttexturenofocus border="5">settings/listselect_nf2.png</alttexturenofocus>
         <font>Font_Reg29</font>
         <textcolor>grey2</textcolor>
         <focusedcolor>white6</focusedcolor>
@@ -312,9 +309,9 @@
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="1">settings/listselect_nf.png</texturenofocus>
+        <texturenofocus border="5">settings/listselect_nf.png</texturenofocus>
         <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</alttexturefocus>
-        <alttexturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="1">settings/listselect_nf.png</alttexturenofocus>
+        <alttexturenofocus border="5">settings/listselect_nf.png</alttexturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
         <focusedcolor>white6</focusedcolor>
@@ -327,9 +324,9 @@
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="1">settings/listselect_nf.png</texturenofocus>
+        <texturenofocus border="5">settings/listselect_nf.png</texturenofocus>
         <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</alttexturefocus>
-        <alttexturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="1">settings/listselect_nf.png</alttexturenofocus>
+        <alttexturenofocus border="5">settings/listselect_nf.png</alttexturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
         <focusedcolor>white6</focusedcolor>
@@ -345,9 +342,9 @@
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="1">settings/listselect_nf.png</texturenofocus>
+        <texturenofocus border="5">settings/listselect_nf.png</texturenofocus>
         <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</alttexturefocus>
-        <alttexturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="1">settings/listselect_nf.png</alttexturenofocus>
+        <alttexturenofocus border="5">settings/listselect_nf.png</alttexturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
         <focusedcolor>white6</focusedcolor>
@@ -360,9 +357,9 @@
         <textoffsetx>15</textoffsetx>
         <textoffsety>0</textoffsety>
         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus border="1">settings/listselect_nf3.png</texturenofocus>
+        <texturenofocus border="5">settings/listselect_nf3.png</texturenofocus>
         <alttexturefocus>views/tripanel/listselect_fo.png</alttexturefocus>
-        <alttexturenofocus border="1">settings/listselect_nf3.png</alttexturenofocus>
+        <alttexturenofocus border="5">settings/listselect_nf3.png</alttexturenofocus>
         <font>Font_Bold26_Caps</font>
         <textcolor>$VAR[FontColorVar]</textcolor>
         <disabledcolor>$VAR[FontColorVar]</disabledcolor>
@@ -408,6 +405,17 @@
         <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlowAlt</include>
         <include condition="Skin.HasSetting(DisableGlowbar)">ShutdownNoGlowAlt</include>
     </include>
+        <include name="ContextMenuButton">
+                <width>462</width>
+                <height>58</height>
+                <textoffsety>12</textoffsety>
+                <align>center</align>
+                <font>Font_Reg30_2</font>
+                <textcolor>context</textcolor>
+                <focusedcolor>white2</focusedcolor>
+                <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
+        </include>
     <include name="Objects_ShutdownMenuButton">
         <width>550</width>
         <height>75</height>
@@ -451,9 +459,9 @@
         <posx>-129</posx>
         <width>300</width>
         <height>102</height>
-        <texturefocus>keyboard/keyboard_triplef.png</texturefocus>
+        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">keyboard/keyboard_triplef.png</texturefocus>
         <texturenofocus>keyboard/keyboard_triplenf.png</texturenofocus>
-        <alttexturefocus>keyboard/keyboard_triplef.png</alttexturefocus>
+        <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">keyboard/keyboard_triplef.png</alttexturefocus>
         <alttexturenofocus>keyboard/keyboard_triplenf.png</alttexturenofocus>
         <include>Objects_KeyOffVars</include>
     </include>
@@ -463,7 +471,7 @@
         <textoffsety>32</textoffsety>
         <align>center</align>
         <aligny>top</aligny>
-        <texturefocus>keyboard/keyboard_doublef.png</texturefocus>
+        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">keyboard/keyboard_doublef.png</texturefocus>
         <texturenofocus>keyboard/keyboard_doublenf.png</texturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
@@ -473,7 +481,7 @@
     <include name="Objects_SingleKeyOff">
         <width>102</width>
         <height>102</height>
-        <texturefocus>keyboard/keyboard_singlef.png</texturefocus>
+        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">keyboard/keyboard_singlef.png</texturefocus>
         <texturenofocus>keyboard/keyboard_singlenf.png</texturenofocus>
         <include>Objects_KeyOffVars</include>
     </include>
@@ -701,6 +709,23 @@
         <radioposx>550</radioposx>
         <colordiffuse></colordiffuse>
     </include>
+    <include name="Objects_LetterButton">
+        <width>32</width>
+        <height>34</height>
+        <textoffsetx>0</textoffsetx>
+        <textcolor>white2</textcolor>
+        <align>center</align>
+        <font>Font_Reg20</font>
+        <selectedcolor>$VAR[AreaColorVar]</selectedcolor>
+        <disabledcolor>grey3</disabledcolor>
+        <pulseonselect>yes</pulseonselect>
+        <focusedcolor>black</focusedcolor>
+        <texturefocus>common/white.png</texturefocus>
+        <alttexturefocus>common/white.png</alttexturefocus>
+        <texturenofocus>-</texturenofocus>
+        <alttexturenofocus>-</alttexturenofocus>
+    </include>
+
     <include name="Objects_CustomizerSettingsButton">
         <width>400</width>
         <height>60</height>
@@ -760,7 +785,6 @@
         <onload>Skin.SetBool(DisableGlowbar)</onload>
         <onload>Skin.SetBool(colortext)</onload>
         <onload>Skin.SetBool(AutoScroll)</onload>
-        <onload>Skin.SetBool(breadcrumbslabel)</onload>
         <onload>Skin.SetBool(smallerdialogs)</onload>
         <onload>Skin.SetBool(musicfanartslideshow)</onload>
         <onload>Skin.SetBool(itemsplaylist)</onload>
@@ -783,7 +807,6 @@
         <onload>Skin.SetBool(lowermainmenu)</onload>
         <onload>Skin.SetString(InfopanelDelay,2)</onload>
         <onload>Skin.SetString(TriPanelPosition,1)</onload>
-        <onload>Skin.SetBool(GlobalNowPlaying)</onload>
         <onload>Skin.SetBool(altoverlayinfowall)</onload>
         <onload condition="!Library.HasContent(MusicVideos)">Skin.SetString(MusicVideosHomeItem.Disable,1)</onload>
         <onload>Skin.SetString(CustomHomeItem1.Disable,1)</onload>
@@ -811,7 +834,7 @@
                 <texture>common/circle.png</texture>
             </control>
             <control type="label">
-                <posx>27</posx>
+                <posx>2</posx>
                 <posy>2</posy>
                 <width>50</width>
                 <height>38</height>
@@ -1393,7 +1416,7 @@
         <onload condition="Window.IsActive(PVR)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_PVR)])</onload>
         <onload condition="Window.IsActive(pictures)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_pictures)])</onload>
         <onload condition="Window.IsActive(addonbrowser)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_addons)])</onload>
-        <onload condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)]">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_programs)])</onload>
+        <onload condition="Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_programs)])</onload>
         <onload condition="Window.IsActive(musicplaylist)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_musicplaylist)])</onload>
         <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_videoplaylist)])</onload>
         <onload condition="Window.IsActive(script-HomeWindow Script-main.xml)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_mainmenu)])</onload>
@@ -1403,7 +1426,7 @@
         <onload condition="Window.IsActive(PVR)">Skin.SetString(font_color,$INFO[Skin.String(font_PVR)])</onload>
         <onload condition="Window.IsActive(pictures)">Skin.SetString(font_color,$INFO[Skin.String(font_pictures)])</onload>
         <onload condition="Window.IsActive(addonbrowser)">Skin.SetString(font_color,$INFO[Skin.String(font_addons)])</onload>
-        <onload condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)]">Skin.SetString(font_color,$INFO[Skin.String(font_programs)])</onload>
+        <onload condition="Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)">Skin.SetString(font_color,$INFO[Skin.String(font_programs)])</onload>
         <onload condition="Window.IsActive(musicplaylist)">Skin.SetString(font_color,$INFO[Skin.String(font_musicplaylist)])</onload>
         <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(font_color,$INFO[Skin.String(font_videoplaylist)])</onload>
         <onload condition="Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(1130) | Window.IsActive(script-HomeWindow Script-featured.xml)">Skin.SetString(font_color,$INFO[Skin.String(font_mainmenu)])</onload>
@@ -1415,7 +1438,7 @@
         <onload condition="Window.IsActive(PVR)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_PVR)])</onload>
         <onload condition="Window.IsActive(pictures)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_pictures)])</onload>
         <onload condition="Window.IsActive(addonbrowser)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_addons)])</onload>
-        <onload condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)]">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_programs)])</onload>
+        <onload condition="Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_programs)])</onload>
         <onload condition="Window.IsActive(musicplaylist)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_musicplaylist)])</onload>
         <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_videoplaylist)])</onload>
         <onload condition="Window.IsActive(script-HomeWindow Script-main.xml)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_mainmenu)])</onload>
@@ -1425,254 +1448,11 @@
         <onload condition="Window.IsActive(PVR)">Skin.SetString(font_color,$INFO[Skin.String(white_font_PVR)])</onload>
         <onload condition="Window.IsActive(pictures)">Skin.SetString(font_color,$INFO[Skin.String(white_font_pictures)])</onload>
         <onload condition="Window.IsActive(addonbrowser)">Skin.SetString(font_color,$INFO[Skin.String(white_font_addons)])</onload>
-        <onload condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)]">Skin.SetString(font_color,$INFO[Skin.String(white_font_programs)])</onload>
+        <onload condition="Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)">Skin.SetString(font_color,$INFO[Skin.String(white_font_programs)])</onload>
         <onload condition="Window.IsActive(musicplaylist)">Skin.SetString(font_color,$INFO[Skin.String(white_font_musicplaylist)])</onload>
         <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(font_color,$INFO[Skin.String(white_font_videoplaylist)])</onload>
         <onload condition="Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(1130) | Window.IsActive(script-HomeWindow Script-featured.xml)">Skin.SetString(font_color,$INFO[Skin.String(white_font_mainmenu)])</onload>
         <onload condition="Window.IsActive(weather)">Skin.SetString(font_color,$INFO[Skin.String(white_font_weather)])</onload>
-    </include>
-    <include name="QuickList">
-        <control type="group">
-            <posx>665</posx>
-            <include>Animation_OpenCloseZoom_New</include>
-            <control type="image">
-                <posx>30</posx>
-                <posy>100</posy>
-                <width>590</width>
-                <height>870</height>
-                <texture border="20">osd/osd_settings_back_glow.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <include>PanelGlowFade</include>
-                <include>Animation_VisibleChange400</include>
-            </control>
-            <control type="image">
-                <posx>30</posx>
-                <posy>100</posy>
-                <width>590</width>
-                <height>870</height>
-                <texture border="20">osd/osd_settings_back.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-            </control>
-            <control type="button" id="810">
-                <include>HiddenObject</include>
-                <onfocus>SetFocus(800)</onfocus>
-                <onfocus>Action(Close)</onfocus>
-                <onfocus condition="Stringcompare(Container(800).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(800).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(800).ListItem.Property(Path),videodb://movies/)">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
-                <onfocus>$INFO[Container(800).ListItem.Property(Path)]</onfocus>
-                <visible>IsEmpty(Window(home).Property(quicknavsetup))</visible>
-            </control>
-            <control type="button" id="810">
-                <include>HiddenObject</include>
-                <onfocus>SetFocus(800)</onfocus>
-                <onfocus>Skin.Setstring(ItemToEdit.Label,$ESCINFO[Container(800).ListItem.Label])</onfocus>
-                <onfocus>Skin.Setstring(ItemToEdit.MultiFanart,$ESCINFO[Container(800).ListItem.Thumb])</onfocus>
-                <onfocus>Skin.Setstring(ItemToEdit.Disable,$INFO[Container(800).ListItem.Property(DisableIcon)])</onfocus>
-                <onfocus>Skin.Setstring(ItemToEdit.Type,$ESCINFO[Container(800).ListItem.Property(Type)])</onfocus>
-                <onfocus>Skin.Setstring(ItemToEdit.Path,$ESCINFO[Container(800).ListItem.Property(Path)])</onfocus>
-                <onfocus>ActivateWindow(1136)</onfocus>
-                <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
-            </control>
-            <control type="list" id="800">
-                <posy>150</posy>
-                <width>600</width>
-                <height>1080</height>
-                <visible>!Window.IsVisible(script-globalsearch-main.xml)</visible>
-                <orientation>vertical</orientation>
-                <onleft>Dialog.CLose(1157)</onleft>
-                <onup>800</onup>
-                <ondown>9012</ondown>
-                <onright>Dialog.Close(1157)</onright>
-                <itemlayout width="600" height="80">
-                    <control type="image">
-                        <posx>50</posx>
-                        <width>600</width>
-                        <height>80</height>
-                        <texture border="0,0,0,4">settings/listselect_nf.png</texture>
-                    </control>
-                    <control type="image">
-                        <posx>72</posx>
-                        <posy>1</posy>
-                        <width>80</width>
-                        <height>80</height>
-                        <aspectratio align="center">keep</aspectratio>
-                        <texture>$INFO[ListItem.Thumb]</texture>
-                        <colordiffuse>white3</colordiffuse>
-                    </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <width>600</width>
-                        <height>80</height>
-                        <font>Font_Reg37_Caps</font>
-                        <textcolor>white3</textcolor>
-                        <info>ListItem.Label</info>
-                    </control>
-                    <control type="image">
-                        <width>600</width>
-                        <height>80</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>close.png</texture>
-                        <visible>stringcompare(ListItem.Property(DisableIcon),1)</visible>
-                    </control>
-                </itemlayout>
-                <focusedlayout width="600" height="80">
-                    <control type="image">
-                        <posx>50</posx>
-                        <width>600</width>
-                        <height>80</height>
-                        <texture border="0,0,0,4">settings/listselect_nf.png</texture>
-                    </control>
-                    <control type="image">
-                        <posx>50</posx>
-                        <width>600</width>
-                        <height>80</height>
-                        <texture>views/tripanel/listselect_fo.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <include>PanelGlowFade</include>
-                        <visible>Control.HasFocus(800)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>72</posx>
-                        <posy>1</posy>
-                        <width>80</width>
-                        <height>80</height>
-                        <aspectratio align="center">keep</aspectratio>
-                        <texture>$INFO[ListItem.Thumb]</texture>
-                        <colordiffuse>white2</colordiffuse>
-                    </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <width>600</width>
-                        <height>80</height>
-                        <font>Font_Reg37_Caps</font>
-                        <info>ListItem.Label</info>
-                    </control>
-                    <control type="image">
-                        <width>600</width>
-                        <height>80</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>close.png</texture>
-                        <visible>stringcompare(ListItem.Property(DisableIcon),1)</visible>
-                    </control>
-                </focusedlayout>
-                <content>
-                    <item>
-                        <label fallback="342">$INFO[Skin.String(QuickList1_1.Label)]</label>
-                        <property name="Path" fallback="ReplaceWindow(Videos,MovieTitles,return)">$INFO[Skin.String(QuickList1_1.Path)]</property>
-                        <property name="Type" fallback="custom">$INFO[Skin.String(QuickList1_1.Type)]</property>
-                        <property name="DisableIcon">$INFO[Skin.String(QuickList1_1.Disable)]</property>
-                        <thumb fallback="special://skin/extras/BigIcons/Film.png">$INFO[Skin.String(QuickList1_1.MultiFanart)]</thumb>
-                        <onclick>SetProperty(MenuItem,QuickList1_1,home)</onclick>
-                        <onclick>SetFocus(810)</onclick>
-                        <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickList1_1.Disable))</visible>
-                    </item>
-                    <item>
-                        <label fallback="20343">$INFO[Skin.String(QuickList1_2.Label)]</label>
-                        <property name="Path" fallback="ReplaceWindow(Videos,TVShowTitles,return)">$INFO[Skin.String(QuickList1_2.Path)]</property>
-                        <property name="Type" fallback="custom">$INFO[Skin.String(QuickList1_2.Type)]</property>
-                        <property name="DisableIcon">$INFO[Skin.String(QuickList1_2.Disable)]</property>
-                        <thumb fallback="special://skin/extras/BigIcons/Television.png">$INFO[Skin.String(QuickList1_2.MultiFanart)]</thumb>
-                        <onclick>SetProperty(MenuItem,QuickList1_2,home)</onclick>
-                        <onclick>SetFocus(810)</onclick>
-                        <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickList1_2.Disable))</visible>
-                    </item>
-                    <item>
-                        <label fallback="2">$INFO[Skin.String(QuickList1_3.Label)]</label>
-                        <property name="Path" fallback="ReplaceWindow(Music)">$INFO[Skin.String(QuickList1_3.Path)]</property>
-                        <property name="Type" fallback="custom">$INFO[Skin.String(QuickList1_3.Type)]</property>
-                        <property name="DisableIcon">$INFO[Skin.String(QuickList1_3.Disable)]</property>
-                        <thumb fallback="special://skin/extras/BigIcons/Headphone.png">$INFO[Skin.String(QuickList1_3.MultiFanart)]</thumb>
-                        <onclick>SetProperty(MenuItem,QuickList1_3,home)</onclick>
-                        <onclick>SetFocus(810)</onclick>
-                        <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickList1_3.Disable))</visible>
-                    </item>
-                    <item>
-                        <label fallback="20389">$INFO[Skin.String(QuickList1_4.Label)]</label>
-                        <property name="Path" fallback="ReplaceWindow(Videos,MusicVideoTitles,return)">$INFO[Skin.String(QuickList1_4.Path)]</property>
-                        <property name="Type" fallback="custom">$INFO[Skin.String(QuickList1_4.Type)]</property>
-                        <property name="DisableIcon">$INFO[Skin.String(QuickList1_4.Disable)]</property>
-                        <thumb fallback="special://skin/extras/BigIcons/Media.png">$INFO[Skin.String(QuickList1_4.MultiFanart)]</thumb>
-                        <onclick>SetProperty(MenuItem,QuickList1_4,home)</onclick>
-                        <onclick>SetFocus(810)</onclick>
-                        <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickList1_4.Disable))</visible>
-                    </item>
-                    <item>
-                        <label fallback="1036">$INFO[Skin.String(QuickList1_5.Label)]</label>
-                        <property name="Path" fallback="ActivateWindow(favourites)">$INFO[Skin.String(QuickList1_5.Path)]</property>
-                        <property name="Type" fallback="custom">$INFO[Skin.String(QuickList1_5.Type)]</property>
-                        <property name="DisableIcon">$INFO[Skin.String(QuickList1_5.Disable)]</property>
-                        <thumb fallback="special://skin/extras/BigIcons/Star.png">$INFO[Skin.String(QuickList1_5.MultiFanart)]</thumb>
-                        <onclick>SetProperty(MenuItem,QuickList1_5,home)</onclick>
-                        <onclick>SetFocus(810)</onclick>
-                        <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickList1_5.Disable))</visible>
-                    </item>
-                    <item>
-                        <label fallback="1037">$INFO[Skin.String(QuickList1_6.Label)]</label>
-                        <property name="Path" fallback="ReplaceWindow(Videos,Addons,return)">$INFO[Skin.String(QuickList1_6.Path)]</property>
-                        <property name="Type" fallback="custom">$INFO[Skin.String(QuickList1_6.Type)]</property>
-                        <property name="DisableIcon">$INFO[Skin.String(QuickList1_6.Disable)]</property>
-                        <thumb fallback="special://skin/extras/BigIcons/Monitor.png">$INFO[Skin.String(QuickList1_6.MultiFanart)]</thumb>
-                        <onclick>SetProperty(MenuItem,QuickList1_6,home)</onclick>
-                        <onclick>SetFocus(810)</onclick>
-                        <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickList1_6.Disable))</visible>
-                    </item>
-                    <item>
-                        <label fallback="24001">$INFO[Skin.String(QuickList1_7.Label)]</label>
-                        <property name="Path" fallback="ReplaceWindow(Programs,addons)">$INFO[Skin.String(QuickList1_7.Path)]</property>
-                        <property name="Type" fallback="custom">$INFO[Skin.String(QuickList1_7.Type)]</property>
-                        <property name="DisableIcon">$INFO[Skin.String(QuickList1_7.Disable)]</property>
-                        <thumb fallback="special://skin/extras/BigIcons/Puzzle.png">$INFO[Skin.String(QuickList1_7.MultiFanart)]</thumb>
-                        <onclick>SetProperty(MenuItem,QuickList1_7,home)</onclick>
-                        <onclick>SetFocus(810)</onclick>
-                        <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickList1_7.Disable))</visible>
-                    </item>
-                    <item>
-                        <label fallback="137">$INFO[Skin.String(QuickList1_8.Label)]</label>
-                        <property name="Path" fallback="RunScript(script.globalsearch)">$INFO[Skin.String(QuickList1_8.Path)]</property>
-                        <property name="Type" fallback="custom">$INFO[Skin.String(QuickList1_8.Type)]</property>
-                        <property name="DisableIcon">$INFO[Skin.String(QuickList1_8.Disable)]</property>
-                        <thumb fallback="special://skin/extras/BigIcons/Search.png">$INFO[Skin.String(QuickList1_8.MultiFanart)]</thumb>
-                        <onclick>SetProperty(MenuItem,QuickList1_8,home)</onclick>
-                        <onclick>SetFocus(810)</onclick>
-                        <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickList1_8.Disable))</visible>
-                    </item>
-                    <item>
-                        <label fallback="559">$INFO[Skin.String(QuickList1_9.Label)]</label>
-                        <property name="Path" fallback="ReplaceWindow(musicplaylist)">$INFO[Skin.String(QuickList1_9.Path)]</property>
-                        <property name="Type" fallback="custom">$INFO[Skin.String(QuickList1_9.Type)]</property>
-                        <property name="DisableIcon">$INFO[Skin.String(QuickList1_9.Disable)]</property>
-                        <thumb fallback="special://skin/extras/BigIcons/Format.png">$INFO[Skin.String(QuickList1_9.MultiFanart)]</thumb>
-                        <onclick>SetProperty(MenuItem,QuickList1_9,home)</onclick>
-                        <onclick>SetFocus(810)</onclick>
-                        <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickList1_9.Disable))</visible>
-                    </item>
-                </content>
-            </control>
-            <control type="button" id="9012">
-                <posx>50</posx>
-                <posy>900</posy>
-                <width>550</width>
-                <height>40</height>
-                <align>center</align>
-                <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-                <texturenofocus>-</texturenofocus>
-                <label>$VAR[QuickNavButtonLabelVar]</label>
-                <font>Font_Reg26</font>
-                <textcolor>grey2</textcolor>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">SetProperty(quicknavsetup,1,home)</onclick>
-                <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">Notification($LOCALIZE[31902],$LOCALIZE[31881])</onclick>
-                <onclick condition="!IsEmpty(Window(home).Property(quicknavsetup))">ClearProperty(quicknavsetup,home)</onclick>
-                <onleft>3</onleft>
-                <onright>3</onright>
-                <onup>SetFocus(800,20)</onup>
-                <onup>800</onup>
-                <ondown>SetFocus(800,0)</ondown>
-                <ondown>800</ondown>
-                <visible>IsEmpty(Window(home).Property(viewtypeselect))</visible>
-                <visible>!Skin.HasSetting(kioskmode)</visible>
-            </control>
-        </control>
     </include>
     <include name="VideoOSD">
          <control type="group" id="703">
@@ -1973,15 +1753,14 @@
         <height>84</height>
         <textoffsetx>30</textoffsetx>
         <align>left</align>
-        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus>views/tripanel/listselect_fo.png</texturenofocus>
+        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
+        <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturenofocus>
         <alttexturefocus>-</alttexturefocus>
         <alttexturenofocus>-</alttexturenofocus>
         <font>Font-Condensed-S34</font>
         <shadowcolor>22000000</shadowcolor>
         <textcolor>white</textcolor>
         <disabledcolor>grey2</disabledcolor>
-        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
     </include>
     <include name="TVGuideWeekdayButton">
         <posx>0</posx>
@@ -1992,13 +1771,10 @@
         <align>left</align>
         <texturefocus>-</texturefocus>
         <texturenofocus>-</texturenofocus>
-        <alttexturefocus>-</alttexturefocus>
-        <alttexturenofocus>-</alttexturenofocus>
         <font>Font-Condensed-S34</font>
         <shadowcolor>22000000</shadowcolor>
         <textcolor>white</textcolor>
         <disabledcolor>grey2</disabledcolor>
-        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
     </include>
     <include name="PosterWallLayout">
                             <itemlayout width="240" height="410">
@@ -2017,7 +1793,7 @@
                             <width>232</width>
                             <height>328</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                            <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                             <bordersize>19.5</bordersize>
                         </control>
@@ -2132,7 +1908,7 @@
                     <colordiffuse>floor</colordiffuse>
                 </control>
                 <control type="label">
-                    <posx>215</posx>
+                    <posx>30</posx>
                     <posy>468</posy>
                     <width>370</width>
                     <height>80</height>

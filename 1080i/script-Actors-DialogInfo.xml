@@ -2,7 +2,6 @@
 <window>
     <defaultcontrol always="true">9000</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <zorder>1</zorder>
     <controls>
         <control type="group">
             <visible>![Window.IsVisible(FileBrowser) | Window.IsVisible(script-Actors-Browser.xml) | [Window.IsVisible(DialogSelect.xml) + StringCompare(Window.Property(actorsselect),1)]]</visible>
@@ -248,7 +247,7 @@
                                 <visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
                             </control>
                             <control type="label">
-                                <posx>710</posx>
+                                <posx>310</posx>
                                 <width>400</width>
                                 <height>50</height>
                                 <textoffsetx>15</textoffsetx>
@@ -291,7 +290,7 @@
                                     <scroll>true</scroll>
                                 </control>
                                 <control type="label">
-                                    <posx>710</posx>
+                                    <posx>310</posx>
                                     <width>400</width>
                                     <height>50</height>
                                     <textoffsetx>15</textoffsetx>
@@ -325,7 +324,7 @@
                                     <scroll>true</scroll>
                                 </control>
                                 <control type="label">
-                                    <posx>710</posx>
+                                    <posx>310</posx>
                                     <width>400</width>
                                     <height>50</height>
                                     <textoffsetx>15</textoffsetx>

@@ -62,47 +62,47 @@
             <onup>9011</onup>
             <ondown>9012</ondown>
             <onright>Dialog.CLose(1121)</onright>
-            <itemlayout width="219" height="60">
+            <itemlayout width="219" height="79">
                 <control type="image">
                     <width>219</width>
-                    <height>60</height>
+                    <height>79</height>
                     <texture border="3">settings/listselect_nf.png</texture>
                 </control>
                 <control type="label">
                     <posx>15</posx>
                     <width>219</width>
-                    <height>60</height>
+                    <height>79</height>
                     <font>Font_Reg30_2</font>
                     <textcolor>grey2</textcolor>
-                    <info>ListItem.Label</info>
+                    <label>$INFO[ListItem.Label]</label>
                     <visible>!StringCompare(ListItem.Label,Container.Viewmode)</visible>
                 </control>
                 <control type="label">
                     <posx>15</posx>
                     <width>219</width>
-                    <height>60</height>
+                    <height>79</height>
                     <font>Font_Reg30_2</font>
-                    <info>ListItem.Label</info>
+                    <label>$INFO[ListItem.Label]</label>
                     <visible>StringCompare(ListItem.Label,Container.Viewmode)</visible>
                 </control>
                 <control type="image">
                     <width>219</width>
-                    <height>60</height>
+                    <height>79</height>
                     <aspectratio>keep</aspectratio>
                     <texture>close.png</texture>
                     <visible>!IsEmpty(ListItem.Thumb)</visible>
                 </control>
             </itemlayout>
-            <focusedlayout width="219" height="60">
+            <focusedlayout width="219" height="79">
                 <control type="image">
                     <width>219</width>
-                    <height>60</height>
+                    <height>79</height>
                     <texture border="3">settings/listselect_nf.png</texture>
                     <visible>!Control.HasFocus(9011)</visible>
                 </control>
                 <control type="image">
                     <width>219</width>
-                    <height>60</height>
+                    <height>79</height>
                         <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <include>PanelGlowFade</include>
@@ -111,23 +111,23 @@
                 <control type="label">
                     <posx>15</posx>
                     <width>219</width>
-                    <height>60</height>
+                    <height>79</height>
                     <font>Font_Reg30_2</font>
-                    <info>ListItem.Label</info>
+                    <label>$INFO[ListItem.Label]</label>
                     <textcolor>grey2</textcolor>
                     <visible>!Control.HasFocus(9011)</visible>
                 </control>
                 <control type="label">
                     <posx>15</posx>
                     <width>219</width>
-                    <height>60</height>
+                    <height>79</height>
                     <font>Font_Reg30_2</font>
-                    <info>ListItem.Label</info>
+                    <label>$INFO[ListItem.Label]</label>
                     <visible>Control.HasFocus(9011)</visible>
                 </control>
                 <control type="image">
                     <width>219</width>
-                    <height>60</height>
+                    <height>79</height>
                     <aspectratio>keep</aspectratio>
                     <texture>close.png</texture>
                     <visible>!IsEmpty(ListItem.Thumb)</visible>
@@ -156,13 +156,6 @@
                     <label>$LOCALIZE[31153]</label>
                     <onclick>Container.SetViewMode(511)</onclick>
                     <visible>Window.IsActive(videos) + IsEmpty(Skin.String(DisableLowListVL))</visible>
-                    <visible>IsEmpty(Window(home).Property(quicknavsetup))</visible>
-                </item>
-                <item>
-                    <label>31233</label>
-                    <onclick>Container.SetViewMode(550)</onclick>
-                    <visible>IsEmpty(Skin.String(DisablePanelVL))</visible>
-                    <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
                     <visible>IsEmpty(Window(home).Property(quicknavsetup))</visible>
                 </item>
                 <item>
@@ -274,14 +267,6 @@
                     <thumb>$INFO[Skin.String(DisableLowListVL)]</thumb>
                     <onclick condition="IsEmpty(Skin.String(DisableLowListVL))">Skin.SetString(DisableLowListVL,true)</onclick>
                     <onclick condition="!IsEmpty(Skin.String(DisableLowListVL)) + !StringCompare(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableLowListVL)</onclick>
-                    <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
-                </item>
-                <item>
-                    <label>31233</label>
-                    <onclick>Container.SetViewMode(550)</onclick>
-                    <thumb>$INFO[Skin.String(DisablePanelVL)]</thumb>
-                    <onclick condition="IsEmpty(Skin.String(DisablePanelVL))">Skin.SetString(DisablePanelVL,true)</onclick>
-                    <onclick condition="!IsEmpty(Skin.String(DisablePanelVL)) + !StringCompare(ListItem.Label,Container.Viewmode)">Skin.Reset(DisablePanelVL)</onclick>
                     <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
                 </item>
                 <item>
@@ -406,9 +391,9 @@
                     <width>219</width>
                     <height>60</height>
                     <align>center</align>
-                    <font>Font_Reg26_Caps</font>
+                    <font>Font_Reg26</font>
                     <textcolor>white3</textcolor>
-                    <info>ListItem.Label</info>
+                    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
                 </control>
             </itemlayout>
             <focusedlayout width="219" height="115">
@@ -440,8 +425,8 @@
                     <width>219</width>
                     <height>60</height>
                     <align>center</align>
-                    <font>Font_Reg26_Caps</font>
-                    <info>ListItem.Label</info>
+                    <font>Font_Reg26</font>
+                    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
                 </control>
             </focusedlayout>
             <content>

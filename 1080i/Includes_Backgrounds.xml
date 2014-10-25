@@ -27,17 +27,17 @@
             <label>$INFO[Window(Home).Property(Detail.Movie.18.Art(fanart))]</label>
             <label>$INFO[Window(Home).Property(Detail.Movie.19.Art(fanart))]</label>
             <label>$INFO[Window(Home).Property(Detail.Movie.20.Art(fanart))]</label>
-            <visible>[Container.Content(tags) | Container.Content(directors) | Container.Content(actors) | Container.Content(genres) | Container.Content(studios) | Container.Content(countries) | Container.Content(years) | Container.Content(sets) | SubString(ListItem.FolderPath,videodb://movies/sets/,left)]</visible>
+            <visible>Container.Content(tags) | Container.Content(directors) | Container.Content(actors) | Container.Content(genres) | Container.Content(studios) | Container.Content(countries) | Container.Content(years) | Container.Content(sets) | SubString(ListItem.FolderPath,videodb://movies/sets/,left)</visible>
             <visible>!Stringcompare(ListItem.Label,..)</visible>
         </control>
     </include>
     <include name="InteractiveNodeCases">
         <control type="group">
-            <animation effect="fade" time="600">VisibleChange</animation>
+            <animation effect="fade" time="500">VisibleChange</animation>
             <include>Animation_WindowFade200</include>
             <visible>Skin.HasSetting(livenodecovers)</visible>
             <visible>!Stringcompare(ListItem.Label,..)</visible>
-            <visible>Container.Content(tags) | Container.Content(directors) | Container.Content(actors) | Container.Content(genres) | Container.Content(studios) | Container.Content(countries) | Container.Content(years) | Container.Content(sets) | SubString(ListItem.FolderPath,videodb://movies/sets/,left)]</visible>
+            <visible>Container.Content(tags) | Container.Content(directors) | Container.Content(actors) | Container.Content(genres) | Container.Content(studios) | Container.Content(countries) | Container.Content(years) | Container.Content(sets) | SubString(ListItem.FolderPath,videodb://movies/sets/,left)</visible>
             <control type="group">
                 <control type="group">
                     <posx>100</posx>
@@ -61,7 +61,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase2Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(2).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -87,7 +87,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase3Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(3).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -113,7 +113,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase5Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(5).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -139,7 +139,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase6Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(6).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -165,7 +165,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase4Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(4).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -191,7 +191,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase8Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(8).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -217,7 +217,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase7Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(7).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -243,7 +243,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase9Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(9).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -269,7 +269,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase10Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(10).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -295,7 +295,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase1Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(1).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -598,114 +598,6 @@
             <height>118</height>
             <font>Font_Reg57</font>
             <textcolor>00FFFFFF</textcolor>
-            <label>$INFO[Window(Home).Property(SmartPlaylist1.1.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist1.2.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist1.3.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist1.4.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist1.5.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist1.6.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist1.7.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist1.8.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist1.9.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist1.10.Art(fanart))]</label>
-            <visible>Stringcompare(Control.GetLabel(4322),1custom)</visible>
-        </control>
-        <control type="fadelabel" id="4324">
-            <pauseatend>7500</pauseatend>
-            <width>11479</width>
-            <height>118</height>
-            <font>Font_Reg57</font>
-            <textcolor>00FFFFFF</textcolor>
-            <label>$INFO[Window(Home).Property(SmartPlaylist2.1.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist2.2.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist2.3.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist2.4.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist2.5.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist2.6.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist2.7.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist2.8.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist2.9.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist2.10.Art(fanart))]</label>
-            <visible>Stringcompare(Control.GetLabel(4322),2custom)</visible>
-        </control>
-        <control type="fadelabel" id="4324">
-            <pauseatend>7500</pauseatend>
-            <width>11479</width>
-            <height>118</height>
-            <font>Font_Reg57</font>
-            <textcolor>00FFFFFF</textcolor>
-            <label>$INFO[Window(Home).Property(SmartPlaylist3.1.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist3.2.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist3.3.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist3.4.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist3.5.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist3.6.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist3.7.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist3.8.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist3.9.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist3.10.Art(fanart))]</label>
-            <visible>Stringcompare(Control.GetLabel(4322),3custom)</visible>
-        </control>
-        <control type="fadelabel" id="4324">
-            <pauseatend>7500</pauseatend>
-            <width>11479</width>
-            <height>118</height>
-            <font>Font_Reg57</font>
-            <textcolor>00FFFFFF</textcolor>
-            <label>$INFO[Window(Home).Property(SmartPlaylist4.1.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist4.2.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist4.3.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist4.4.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist4.5.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist4.6.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist4.7.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist4.8.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist4.9.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist4.10.Art(fanart))]</label>
-            <visible>Stringcompare(Control.GetLabel(4322),4custom)</visible>
-        </control>
-        <control type="fadelabel" id="4324">
-            <pauseatend>7500</pauseatend>
-            <width>11479</width>
-            <height>118</height>
-            <font>Font_Reg57</font>
-            <textcolor>00FFFFFF</textcolor>
-            <label>$INFO[Window(Home).Property(SmartPlaylist5.1.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist5.2.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist5.3.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist5.4.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist5.5.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist5.6.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist5.7.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist5.8.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist5.9.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist5.10.Art(fanart))]</label>
-            <visible>Stringcompare(Control.GetLabel(4322),5custom)</visible>
-        </control>
-        <control type="fadelabel" id="4324">
-            <pauseatend>7500</pauseatend>
-            <width>11479</width>
-            <height>118</height>
-            <font>Font_Reg57</font>
-            <textcolor>00FFFFFF</textcolor>
-            <label>$INFO[Window(Home).Property(SmartPlaylist6.1.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist6.2.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist6.3.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist6.4.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist6.5.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist6.6.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist6.7.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist6.8.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist6.9.Art(fanart))]</label>
-            <label>$INFO[Window(Home).Property(SmartPlaylist6.10.Art(fanart))]</label>
-            <visible>Stringcompare(Control.GetLabel(4322),6custom)</visible>
-        </control>
-        <control type="fadelabel" id="4324">
-            <pauseatend>7500</pauseatend>
-            <width>11479</width>
-            <height>118</height>
-            <font>Font_Reg57</font>
-            <textcolor>00FFFFFF</textcolor>
             <label>http://img1.demo.jsxbabeotd.dellsports.com/static/models/$INFO[System.Date(yyyy)]/$INFO[System.Date(mm)]/$INFO[System.Date(dd)]/1.jpg</label>
             <label>http://img1.demo.jsxbabeotd.dellsports.com/static/models/2013/01/$INFO[System.Date(dd)]/$INFO[System.Date(m)].jpg</label>
             <label>http://img1.demo.jsxbabeotd.dellsports.com/static/models/2013/02/$INFO[System.Date(dd)]/$INFO[System.Date(m)].jpg</label>
@@ -905,10 +797,19 @@
         </control>
     </include>
     <include name="InteractiveCasesBackground">
+        <control type="list" id="30000">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1</width>
+            <height>1</height>
+            <focusedlayout></focusedlayout>
+            <itemlayout></itemlayout>
+            <content>$VAR[LiveCasesDVDContentVar]</content>
+            <visible>Substring(Control.GetLabel(4328),dvdcase,left)</visible>
+        </control>
         <control type="group">
-            <animation effect="fade" time="600">VisibleChange</animation>
-            <include>Animation_WindowFade200</include>
-            <visible>Substring(Control.GetLabel(4322),dvdcase,left)</visible>
+            <animation effect="fade" time="500">VisibleChange</animation>
+            <visible>Substring(Control.GetLabel(4328),dvdcase,left)</visible>
             <control type="group">
                 <control type="group">
                     <posx>800</posx>
@@ -923,13 +824,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case2Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(2).Art(poster)]$INFO[Container(30000).ListItem(2).Art(tvshow.poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase2Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(2).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -945,13 +846,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case3Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(3).Art(poster)]$INFO[Container(30000).ListItem(3).Art(tvshow.poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase3Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(3).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -967,13 +868,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case5Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(5).Art(poster)]$INFO[Container(30000).ListItem(5).Art(tvshow.poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase5Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(5).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -989,13 +890,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case6Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(6).Art(poster)]$INFO[Container(30000).ListItem(6).Art(tvshow.poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase6Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(6).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -1011,17 +912,17 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case4Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(4).Art(poster)]$INFO[Container(30000).ListItem(4).Art(tvshow.poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase4Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(4).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
-                    <posx>1380</posx>
+                    <posx>1080</posx>
                     <posy>650</posy>
                     <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-35" end="-35" time="0" condition="true">Conditional</animation>
@@ -1033,13 +934,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case8Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(8).Art(poster)]$INFO[Container(30000).ListItem(8).Art(tvshow.poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase8Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(8).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -1055,57 +956,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case7Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(7).Art(poster)]$INFO[Container(30000).ListItem(7).Art(tvshow.poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase7Var]p.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>1100</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case9Var]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase9Var]p.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>800</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="16" end="16" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case10Var]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase10Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(7).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -1121,24 +978,33 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case1Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(1).Art(poster)]$INFO[Container(30000).ListItem(1).Art(tvshow.poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase1Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(1).VideoResolution]p.png</texture>
                     </control>
                 </control>
             </control>
         </control>
     </include>
-    <!-- CD Case -->
+    <!--CD Case-->
     <include name="LiveCDCasesbackground">
+        <control type="list" id="30001">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1</width>
+            <height>1</height>
+            <focusedlayout></focusedlayout>
+            <itemlayout></itemlayout>
+            <content>$VAR[LiveCasesSquareContentVar]</content>
+            <visible>Substring(Control.GetLabel(4328),case,left)</visible>
+        </control>
         <control type="group">
-            <animation effect="fade" time="600">VisibleChange</animation>
-            <include>Animation_WindowFade200</include>
-            <visible>Substring(Control.GetLabel(4322),case,left)</visible>
+            <animation effect="fade" time="500">VisibleChange</animation>
+            <visible>Substring(Control.GetLabel(4328),case,left)</visible>
             <control type="group">
                 <posx>-200</posx>
                 <control type="group">
@@ -1152,20 +1018,20 @@
                         <width>302</width>
                         <height>302</height>
                         <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase1Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30001).ListItem(1).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <texture>thumbs/boxes/cd_glass.png</texture>
                         <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <texture>thumbs/boxes/cd_box_closed.png</texture>
                         <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
@@ -1179,20 +1045,20 @@
                         <width>302</width>
                         <height>302</height>
                         <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase2Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30001).ListItem(2).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <texture>thumbs/boxes/cd_glass.png</texture>
                         <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <texture>thumbs/boxes/cd_box_closed.png</texture>
                         <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
@@ -1206,7 +1072,7 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase3Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30001).ListItem(3).Thumb]</texture>
                         <fadetime>600</fadetime>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
@@ -1214,13 +1080,13 @@
                         <width>375</width>
                         <height>342</height>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <texture>thumbs/boxes/cd_glass.png</texture>
                         <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <texture>thumbs/boxes/cd_box_closed.png</texture>
                         <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
@@ -1235,20 +1101,20 @@
                         <width>302</width>
                         <height>302</height>
                         <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase4Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30001).ListItem(4).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <texture>thumbs/boxes/cd_glass.png</texture>
                         <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <texture>thumbs/boxes/cd_box_closed.png</texture>
                         <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
@@ -1262,7 +1128,7 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase5Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30001).ListItem(5).Thumb]</texture>
                         <fadetime>600</fadetime>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
@@ -1270,13 +1136,13 @@
                         <width>375</width>
                         <height>342</height>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <texture>thumbs/boxes/cd_glass.png</texture>
                         <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <texture>thumbs/boxes/cd_box_closed.png</texture>
                         <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
@@ -1291,20 +1157,20 @@
                         <width>302</width>
                         <height>302</height>
                         <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase6Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30001).ListItem(6).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <texture>thumbs/boxes/cd_glass.png</texture>
                         <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <texture>thumbs/boxes/cd_box_closed.png</texture>
                         <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
@@ -1319,20 +1185,20 @@
                         <width>302</width>
                         <height>302</height>
                         <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase7Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30001).ListItem(7).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <texture>thumbs/boxes/cd_glass.png</texture>
                         <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <texture>thumbs/boxes/cd_box_closed.png</texture>
                         <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
@@ -1347,76 +1213,20 @@
                         <width>302</width>
                         <fadetime>600</fadetime>
                         <height>302</height>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase8Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30001).ListItem(8).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <texture>thumbs/boxes/cd_glass.png</texture>
                         <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
-                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>1050</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>302</width>
-                        <height>302</height>
-                        <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase9Var]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>375</width>
-                        <height>342</height>
-                        <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
-                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
-                    </control>
-                    <control type="image">
-                        <width>375</width>
-                        <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
-                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>600</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>302</width>
-                        <height>302</height>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase10Var]</texture>
-                        <fadetime>600</fadetime>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>375</width>
-                        <height>342</height>
-                        <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
-                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
-                    </control>
-                    <control type="image">
-                        <width>375</width>
-                        <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <texture>thumbs/boxes/cd_box_closed.png</texture>
                         <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
@@ -1424,160 +1234,100 @@
         </control>
     </include>
     <include name="LiveNoCasesbackground">
+        <control type="list" id="30002">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1</width>
+            <height>1</height>
+            <focusedlayout></focusedlayout>
+            <itemlayout></itemlayout>
+            <content>$VAR[LiveCasesKeepContentVar]</content>
+            <visible>Substring(Control.GetLabel(4328),nocase,left)</visible>
+        </control>
         <control type="group">
             <animation effect="fade" time="480">VisibleChange</animation>
-            <include>Animation_WindowFade200</include>
-            <visible>Substring(Control.GetLabel(4322),nocase,left)</visible>
+            <visible>Substring(Control.GetLabel(4328),nocase,left)</visible>
             <control type="group">
                 <posx>-200</posx>
-                <control type="group">
-                    <posx>1120</posx>
-                    <posy>700</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="9" end="9" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase1Var]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
+                <control type="image">
+                    <posx>250</posx>
+                    <posy>-200</posy>
+                    <animation effect="rotate" center="0,700" end="9" time="0" condition="true">Conditional</animation>
+                    <width>670</width>
+                    <height>670</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$INFO[Container(30002).ListItem(1).Thumb]</texture>
+                    <fadetime>600</fadetime>
                 </control>
-                <control type="group">
-                    <posx>700</posx>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase2Var]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
+                <control type="image">
+                    <posx>200</posx>
+                    <posy>250</posy>
+                    <animation effect="rotate" center="auto" end="35" time="0" condition="true">Conditional</animation>
+                    <width>670</width>
+                    <height>670</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$INFO[Container(30002).ListItem(2).Thumb]</texture>
+                    <fadetime>600</fadetime>
                 </control>
-                <control type="group">
-                    <posx>430</posx>
-                    <posy>150</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase3Var]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
+                <control type="image">
+                    <posx>730</posx>
+                    <posy>550</posy>
+                    <animation effect="rotate" center="auto" end="10" time="0" condition="true">Conditional</animation>
+                    <width>670</width>
+                    <height>670</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$INFO[Container(30002).ListItem(3).Thumb]</texture>
+                    <fadetime>600</fadetime>
                 </control>
-                <control type="group">
-                    <posx>1600</posx>
+                <control type="image">
+                    <posx>600</posx>
                     <posy>200</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase4Var]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
+                    <animation effect="rotate" center="auto" end="-20" time="0" condition="true">Conditional</animation>
+                    <width>670</width>
+                    <height>670</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$INFO[Container(30002).ListItem(4).Thumb]</texture>
+                    <fadetime>600</fadetime>
                 </control>
-                <control type="group">
+                <animation effect="rotate" center="auto" end="25" time="0" condition="true">Conditional</animation>
+                <control type="image">
                     <posx>1000</posx>
                     <posy>100</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase5Var]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
+                    <width>670</width>
+                    <height>670</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$INFO[Container(30002).ListItem(5).Thumb]</texture>
+                    <fadetime>600</fadetime>
                 </control>
-                <control type="group">
-                    <posx>1950</posx>
+                <control type="image">
+                    <posx>1050</posx>
                     <posy>-100</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase6Var]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
+                    <animation effect="rotate" center="auto" end="25" time="0" condition="true">Conditional</animation>
+                    <width>670</width>
+                    <height>670</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$INFO[Container(30002).ListItem(6).Thumb]</texture>
+                    <fadetime>600</fadetime>
                 </control>
-                <control type="group">
+                <control type="image">
                     <posx>1700</posx>
                     <posy>800</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase7Var]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
+                    <width>670</width>
+                    <height>670</height>
+                    <animation effect="rotate" center="auto" end="45" time="0" condition="true">Conditional</animation>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$INFO[Container(30002).ListItem(7).Thumb]</texture>
+                    <fadetime>600</fadetime>
                 </control>
-                <control type="group">
+                <control type="image">
                     <posx>1470</posx>
                     <posy>510</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-15" end="-15" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase8Var]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>1050</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase9Var]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>600</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase10Var]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
+                    <animation effect="rotate" center="auto" end="-15" time="0" condition="true">Conditional</animation>
+                    <width>670</width>
+                    <height>670</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$INFO[Container(30002).ListItem(8).Thumb]</texture>
+                    <fadetime>600</fadetime>
                 </control>
             </control>
         </control>
@@ -1597,18 +1347,19 @@
         </control>
     </include>
     <include name="CommonMediaPlayingBackground">
-        <control type="image">
-            <texture>common/black.png</texture>
-            <include>FullscreenDimensions</include>
+        <control type="group">
             <visible>Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)</visible>
+            <control type="image">
+                <texture>common/black.png</texture>
+                <include>FullscreenDimensions</include>
+            </control>
+            <control type="videowindow">
+                <include>FullscreenDimensions</include>
+            </control>
         </control>
         <control type="visualisation">
             <include>FullscreenDimensions</include>
             <visible>Player.HasAudio + !Skin.HasSetting(ShowBackgroundVis)</visible>
-        </control>
-        <control type="videowindow">
-            <include>FullscreenDimensions</include>
-            <visible>Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)</visible>
         </control>
     </include>
     <include name="CommonFanartVarsSingle">
@@ -1634,6 +1385,103 @@
             <fadetime>600</fadetime>
             <visible>Player.HasAudio + Skin.HasSetting(musicfanarthome)</visible>
             <include>Animation_VisibleChange400</include>
+        </control>
+    </include>
+    <include name="MusicVizBG">
+        <aspectratio align="center" aligny="top">scale</aspectratio>
+        <fadetime>1000</fadetime>
+        <include>FullscreenDimensions</include>
+        <include>Animation_VisibleChange400</include>
+        <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+        <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+        <timeperimage>10000</timeperimage>
+    </include>
+    <include name="cdwall-musicvisualisation">
+        <control type="group" id="2355">
+            <posx>-52</posx>
+            <posy>-22</posy>
+            <!--         <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="true">Conditional</animation>
+        <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
+        <animation effect="rotatex" start="" end="15" time="0" condition="true">Conditional</animation> -->
+            <visible>[Window.IsActive(visualisation) + StringCompare(Skin.String(MusicViz.MultiFanart),cd-wall)] | [Player.HasAudio + Window.IsActive(script-HomeWindow Script-main.xml) + Skin.HasSetting(homecdwall)] | Stringcompare(Control.GetLabel(4322),cdwall)</visible>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbg)]">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbg)]">Conditional</animation>
+            <include>Animation_WindowFade200</include>
+            <include>Animation_VisibleChange400</include>
+            <control type="panel" id="9032">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>1080</height>
+                <movement>6</movement>
+                <pagecontrol>60</pagecontrol>
+                <scrolltime tween="cubic" easing="inout">600</scrolltime>
+                <orientation>vertical</orientation>
+                <preloaditems>0</preloaditems>
+                <itemlayout height="192" width="192">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>192</width>
+                        <height>192</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="192" width="192">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>192</width>
+                        <height>192</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </focusedlayout>
+                <content>special://skin/extras/Playlists/albumwall.xsp</content>
+            </control>
+        </control>
+    </include>
+    <include name="MovieWall">
+        <control type="group" id="2355">
+            <!--         <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="true">Conditional</animation>
+        <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
+        <animation effect="rotatex" start="" end="15" time="0" condition="true">Conditional</animation> -->
+            <visible>SubString(Control.GetLabel(4322),moviewall)</visible>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbg)]">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbg)]">Conditional</animation>
+            <include>Animation_VisibleChange400</include>
+            <control type="panel" id="9032">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>2120</width>
+                <height>1080</height>
+                <movement>6</movement>
+                <scrolltime tween="cubic" easing="inout">600</scrolltime>
+                <orientation>vertical</orientation>
+                <preloaditems>0</preloaditems>
+                <itemlayout height="337" width="225">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>225</width>
+                        <height>337</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="337" width="225">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>225</width>
+                        <height>337</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </focusedlayout>
+                <content>special://skin/extras/Playlists/randommovies.xsp</content>
+            </control>
         </control>
     </include>
 </includes>

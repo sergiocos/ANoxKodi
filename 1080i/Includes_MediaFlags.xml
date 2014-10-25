@@ -271,7 +271,7 @@
     <include name="FloorFlags">
         <control type="group">
             <include>Animation_FlagSlideDown</include>
-            <visible>Control.IsVisible(550) | Control.IsVisible(508) | [Control.IsVisible(503) + !Skin.HasSetting(landscapeonelogo)]  | Control.IsVisible(501) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(516)</visible>
+            <visible>Control.IsVisible(508) | [Control.IsVisible(503) + !Skin.HasSetting(landscapeonelogo)]  | Control.IsVisible(501) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(516)</visible>
             <visible>![SubString(Container.FolderPath,addons://) | SubString(Container.FolderPath,plugin.video)]</visible>
             <posy>1000</posy>
             <control type="group">
@@ -286,12 +286,12 @@
                         <posx>15</posx>
                         <texture>$VAR[SourceFlagVar,flags/source/,.png]</texture>
                         <include>AudioFlagsVars</include>
-                        <animation effect="slide" end="64" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
+                        <animation effect="slide" end="64" condition="Control.IsVisible(512)">Conditional</animation>
                     </control>
                     <control type="group">
                         <!--studio logo-->
                         <posx>155</posx>
-                        <animation effect="slide" end="109" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
+                        <animation effect="slide" end="109" condition="Control.IsVisible(512)">Conditional</animation>
                         <control type="image" id="76">
                             <posy>-7</posy>
                             <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
@@ -325,12 +325,12 @@
                         <posx>295</posx>
                         <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
                         <include>AudioFlagsVars</include>
-                        <animation effect="slide" end="138" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
+                        <animation effect="slide" end="138" condition="Control.IsVisible(512)">Conditional</animation>
                     </control>
                 </control>
                 <control type="group">
                     <!--right part -->
-                    <animation effect="slide" end="-930" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
+                    <animation effect="slide" end="-930" condition="Control.IsVisible(512)">Conditional</animation>
                     <control type="image">
                         <!--AspectRatio logo-->
                         <posx>1483</posx>
@@ -446,7 +446,7 @@
                 </control>
                 <control type="group">
                     <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
-                    <animation effect="slide" end="-975" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
+                    <animation effect="slide" end="-975" condition="Control.IsVisible(512)">Conditional</animation>
                     <control type="image">
                         <posx>1600</posx>
                         <texture>flags/IMDB.png</texture>
@@ -478,7 +478,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>Control.IsVisible(512) | Control.IsVisible(550)</visible>
+                <visible>Control.IsVisible(512)</visible>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                 <control type="label">
@@ -570,35 +570,32 @@
                 </control>
                 <control type="group">
                     <posx>1630</posx>
-                    <control type="label">  	
-	                    <posx>282</posx>
-						<posy>-30</posy>
-                        <width>330</width>	  	
-                        <height>90</height>	  	
-                        <align>right</align>	  	
-                        <font>Font_Reg32</font>	  	
-                        <label>[LOWERCASE]$LOCALIZE[210]: [B]$VAR[LastEpisodeVar][/B][/LOWERCASE]</label>	  	
-                    </control>  	
-                    <control type="label">	  	
-                        <posx>282</posx>	  	
-                        <posy>-1</posy>	  	
-                        <width>330</width>	  	
-                        <height>90</height>	  	
-                        <align>right</align>	  	
-                        <font>Font_Reg32</font>	  	
-                        <label>[LOWERCASE]$LOCALIZE[209]: [B]$VAR[NextEpisodeVar][/B][/LOWERCASE]</label>	  	
-						<visible>!IsEmpty(Window(Home).Property(NextAired.NextDate)</visible>	  	
-                    </control> 	
-					<control type="label">	  	
-                        <posx>282</posx>  	
-                        <posy>-1</posy>	  	
-                        <width>330</width>	  	
-                        <height>90</height>	  	
-                       <align>right</align>	  	
-                        <font>Font_Reg32</font>
-	  	                <label>$INFO[Window(Home).Property(NextAired.Status)]</label>
-						<visible>IsEmpty(Window(Home).Property(NextAired.NextDate)</visible>
-                     </control>
+                    <control type="label">
+                        <posy>-27</posy>
+                        <width>330</width>
+                        <height>90</height>
+                        <align>left</align>
+                        <font>Font_Reg22</font>
+                        <label>$LOCALIZE[210]: [B]$VAR[LastEpisodeVar][/B]</label>
+                    </control>
+                    <control type="label">
+                        <posy>0</posy>
+                        <width>330</width>
+                        <height>90</height>
+                        <align>left</align>
+                        <font>Font_Reg22</font>
+                        <label>$LOCALIZE[209]: [B]$VAR[NextEpisodeVar][/B]</label>
+                        <visible>!IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
+                    </control>
+                    <control type="label">
+                        <posy>0</posy>
+                        <width>330</width>
+                        <height>90</height>
+                        <align>left</align>
+                        <font>Font_Reg22</font>
+                        <label>$INFO[Window(Home).Property(NextAired.Status)]</label>
+                        <visible>IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
+                    </control>
                 </control>
             </control>
         </control>
@@ -709,7 +706,7 @@
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                 <animation effect="slide" end="5,-30" time="0" condition="Control.IsVisible(50)">Conditional</animation>
                 <animation effect="slide" end="100,0" time="0" condition="Control.IsVisible(53)">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="0" condition="Control.IsVisible(506)">Conditional</animation>                
+                <animation effect="fade" start="100" end="0" time="0" condition="Control.IsVisible(506)">Conditional</animation>
                 <!-- Rating -->
                 <control type="group">
                     <animation effect="slide" end="1210,0" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(57)">Conditional</animation>
@@ -873,7 +870,7 @@
                     <colordiffuse>floor</colordiffuse>
                     <visible>!IsEmpty(ListItem.StarRating)</visible>
                     <include>Animation_VisibleChange200</include>
-                </control>               
+                </control>
                 <!-- Codec -->
                 <control type="image">
                     <posx>1540</posx>

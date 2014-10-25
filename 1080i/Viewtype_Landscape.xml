@@ -56,8 +56,8 @@
                 <width>375</width>
                 <height>90</height>
                 <align>center</align>
-                <label>$INFO[ListItem.Episode,$LOCALIZE[20359] ]</label>
-                <font>Font_Reg26_Caps</font>
+                <label>[UPPERCASE]$INFO[ListItem.Episode,$LOCALIZE[20359] ][/UPPERCASE]</label>
+                <font>Font_Reg26</font>
             </control>
         </control>
         <control type="image">
@@ -82,7 +82,7 @@
         <onleft>503</onleft>
         <onright>503</onright>
         <onup>7000</onup>
-        <ondown condition="![Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">61</ondown>
+        <ondown condition="![Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">610</ondown>
         <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + !IsEmpty(ListItem.Trailer)">9000</ondown>
         <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + IsEmpty(ListItem.Trailer)">7000</ondown>
         <orientation>horizontal</orientation>
@@ -166,8 +166,9 @@
                 </control>
                     <control type="label">
                         <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]]</visible>
+                        <visible>!ControlGroup(24000).HasFocus</visible>
                         <include>Animation_VisibleChange200</include>
-                        <animation effect="slide" end="0,-20" time="240" condition="Control.IsVisible(4050) | Control.HasFocus(61)">Conditional</animation>
+                        <animation effect="slide" end="0,-20" time="240" condition="Control.IsVisible(4050) | Control.HasFocus(61) | Control.IsVisible(24000)">Conditional</animation>
                         <posx>510</posx>
                         <posy>1012</posy>
                         <width>900</width>
@@ -176,7 +177,6 @@
                         <font>Font_ShowcaseMainLabel2_Caps</font>
                         <shadowcolor>floorshadow</shadowcolor>
                         <textcolor>floor</textcolor>
-                        <include>Animation_VisibleChange200</include>
                         <scroll>true</scroll>
                         <scrollspeed>30</scrollspeed>
                     </control>
@@ -191,6 +191,7 @@
                     <include>Animation_VisibleChange200</include>
                     <scroll>true</scroll>
                     <scrollspeed>30</scrollspeed>
+                    <visible>!ControlGroup(24000).HasFocus</visible>
                     <visible>Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)] + !Control.HasFocus(61)</visible>
                 </control>
             </control>
@@ -227,7 +228,7 @@
                 <height>200</height>
                 <texture>$INFO[ListItem.Overlay,thumbs/]</texture>
                 <visible>[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)]</visible>
-                <visible>[Skin.HasSetting(watchedoverlay) + SubString(ListItem(0).Overlay,OverlayWatched.png)] | [Skin.HasSetting(newstatus) + SubString(ListItem(0).Overlay,OverlayUnWatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(0).Title)]]]]</visible>
+                <visible>[Skin.HasSetting(watchedoverlay) + SubString(ListItem(0).Overlay,OverlayWatched.png)] | [Skin.HasSetting(newstatus) + SubString(ListItem(0).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(0).Title)]]]]</visible>
                 <include>Animation_VisibleChange200</include>
             </control>
         </control>
@@ -253,9 +254,10 @@
         <control type="group">
             <visible>IsEmpty(ListItem.Art(clearlogo))</visible>
             <control type="label">
-                <posx>248</posx>
+                <posx>13</posx>
                 <posy>330</posy>
                 <width>470</width>
+                <height>50</height>
                 <align>center</align>
                 <label>$VAR[SecondLabelVar]</label>
                 <font>Font_Reg28_Caps</font>
@@ -263,10 +265,11 @@
                 <textcolor>white2</textcolor>
             </control>
             <control type="label">
-                <posx>248</posx>
+                <posx>13</posx>
                 <posy>296</posy>
                 <width>470</width>
                 <align>center</align>
+                <height>50</height>
                 <label>$VAR[FirstLabelVar]</label>
                 <font>Font_MainClassic4</font>
                 <shadowcolor>floorshadow</shadowcolor>
@@ -297,9 +300,10 @@
         <control type="group">
             <visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(clearart))</visible>
             <control type="label">
-                <posx>248</posx>
+                <posx>13</posx>
                 <posy>330</posy>
                 <width>470</width>
+                <height>50</height>
                 <align>center</align>
                 <label>$VAR[SecondLabelVar]</label>
                 <font>Font_Reg28_Caps</font>
@@ -307,11 +311,12 @@
                 <textcolor>white2</textcolor>
             </control>
             <control type="label">
-                <posx>248</posx>
+                <posx>13</posx>
                 <posy>296</posy>
                 <width>470</width>
                 <align>center</align>
                 <label>$VAR[FirstLabelVar]</label>
+                <height>50</height>
                 <font>Font_MainClassic4</font>
                 <shadowcolor>floorshadow</shadowcolor>
                 <textcolor>white2</textcolor>
