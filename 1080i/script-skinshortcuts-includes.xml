@@ -316,66 +316,66 @@
 			<property name="group">tvshows</property>
 		</item>
 		<item id="1">
-			<label>$LOCALIZE[19023]</label>
+			<label>$LOCALIZE[19019]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
-			<property name="labelID">19023</property>
-			<property name="defaultID">19023</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,32,0 ,11,0)</onclick>
+			<property name="labelID">19019</property>
+			<property name="defaultID">19019</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVChannels)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
 		<item id="2">
-			<label>$LOCALIZE[19024]</label>
+			<label>$LOCALIZE[22020]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
-			<property name="labelID">19024</property>
-			<property name="defaultID">19024</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,33,0 ,12,0)</onclick>
+			<property name="labelID">22020</property>
+			<property name="defaultID">22020</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVGuide)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
 		<item id="3">
-			<label>$LOCALIZE[19069]</label>
-			<label2>$ADDON[script.skinshortcuts 32017]</label2>
-			<icon>DefaultTVShows.png</icon>
-			<thumb />
-			<property name="labelID">19069</property>
-			<property name="defaultID">19069</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,31,0 ,10,0)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">livetv</property>
-		</item>
-		<item id="4">
 			<label>$LOCALIZE[19163]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
 			<property name="labelID">19163</property>
 			<property name="defaultID">19163</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,34,0 ,13,0)</onclick>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVRecordings)</onclick>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+		<item id="4">
+			<label>$LOCALIZE[19040]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultTVShows.png</icon>
+			<thumb />
+			<property name="labelID">19040</property>
+			<property name="defaultID">19040</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVTimers)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
 		<item id="5">
-			<label>$ADDON[script.skinshortcuts 32023]</label>
+			<label>$LOCALIZE[137]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
-			<property name="labelID">32023</property>
-			<property name="defaultID">32023</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,35,0 ,14,0)</onclick>
+			<property name="labelID">137</property>
+			<property name="defaultID">137</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVSearch)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
@@ -1228,128 +1228,128 @@
 	</include>
 	<include name="skinshortcuts-group-livetv">
 		<item id="1">
-			<label>$LOCALIZE[19023]</label>
+			<label>$LOCALIZE[19019]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
-			<property name="labelID">19023</property>
-			<property name="defaultID">19023</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,32,0 ,11,0)</onclick>
+			<property name="labelID">19019</property>
+			<property name="defaultID">19019</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVChannels)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 		</item>
 		<item id="2">
-			<label>$LOCALIZE[19024]</label>
+			<label>$LOCALIZE[22020]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
-			<property name="labelID">19024</property>
-			<property name="defaultID">19024</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,33,0 ,12,0)</onclick>
+			<property name="labelID">22020</property>
+			<property name="defaultID">22020</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVGuide)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 		</item>
 		<item id="3">
-			<label>$LOCALIZE[19069]</label>
-			<label2>$ADDON[script.skinshortcuts 32017]</label2>
-			<icon>DefaultTVShows.png</icon>
-			<thumb />
-			<property name="labelID">19069</property>
-			<property name="defaultID">19069</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,31,0 ,10,0)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">livetv</property>
-		</item>
-		<item id="4">
 			<label>$LOCALIZE[19163]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
 			<property name="labelID">19163</property>
 			<property name="defaultID">19163</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,34,0 ,13,0)</onclick>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVRecordings)</onclick>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="group">livetv</property>
+		</item>
+		<item id="4">
+			<label>$LOCALIZE[19040]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultTVShows.png</icon>
+			<thumb />
+			<property name="labelID">19040</property>
+			<property name="defaultID">19040</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVTimers)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 		</item>
 		<item id="5">
-			<label>$ADDON[script.skinshortcuts 32023]</label>
+			<label>$LOCALIZE[137]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
-			<property name="labelID">32023</property>
-			<property name="defaultID">32023</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,35,0 ,14,0)</onclick>
+			<property name="labelID">137</property>
+			<property name="defaultID">137</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVSearch)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 		</item>
 	</include>
 	<include name="skinshortcuts-group-alt-livetv">
 		<item id="1">
-			<label>$LOCALIZE[19023]</label>
+			<label>$LOCALIZE[19019]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
-			<property name="labelID">19023</property>
-			<property name="defaultID">19023</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,32,0 ,11,0)</onclick>
+			<property name="labelID">19019</property>
+			<property name="defaultID">19019</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVChannels)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
 		<item id="2">
-			<label>$LOCALIZE[19024]</label>
+			<label>$LOCALIZE[22020]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
-			<property name="labelID">19024</property>
-			<property name="defaultID">19024</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,33,0 ,12,0)</onclick>
+			<property name="labelID">22020</property>
+			<property name="defaultID">22020</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVGuide)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
 		<item id="3">
-			<label>$LOCALIZE[19069]</label>
-			<label2>$ADDON[script.skinshortcuts 32017]</label2>
-			<icon>DefaultTVShows.png</icon>
-			<thumb />
-			<property name="labelID">19069</property>
-			<property name="defaultID">19069</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,31,0 ,10,0)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">livetv</property>
-		</item>
-		<item id="4">
 			<label>$LOCALIZE[19163]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
 			<property name="labelID">19163</property>
 			<property name="defaultID">19163</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,34,0 ,13,0)</onclick>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVRecordings)</onclick>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+		<item id="4">
+			<label>$LOCALIZE[19040]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultTVShows.png</icon>
+			<thumb />
+			<property name="labelID">19040</property>
+			<property name="defaultID">19040</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVTimers)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
 		<item id="5">
-			<label>$ADDON[script.skinshortcuts 32023]</label>
+			<label>$LOCALIZE[137]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
 			<thumb />
-			<property name="labelID">32023</property>
-			<property name="defaultID">32023</property>
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<onclick>ActivateWindowAndFocus(MyPVR,35,0 ,14,0)</onclick>
+			<property name="labelID">137</property>
+			<property name="defaultID">137</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVSearch)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
