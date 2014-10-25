@@ -192,7 +192,7 @@
         <value condition="substring(Window(home).Property(mpaa),전체)">KR_Certificate_All</value>
         <value condition="substring(Window(home).Property(mpaa),12세)">KR_Certificate_12</value>
         <value condition="substring(Window(home).Property(mpaa),15세)">KR_Certificate_15</value>
-        <value condition="substring(Window(home).Property(mpaa),불가)">KR_Certificate_18</value>
+        <value condition="substring(Window(home).Property(mpaa),�?가)">KR_Certificate_18</value>
         <value condition="substring(Window(home).Property(mpaa),제한)">KR_Certificate_R</value>
         <value condition="substring(Window(home).Property(mpaa),Brazil:Livre) | substring(Window(home).Property(mpaa),Livre)">MPAA_Brazil_Livre</value>
         <value condition="substring(Window(home).Property(mpaa),Brazil:10) | substring(Window(home).Property(mpaa),10 anos)">MPAA_Brazil_10</value>
@@ -237,7 +237,7 @@
         <value condition="substring(ListItem.mpaa,전체)">KR_Certificate_All</value>
         <value condition="substring(ListItem.mpaa,12세)">KR_Certificate_12</value>
         <value condition="substring(ListItem.mpaa,15세)">KR_Certificate_15</value>
-        <value condition="substring(ListItem.mpaa,불가)">KR_Certificate_18</value>
+        <value condition="substring(ListItem.mpaa,�?가)">KR_Certificate_18</value>
         <value condition="substring(ListItem.mpaa,제한)">KR_Certificate_R</value>
         <value condition="substring(ListItem.mpaa,Brazil:Livre) | substring(ListItem.mpaa,Livre)">MPAA_Brazil_Livre</value>
         <value condition="substring(ListItem.mpaa,Brazil:10) | substring(ListItem.mpaa,10 anos)">MPAA_Brazil_10</value>
@@ -282,7 +282,7 @@
         <value condition="substring(VideoPlayer.mpaa,전체)">KR_Certificate_All</value>
         <value condition="substring(VideoPlayer.mpaa,12세)">KR_Certificate_12</value>
         <value condition="substring(VideoPlayer.mpaa,15세)">KR_Certificate_15</value>
-        <value condition="substring(VideoPlayer.mpaa,불가)">KR_Certificate_18</value>
+        <value condition="substring(VideoPlayer.mpaa,�?가)">KR_Certificate_18</value>
         <value condition="substring(VideoPlayer.mpaa,제한)">KR_Certificate_R</value>
         <value condition="substring(VideoPlayer.mpaa,Brazil:Livre) | substring(VideoPlayer.mpaa,Livre)">MPAA_Brazil_Livre</value>
         <value condition="substring(VideoPlayer.mpaa,Brazil:10) | substring(VideoPlayer.mpaa,10 anos)">MPAA_Brazil_10</value>
@@ -917,7 +917,6 @@
     </variable>
     <variable name="HomeMainFanartVar">
         <value condition="Substring(Control.GetLabel(4322),wall)">common/bgcolor.png</value>
-        <value condition="Control.IsVisible(8998) + !IsEmpty(Container(8000).ListItem.Art(fanart)) + StringCompare(Control.GetLabel(4322),widgetfanart)">$INFO[Container(8000).ListItem.Art(fanart)]</value>
         <value condition="!Substring(Control.GetLabel(4322),/) + !Substring(Control.GetLabel(4322),\)">$INFO[Control.GetLabel(4324)]</value>
         <value>$VAR[MultiFanartVar]</value>
     </variable>
@@ -977,7 +976,7 @@
     </variable>
     <variable name="PlayerTimeLabelVar">
         <value condition="Player.HasDuration">$INFO[MusicPlayer.Time,, / ]$INFO[MusicPlayer.Duration]</value>
-        <value>$INFO[MusicPlayer.Time,, / ]∞</value>
+        <value>$INFO[MusicPlayer.Time,, / ]�?�</value>
     </variable>
     <variable name="PicturesFanartVar">
         <value condition="Substring(Container.FolderPath,\comics\) + IsEmpty(Skin.String(ComicsBackground))">special://skin/backgrounds/comics/</value>
