@@ -76,9 +76,39 @@
                             <texture background="true">$VAR[LogoVar]</texture>
                             <fadetime>400</fadetime>
                             <include>Animation_VisibleChange400</include>
-                            <visible>!Skin.HasSetting(lowlistclearart) + [Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)]</visible>
+                            <visible>!Skin.HasSetting(lowlistclearart) + [!Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)]</visible>
                         </control>
                     </control>
+					<control type="image"><!--sergiu: logo si banner ep--> 
+						<posx>33</posx>
+						<posy>915</posy>
+						<width>380</width>
+						<height>149</height>
+						<texture background="true">$VAR[LogoVar]</texture>
+						<visible>Container.Content(episodes)</visible>
+						<fadetime>300</fadetime>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+					<control type="image">
+                        <posx>1275</posx>
+                        <posy>640</posy>
+                        <width>629,28</width>
+                        <height>118,56</height>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/banner_mask.png">$VAR[BannerVar]</texture>
+						<visible>Container.Content(episodes)+!Player.HasVideo</visible>
+                    </control>
+					<control type="image">
+                            <posx>1262.4</posx>
+                            <posy>628</posy>
+                            <width>653.7</width>
+                            <height>142</height>
+                            <texture diffuse="thumbs/banner_mask.png">common/blank.png</texture>
+                            <bordersize>12</bordersize>
+                            <bordertexture border="12">thumbs/banner_shadow.png</bordertexture>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+							<visible>Container.Content(episodes)+!Player.HasVideo</visible>
+                        </control><!--sergiu: end logo si banner ep-->
                     <control type="image">
                         <posx>1128</posx>
                         <posy>754</posy>
@@ -158,6 +188,18 @@
                             <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                             <bordersize>7</bordersize>
                         </control>
+						<control type="image"><!--sergiu: landscape for tvshows-->
+							<posx>405</posx>
+							<posy>607</posy>
+							<width>628</width>
+							<height>360</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture background="true">$INFO[ListItem.Art(landscape)]</texture>
+							<bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
+							<bordersize>7</bordersize>
+							<visible>!Container.Content(episodes) + !Container.Content(movies)</visible>
+						</control><!--sergiu: end landscape for tvshows-->
                         <control type="multiimage">
                             <posx>412</posx>
                             <posy>614</posy>
@@ -573,7 +615,7 @@
                 </control>
                 <control type="group">
                     <posx>-25</posx>
-                    <posy>194</posy>
+                    <posy>94</posy>
                     <animation effect="slide" end="-21,0" time="320" easing="inout" tween="cubic" condition="Control.HasFocus(69)">Conditional</animation>
                     <animation type="Visible">
                         <effect type="fade" time="120" end="100" />
@@ -685,19 +727,23 @@
                     </control>
                 </itemlayout>
                 <focusedlayout height="66" width="825" condition="![Skin.HasSetting(lowlistbanner) + Container.Content(tvshows)]">
+					<!--sergiu: bara custom-->				
+                    <control type="image">
+						<posx>0</posx>
+						<posy>-10</posy>
+                        <width>814</width>
+                        <height>81</height>
+                        <texture>views/lowlistpanel_selectbar.png</texture>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <include>PanelGlowFade</include>
+                        <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(511)">Conditional</animation>
+                    </control> <!--sergiu: bara custom end code, also deleted listselect_fo.png code-->
                     <control type="image">
                         <posx>1</posx>
                         <posy>64</posy>
                         <width>795</width>
                         <height>1</height>
                         <texture>views/lowlistpanel_line.png</texture>
-                    </control>
-                    <control type="image">
-                        <width>814</width>
-                        <height>66</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                        <include>PanelGlowFade</include>
-                        <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(511)">Conditional</animation>
                     </control>
                     <control type="label">
                         <posx>30</posx>
@@ -751,7 +797,7 @@
                             <bordersize>5</bordersize>
                         </control>
                         <control type="label">
-                            <posx>8</posx>
+                            <posx>416</posx>
                             <posy>8</posy>
                             <width>816</width>
                             <height>146</height>
@@ -797,7 +843,7 @@
                             <bordersize>5</bordersize>
                         </control>
                         <control type="label">
-                            <posx>8</posx>
+                            <posx>416</posx>
                             <posy>8</posy>
                             <width>816</width>
                             <height>146</height>
