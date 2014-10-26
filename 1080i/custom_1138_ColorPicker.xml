@@ -40,7 +40,7 @@
                 <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
             </control>
             <control type="image">
                 <posx>-4</posx>
@@ -78,7 +78,7 @@
                         <width>70</width>
                         <height>70</height>
                         <texture>views/addonwall_select.png</texture>
-                        <include>Animation_VisibleChange200</include>
+                        <animation effect="fade" time="200">VisibleChange</animation>
                         <colordiffuse>black</colordiffuse>
                         <bordersize>1.7</bordersize>
                         <visible>Control.HasFocus(10)</visible>

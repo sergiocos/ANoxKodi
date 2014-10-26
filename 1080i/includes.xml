@@ -47,7 +47,7 @@
             <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
         </control>
         <control type="image">
             <posx>-4</posx>
@@ -287,6 +287,7 @@
         <height>85</height>
         <textoffsetx>82</textoffsetx>
         <textoffsety>23</textoffsety>
+        <textwidth>315</textwidth>
         <aligny>top</aligny>
         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus border="5">settings/listselect_nf2.png</texturenofocus>
@@ -493,7 +494,7 @@
                 <include>FullscreenDimensions</include>
                 <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
             </control>
             <control type="image">
                 <posy>472</posy>
@@ -528,7 +529,7 @@
             <texture>settings/settings_panelback_shadow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
         </control>
         <control type="image">
             <posx>34</posx>
@@ -564,7 +565,7 @@
             <texture>settings/settings_panelback_shadow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
         </control>
         <control type="image">
             <posx>34</posx>
@@ -711,7 +712,7 @@
     </include>
     <include name="Objects_LetterButton">
         <width>32</width>
-        <height>34</height>
+        <height>35</height>
         <textoffsetx>0</textoffsetx>
         <textcolor>white2</textcolor>
         <align>center</align>
@@ -1047,7 +1048,7 @@
             <texture>wall/wall_bg_glow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
             <include>PanelGlowFade</include>
         </control>
         <control type="image">
@@ -1119,7 +1120,7 @@
         </control>
         <control type="group">
             <visible>!Skin.HasSetting(DisableVideoThumb) + !substring(Control.GetLabel(888777),defaultvideo)</visible>
-            <include>Animation_VisibleChange200</include>
+            <animation effect="fade" time="200">VisibleChange</animation>
             <control type="group">
                 <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos) | VideoPlayer.Content(episodes)</visible>
                 <animation type="WindowOpen">
@@ -1138,7 +1139,7 @@
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <include>PanelGlowFade</include>
                     <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                 </control>
                 <control type="image">
                     <posx>25</posx>
@@ -1728,7 +1729,7 @@
                 <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
             </control>
             <control type="image">
                 <width>1332</width>
@@ -1807,8 +1808,8 @@
                             <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
                             <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
                             <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
+                            <info>ListItem.PercentPlayed</info>
+                            <visible>!IsEmpty(ListItem.PercentPlayed) + !Stringcompare(ListItem.PercentPlayed,0)</visible>
                         </control>
                     </itemlayout>
                     <focusedlayout width="240" height="410">
@@ -1822,8 +1823,8 @@
                             <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
                             <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
                             <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
+                            <info>ListItem.PercentPlayed</info>
+                            <visible>!IsEmpty(ListItem.PercentPlayed) + !Stringcompare(ListItem.PercentPlayed,0)</visible>
                         </control>
                         <control type="group">
                             <animation effect="zoom" center="100,150" start="100" end="105" delay="300" time="280" tween="back" reversible="false">Focus</animation>

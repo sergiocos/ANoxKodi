@@ -32,7 +32,7 @@
                 <texture>settings/settings_panelback_shadow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
             </control>
             <control type="image">
                 <posx>34</posx>
@@ -222,7 +222,7 @@
                             <posy>0</posy>
                             <texture border="6">views/addonwall_select.png</texture>
                             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <visible>!ControlGroup(500).HasFocus</visible>
                         </control>
                     </focusedlayout>

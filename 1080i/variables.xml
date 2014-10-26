@@ -831,6 +831,15 @@
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.WidgetTitle)]</value>
         <value>$INFO[Window(home).Property(Widget1Title)]</value>
     </variable>
+    <variable name="WidgetConfigLabelVar">
+        <value condition="Stringcompare(Window(skinsettings).Property(WidgetSelection),Widget)">$INFO[Skin.String(ItemToEdit.WidgetTitle)]</value>
+        <value>$INFO[Skin.String(ItemToEdit.Widget2Title)]</value>
+    </variable>
+    <variable name="WidgetStyleLabelVar">
+        <value condition="Stringcompare(Window(home).Property(Transparency),default)">$LOCALIZE[31685]</value>
+        <value condition="Stringcompare(Window(home).Property(Transparency),glass)">$LOCALIZE[31684]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
     <variable name="ClassicWidgetImageVar">
         <value condition="[Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),movie)] + !IsEmpty(Container(5010).ListItem.Art(landscape))">$INFO[Container(5010).ListItem.Art(landscape)]</value>
         <value condition="[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + !IsEmpty(Container(5010).ListItem.Art(fanart))">$INFO[Container(5010).ListItem.Art(fanart)]</value>
@@ -917,7 +926,9 @@
     </variable>
     <variable name="HomeMainFanartVar">
         <value condition="Substring(Control.GetLabel(4322),wall)">common/bgcolor.png</value>
-        <value condition="!Substring(Control.GetLabel(4322),/) + !Substring(Control.GetLabel(4322),\)">$INFO[Control.GetLabel(4324)]</value>
+        <value condition="Control.IsVisible(5010) + !IsEmpty(Container(5010).ListItem.Art(fanart)) + StringCompare(Control.GetLabel(4322),widgetfanart)">$INFO[Container(5010).ListItem.Art(fanart)]</value>
+<!--         <value condition="Control.IsVisible(6010) + !IsEmpty(Container(5010).ListItem.Art(fanart)) + StringCompare(Control.GetLabel(4322),widgetfanart)">$INFO[Container(5010).ListItem.Art(fanart)]</value>
+ -->        <value condition="!Substring(Control.GetLabel(4322),/) + !Substring(Control.GetLabel(4322),\)">$INFO[Control.GetLabel(4324)]</value>
         <value>$VAR[MultiFanartVar]</value>
     </variable>
     <variable name="WidgetTypeVar">
@@ -940,13 +951,11 @@
     </variable>
     <variable name="WidgetBackVar">
         <value condition="Substring(Control.GetLabel(4321),glass)">keyboard/keyboard_back_classic.png</value>
-        <value condition="Substring(Control.GetLabel(4321),default)">keyboard/keyboard_back.png</value>
-        <value>-</value>
+        <value>keyboard/keyboard_back.png</value>
     </variable>
     <variable name="Widget2BackVar">
         <value condition="Substring(Control.GetLabel(4325),glass)">keyboard/keyboard_back_classic.png</value>
-        <value condition="Substring(Control.GetLabel(4325),default)">keyboard/keyboard_back.png</value>
-        <value>-</value>
+        <value>keyboard/keyboard_back.png</value>
     </variable>
     <variable name="WeatherWidgetBackVar">
         <value condition="Substring(Control.GetLabel(4321),glass)">keyboard/numeric_back_classic.png</value>
@@ -1954,7 +1963,6 @@
     </variable>
     <variable name="HomePanelVar">
         <value condition="Skin.HasSetting(rotatenowplayingpanel)">$LOCALIZE[31636]</value>
-        <value condition="Skin.HasSetting(nowplayingpanel)">$LOCALIZE[571]</value>
         <value>$LOCALIZE[106]</value>
     </variable>
     <variable name="cdARTVar">
@@ -2126,31 +2134,6 @@
         <value condition="Stringcompare(Container(9000).ListItem(21).Property(ID),Skin.String(CustomFocusOffset))">Control.Move(9000,21)</value>
         <value condition="Stringcompare(Container(9000).ListItem(22).Property(ID),Skin.String(CustomFocusOffset))">Control.Move(9000,22)</value>
         <value condition="Stringcompare(Container(9000).ListItem(23).Property(ID),Skin.String(CustomFocusOffset))">Control.Move(9000,23)</value>
-    </variable>
-    <variable name="SettingsCustomStartupFocus">
-        <value condition="Stringcompare(Container(9000).ListItem(1).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,1)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(2).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,2)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(3).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,3)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(4).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,4)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(5).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,5)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(6).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,6)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(7).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,7)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(8).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,8)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(9).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,9)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(10).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,10)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(11).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,11)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(12).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,12)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(13).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,13)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(14).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,14)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(15).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,15)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(16).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,16)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(17).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,17)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(18).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,18)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(19).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,19)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(20).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,20)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(21).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,21)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(22).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,22)</value>
-        <value condition="Stringcompare(Container(9000).ListItem(23).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,23)</value>
     </variable>
     <variable name="SmallListIconVar">
         <value condition="Container.Content(songs)">$INFO[ListItem.DiscNumber,flags/discnumber/,.png]</value>

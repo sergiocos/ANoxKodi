@@ -63,7 +63,7 @@
                             <texture background="true">$VAR[TVShowClearArtVar]</texture>
                             <fadetime>400</fadetime>
                             <visible>Skin.HasSetting(lowlistclearart)</visible>
-                            <include>Animation_VisibleChange400</include>
+                            <animation effect="fade" time="350">VisibleChange</animation>
                             <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
                         </control>
                         <include>Neon_LowList</include>
@@ -75,7 +75,7 @@
                             <aspectratio>keep</aspectratio>
                             <texture background="true">$VAR[LogoVar]</texture>
                             <fadetime>400</fadetime>
-                            <include>Animation_VisibleChange400</include>
+                            <animation effect="fade" time="350">VisibleChange</animation>
                             <visible>!Skin.HasSetting(lowlistclearart) + [!Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)]</visible>
                         </control>
                     </control>
@@ -116,7 +116,7 @@
                         <height>490</height>
                         <texture>views/listpanel_detailwide.png</texture>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                        <include>Animation_VisibleChange200</include>
+                        <animation effect="fade" time="200">VisibleChange</animation>
                         <visible>!Control.HasFocus(7002) + !Container.Content(seasons) + Control.IsVisible(9900)</visible>
                     </control>
                 </control>
@@ -563,7 +563,7 @@
                         <bordersize>18</bordersize>
                         <include>PanelGlowFade</include>
                         <visible>!Skin.HasSetting(usecaseslowlist)</visible>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>
@@ -610,7 +610,7 @@
                         <texture background="true">thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
                         <fadetime>50</fadetime>
                         <visible>Skin.HasSetting(usecaseslowlist) + Container.Content(movies)</visible>
-                        <include>Animation_VisibleChange200</include>
+                        <animation effect="fade" time="200">VisibleChange</animation>
                     </control>
                 </control>
                 <control type="group">
