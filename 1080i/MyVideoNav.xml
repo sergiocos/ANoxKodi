@@ -8,7 +8,7 @@
     <onload>ClearProperty(BrowseActors,home)</onload>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <allowoverlay>no</allowoverlay>
-    <views>50,52,53,57,500,501,503,508,509,510,511,512,514,516,518</views>
+    <views>50,52,53,57,500,501,503,508,509,511,512,514,516,518</views>
     <controls>
         <control type="button" id="10">
             <include>HiddenObject</include>
@@ -93,18 +93,18 @@
         <control type="button" id="5999">
             <include>HiddenObject</include>
             <visible>!Control.HasFocus(109)</visible>
-            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52)]</visible>
+            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52)]</visible>
         </control>
         <control type="image">
-            <texture>diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[SpotColorVar2]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
             <animation effect="fade" time="200">WindowOpen</animation>
             <animation effect="fade" time="200">WindowClose</animation>
             <animation effect="fade" end="100" time="440" delay="160">Visible</animation>
             <animation effect="fade" start="100" end="0" time="320">Hidden</animation>
-            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+            <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
             <visible>!Control.HasFocus(109)</visible>
-            <visible>[Control.IsVisible(512) + Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | [Skin.HasSetting(no_infopane_panel) + Control.IsVisible(7550)] | Control.IsVisible(5999)</visible>
+            <visible>[Control.IsVisible(512) + Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | Control.IsVisible(7550) | Control.IsVisible(5999)</visible>
         </control>
         <include>Furniture_Glow</include>
         <include>ShowcaseInfoPaneMovies</include>
@@ -115,10 +115,8 @@
             <control type="group">
                 <!--view id = 50-->
                 <include>CommonRootView</include>
-                <!--view id = 510-->
-                <include condition="IsEmpty(Skin.String(DisablePostersVL))">PostersViewList</include>
-                <include condition="IsEmpty(Skin.String(DisablePostersVL)) | IsEmpty(Skin.String(DisableTriPanelVL))">PostersView</include>
                 <!--view id = 52-->
+                <include condition="IsEmpty(Skin.String(DisableTriPanelVL))">PostersView</include>
                 <include condition="IsEmpty(Skin.String(DisableTriPanelVL))">TriPanel</include>
                 <!--view id = 53-->
                 <include condition="IsEmpty(Skin.String(DisableTriPanelVL))">TriPanelSquare</include>
@@ -227,14 +225,14 @@
                 </control>
                 <control type="button" id="7566">
                     <include>HiddenObject</include>
-                    <onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onfocus>
-                    <onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">SetFocus(50)</onfocus>
-                    <onfocus condition="Skin.HasSetting(fstrailer) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onfocus>
+                    <onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">SetFocus(50)</onfocus>
+                    <onfocus condition="Skin.HasSetting(fstrailer) | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onfocus>
                 </control>
             </control>
             <include>FloorFlags</include>
             <include>FloorLabels</include>
-            <include condition="!Skin.HasSetting(DisablePostersVL) | !Skin.HasSetting(DisableShiftVL) |!Skin.HasSetting(DisableTriPanelVL)">Posters_Furniture</include>
+            <include condition="!Skin.HasSetting(DisableShiftVL) |!Skin.HasSetting(DisableTriPanelVL)">Posters_Furniture</include>
             <control type="group">
                 <animation effect="slide" end="-50,0" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(smallshiftview) + Control.IsVisible(57)">Conditional</animation>
                 <animation effect="slide" end="-642.5,0" time="320" easing="inout" tween="circle" condition="Control.IsVisible(57)">Conditional</animation>
@@ -310,7 +308,6 @@
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>
             <include>BreadcrumbsContent</include>
-            <include>Breadcrumbs_Furniture</include>
         </control>
         <include>Furniture_NowPlayingWidget</include>
         <include>Media_Menu</include>

@@ -129,9 +129,8 @@
             <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info))">Conditional</animation>
             <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo))">Conditional</animation>
             <animation effect="slide" end="1920,0" time="240">WindowClose</animation>
-            <animation effect="slide" start="1880,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
-            <animation effect="slide" start="1880,0" end="0,0" delay="2000" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
-            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(rsshomelow)">Conditional</animation>
+            <animation effect="slide" start="0,-50" end="0,0" delay="800" time="480">WindowOpen</animation>
+            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
             <animation effect="slide" end="0,-19" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + !Window.IsActive(skinsettings) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
             <animation type="Visible" reversible="false">
                 <effect type="fade" end="100" time="240" />
@@ -143,14 +142,14 @@
             </animation>
             <visible>[!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]] | Skin.HasSetting(rsshomelow)</visible>
             <control type="group">
-                <visible>Skin.HasSetting(alternativerss)</visible>
                 <animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 <control type="image">
                     <posy>2</posy>
                     <width>1920</width>
                     <height>87</height>
-                    <texture flipy="true">$VAR[NavBarImageVar]</texture>
-                    <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                    <texture flipy="true">home/nav_back_shadow.png</texture>
+                    <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
+                    <colordiffuse>black</colordiffuse>
                     <animation effect="slide" end="0,5" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                     <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
@@ -184,63 +183,6 @@
                     </control>
                 </control>
             </control>
-            <control type="group">
-                <visible>!Skin.HasSetting(alternativerss)</visible>
-                <animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                <control type="image">
-                    <posx>81</posx>
-                    <width>1880</width>
-                    <height>87</height>
-                    <texture>home/rssbar_mid.png</texture>
-                    <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                    <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                </control>
-                <control type="label">
-                    <posx>165</posx>
-                    <posy>3</posy>
-                    <width>1880</width>
-                    <height>40</height>
-                    <textoffsetx>0</textoffsetx>
-                    <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.1.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.2.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.3.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.4.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.5.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.6.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.7.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.8.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.9.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.10.job), • ][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                    <textcolor>FF666666</textcolor>
-                    <scroll>true</scroll>
-                    <wrapmultiline>false</wrapmultiline>
-                    <scrollspeed>40</scrollspeed>
-                    <visible>Skin.HasSetting(ActorBirthdayRSS)</visible>
-                </control>
-                <control type="rss">
-                    <posx>165</posx>
-                    <posy>3</posy>
-                    <width>1880</width>
-                    <height>86</height>
-                    <font>Font_Reg26</font>
-                    <textcolor>a9000000</textcolor>
-                    <urlset>1</urlset>
-                    <headlinecolor>a9000000</headlinecolor>
-                    <highlightcolor>a9000000</highlightcolor>
-                    <titlecolor>dc2B60DE</titlecolor>
-                    <scrollspeed>40</scrollspeed>
-                    <visible>!Skin.HasSetting(ActorBirthdayRSS)</visible>
-                </control>
-                <control type="group">
-                    <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                    <control type="image">
-                        <posx>116</posx>
-                        <width>200</width>
-                        <height>40</height>
-                        <texture>home/rssbar_mid_fade.png</texture>
-                        <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <posx>1785</posx>
-                        <width>165</width>
-                        <height>40</height>
-                        <texture>home/rssbar_begin_fade.png</texture>
-                        <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                    </control>
-                </control>
-            </control>
         </control>
         <include>MainMenuBottomBar</include>
         <control type="group">
@@ -259,20 +201,20 @@
                     <content>plugin://script.extendedinfo?info=playliststats&amp;&amp;id=$INFO[Container(9000).ListItem.Property(Path)]</content>
                 </control>
                 <control type="group">
-                    <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
                     <animation effect="slide" end="-750,0" time="240">WindowClose</animation>
-                    <animation effect="slide" start="-750,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
-                    <animation effect="slide" start="-750" end="0" time="240">VisibleChange</animation>
-                    <animation effect="slide" start="-750,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
+                    <animation effect="slide" start="0,50" end="0,0" delay="800" time="480">WindowOpen</animation>
                     <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <control type="image">
                         <posy>0</posy>
                         <width>794</width>
                         <height>87</height>
-                        <texture flipy="true" flipx="true">$VAR[TimePanelImageVar]</texture>
+                        <texture flipy="true" flipx="true">home/timepanel_mid_shadow.png</texture>
                         <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                        <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
+                        <visible>!IsEmpty(Control.GetLabel(4323))</visible>
+                        <animation effect="zoom" start="100,0" end="100,100" time="540" tween="cubic">VisibleChange</animation>
                     </control>
                     <control type="label">
                         <posx>15</posx>
@@ -282,14 +224,18 @@
                         <font>Font_Reg28_Caps</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                         <scroll>true</scroll>
+                        <visible>!IsEmpty(Control.GetLabel(4323))</visible>
+                        <animation type="VisibleChange">
+                            <effect type="fade" end="100" time="360" />
+                            <effect type="slide" start="0,50" end="0,0" time="360" />
+                        </animation>
                     </control>
                 </control>
                 <control type="group">
                     <posx>748r</posx>
                     <visible>!Skin.HasSetting(DisableTimePanel)</visible>
                     <animation effect="slide" end="750,0" time="240">WindowClose</animation>
-                    <animation effect="slide" start="750,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
-                    <animation effect="slide" start="750,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
+                    <animation effect="slide" start="0,50" end="0,0" delay="800" time="480">WindowOpen</animation>
                     <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" start="750" end="0" time="240">VisibleChange</animation>
@@ -298,7 +244,8 @@
                         <posy>-46</posy>
                         <width>794</width>
                         <height>87</height>
-                        <texture>$VAR[TimePanelImageVar]</texture>
+                        <texture>home/timepanel_mid_shadow.png</texture>
+                        <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
                         <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     </control>
@@ -353,41 +300,97 @@
                         <animation effect="zoom" start="100,0" end="100,100" time="400" delay="160" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
                     </control>
                     <control type="group" id="9001">
-                        <posx>240</posx>
-                        <posy>609</posy>
                         <animation effect="zoom" end="120" center="960,610" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
                         <animation effect="fade" start="100" end="0" time="240" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
                         <animation effect="slide" end="0,-60" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
                         <control type="image">
-                            <posx>70</posx>
-                            <posy>3</posy>
-                            <width>1300</width>
+                            <posx>190</posx>
+                            <posy>612</posy>
+                            <width>1540</width>
                             <height>87</height>
-                            <texture>$VAR[SubMenuImageVar]</texture>
+                            <texture>home/submenubar_shadow.png</texture>
                             <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                         </control>
-                        <include>SubMenuFixedList</include>
+                        <control type="fixedlist" id="9010">
+                            <posx>285</posx>
+                            <posy>605</posy>
+                            <width>1350</width>
+                            <height>50</height>
+                            <onleft>9010</onleft>
+                            <onright>9010</onright>
+                            <orientation>horizontal</orientation>
+                            <focusposition>2</focusposition>
+                            <hitrect x="-238" y="0" w="2400" h="130" />
+                            <scrolltime tween="quadratic">300</scrolltime>
+                            <onup>9000</onup>
+                            <onback>SetFocus(9000)</onback>
+                            <ondown condition="!Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>
+                            <ondown condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(4444)">SetFocus(9011)</ondown>
+                            <ondown condition="Skin.HasSetting(lowermainmenu)">SetFocus(9011)</ondown>
+                            <itemlayout width="270" height="50">
+                                <control type="label">
+                                    <posx>5</posx>
+                                    <width>270</width>
+                                    <height>50</height>
+                                    <align>center</align>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>Font_Reg28_Caps</font>
+                                    <textcolor>grey2</textcolor>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="270" height="50">
+                                <control type="label">
+                                    <posx>5</posx>
+                                    <width>270</width>
+                                    <height>50</height>
+                                    <align>center</align>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>Font_Reg28_Caps</font>
+                                    <textcolor>grey2</textcolor>
+                                    <animation effect="zoom" center="112,25" start="100" end="130" time="160" tween="quadratic">Focus</animation>
+                                    <animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
+                                    <scroll>true</scroll>
+                                </control>
+                                <control type="label">
+                                    <posx>5</posx>
+                                    <width>270</width>
+                                    <height>50</height>
+                                    <align>center</align>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>Font_Reg28_Caps</font>
+                                    <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
+                                    <animation effect="zoom" center="112,25" start="100" end="130" time="160" tween="quadratic">Focus</animation>
+                                    <animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
+                                    <scroll>true</scroll>
+                                    <animation effect="fade" time="200">VisibleChange</animation>
+                                    <visible>Control.HasFocus(9010)</visible>
+                                </control>
+                            </focusedlayout>
+                            <content>
+                                <include>skinshortcuts-submenu</include>
+                            </content>
+                        </control>
                     </control>
                     <!--Home Menu Bar-->
-                    <control type="image">
-                        <posy>453</posy>
-                        <width>1920</width>
-                        <height>225</height>
-                        <texture>$VAR[HomeMenuBackVar]</texture>
-                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <control type="group">
                         <animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
-                        <animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
-                    </control>
-                    <control type="image">
-                        <posy>453</posy>
-                        <width>1920</width>
-                        <height>225</height>
-                        <texture>home/homemenu_back_glow.png</texture>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                        <animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
-                        <include>PanelGlowFade</include>
-                        <animation effect="fade" time="350">VisibleChange</animation>
-                        <visible>!Skin.HasSetting(DisableGlowbar) | Skin.HasSetting(classichome)</visible>
+                        <control type="image">
+                            <posy>453</posy>
+                            <width>1920</width>
+                            <height>225</height>
+                            <texture>$VAR[HomeMenuBackVar]</texture>
+                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                            <animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
+                        </control>
+                        <control type="image">
+                            <posx>-300</posx>
+                            <posy>453</posy>
+                            <width>2520</width>
+                            <height>225</height>
+                            <texture>home/homemenu_back_glow.png</texture>
+                            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                            <include>PanelGlowFade</include>
+                        </control>
                     </control>
                     <!--Home Menu-->
                     <control type="button" id="8993">

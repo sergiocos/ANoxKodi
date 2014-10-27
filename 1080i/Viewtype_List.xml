@@ -285,15 +285,6 @@
                     <visible>Container.Content(movies) | Container.Content(albums) | Container.Content(songs) | Container.Content(episodes)</visible>
                 </control>
                 <control type="image">
-                    <posx>960</posx>
-                    <posy>123</posy>
-                    <width>183</width>
-                    <height>850</height>
-                    <texture>views/listpanel_detailwide.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                    <visible>Container.Content(tvshows) | Container.Content(seasons) | StringCompare(Container.SortMethod,$LOCALIZE[570])</visible>
-                </control>
-                <control type="image">
                     <posx>1063</posx>
                     <posy>123</posy>
                     <width>80</width>
@@ -301,7 +292,7 @@
                     <texture>views/listpanel_detailwide.png</texture>
                     <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>[StringCompare(Container.SortMethod,$LOCALIZE[562]) + Container.Content(movies)] | [Container.Content(addons) + StringCompare(Container.SortMethod,$LOCALIZE[551])]</visible>
-                    <visible>[Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(addons)]</visible>
+                    <visible>Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(addons)</visible>
                     <animation effect="slide" end="38" condition="!Window.IsActive(videolibrary) + !Container.Content(musicvideos)">Conditional</animation>
                 </control>
                 <control type="image">
@@ -320,10 +311,10 @@
                 <posy>164</posy>
                 <width>1140</width>
                 <height>800</height>
-                <onleft>62</onleft>
+                <onleft>9000</onleft>
                 <onup>50</onup>
                 <ondown>50</ondown>
-                <onright>9000</onright>
+                <onright>62</onright>
                 <viewtype label="535">list</viewtype>
                 <pagecontrol>62</pagecontrol>
                 <scrolltime tween="quadratic">200</scrolltime>
@@ -782,7 +773,7 @@
                         <label>$VAR[SlimListLabel1Var]</label>
                     </control>
                     <control type="label">
-                        <posx>1040</posx>
+                        <posx>142</posx>
                         <width>898</width>
                         <height>60</height>
                         <align>right</align>
@@ -791,7 +782,7 @@
                         <label>$VAR[ListLabel2Var]</label>
                     </control>
                     <control type="label">
-                        <posx>78</posx>
+                        <posx>28</posx>
                         <width>100</width>
                         <height>60</height>
                         <align>center</align>
@@ -843,7 +834,7 @@
                         <label>$VAR[SlimListLabel1Var]</label>
                     </control>
                     <control type="label">
-                        <posx>1040</posx>
+                        <posx>142</posx>
                         <width>898</width>
                         <height>60</height>
                         <align>right</align>
@@ -851,7 +842,7 @@
                         <label>$VAR[ListLabel2Var]</label>
                     </control>
                     <control type="label">
-                        <posx>78</posx>
+                        <posx>28</posx>
                         <width>100</width>
                         <height>60</height>
                         <align>center</align>
@@ -883,34 +874,15 @@
                 </focusedlayout>
             </control>
             <control type="scrollbar" id="62">
-                <posx>78</posx>
+                <posx>1195</posx>
                 <posy>158</posy>
                 <width>46</width>
                 <height>780</height>
                 <include>Animation_VerticalScrollBar</include>
                 <onup>62</onup>
                 <ondown>62</ondown>
-                <onleft>9000</onleft>
+                <onleft>50</onleft>
                 <onright>50</onright>
-            </control>
-            <control type="label" id="161">
-                <posx>158</posx>
-                <posy>954</posy>
-                <width>450</width>
-                <height>62</height>
-                <label>$VAR[ListBottomLabelVar]</label>
-                <font>Font_Reg26</font>
-                <textcolor>grey</textcolor>
-            </control>
-            <control type="label" id="161">
-                <posx>1014</posx>
-                <posy>954</posy>
-                <width>128</width>
-                <height>62</height>
-                <align>center</align>
-                <label>$INFO[Container(50).CurrentPage,$LOCALIZE[31024] ]/$INFO[Container(50).NumPages]</label>
-                <font>Font_Reg26</font>
-                <textcolor>grey</textcolor>
             </control>
         </control>
     </include>

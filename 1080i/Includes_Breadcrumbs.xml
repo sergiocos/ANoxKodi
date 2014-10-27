@@ -14,7 +14,6 @@
         <shadowcolor>bcshadow</shadowcolor>
         <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
         <scroll>false</scroll>
-        <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
     </include>
     <include name="Breadcrumbs_BackBar">
         <control type="group">
@@ -33,18 +32,17 @@
             <orientation>horizontal</orientation>
             <usecontrolcoords>true</usecontrolcoords>
             <visible>![Player.HasMedia + IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))]</visible>
+            <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
             <control type="image">
                 <width>36</width>
                 <height>36</height>
-                <posy>-2</posy>
-                <texture>defaulticons/DefaultFolderBack.png</texture>
-                <animation effect="slide" end="-9,4" center="auto" time="0" condition="true">Conditional</animation>
-                <animation effect="rotate" end="-90" center="auto" delay="240" time="640" condition="Window.IsActive(musicinformation) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
+                <posx>-2</posx>
+                <posy>2</posy>
+                <texture>settingsarrow.png</texture>
+                <animation effect="rotate" end="-90" center="auto" delay="240" time="640" condition="Window.IsActive(musicinformation) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
                 <animation effect="rotate" end="-180" center="auto" delay="240" time="640" condition="ControlGroup(9000).HasFocus">Conditional</animation>
                 <animation effect="rotate" start="-90" end="180" center="auto" delay="240" time="640" condition="Control.IsVisible(503) + [Skin.HasSetting(landscapeonelogo) + Container.Content(movies)]">Conditional</animation>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                <animation effect="fade" time="350">VisibleChange</animation>
-                <visible>Skin.HasSetting(TopBarToolTip)</visible>
             </control>
             <control type="image">
                 <width>54</width>
@@ -52,7 +50,6 @@
                 <aspectratio>keep</aspectratio>
                 <texture>$VAR[BreadcrumbsIconVar]</texture>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 <visible>!Player.HasMedia</visible>
             </control>
             <control type="label">
@@ -65,14 +62,38 @@
                 <visible>!Window.IsActive(PVR)</visible>
             </control>
             <control type="label">
-                <label>$INFO[Control.GetLabel(10), (,)]</label>
+                <label>$INFO[Control.GetLabel(10),: ]</label>
                 <include>BreadcrumbsLabel</include>
                 <visible>!Stringcompare(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)</visible>
             </control>
             <control type="label">
-                <label>($LOCALIZE[587])</label>
+                <label>(Filtered)</label>
                 <include>BreadcrumbsLabel</include>
                 <visible>Container.Filtered</visible>
+            </control>
+        </control>
+        <control type="button" id="4051">
+            <include>HiddenObject</include>
+            <visible>![Container.Scrolling | Container.OnScrollNext | Container.OnScrollPrevious]</visible>
+            <animation effect="fade" end="100" time="0">Visible</animation>
+            <animation effect="fade" time="400">Hidden</animation>
+        </control>
+        <control type="group">
+            <control type="grouplist">
+                <width>1900</width>
+                <align>right</align>
+                <aligny>center</aligny>
+                <orientation>horizontal</orientation>
+                <include>Animation_WindowFade200</include>
+                <control type="label">
+                    <width min="15" max="1920">auto</width>
+                    <height>38</height>
+                    <label>[COLOR $VAR[BreadCrumbsContentColorVar]] $INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •  [/COLOR][COLOR=$VAR[TitleColorVar]]$INFO[System.Time][/COLOR]</label>
+                    <font>Font_Reg30_Caps</font>
+                    <shadowcolor>bcshadow</shadowcolor>
+                    <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
+                    <scroll>false</scroll>
+                </control>
             </control>
         </control>
     </include>
@@ -80,6 +101,7 @@
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <visible>Player.HasMedia</visible>
+            <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
             <include condition="Window.isActive(videos) + system.hasaddon(script.tvtunes)">TvTunesVisibleCondition</include>
             <control type="multiimage">
                 <posx>12</posx>
@@ -90,7 +112,6 @@
                 <fadetime>10</fadetime>
                 <timeperimage>100</timeperimage>
                 <randomize>true</randomize>
-                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 <visible>Player.HasAudio + Player.Playing</visible>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
             </control>
@@ -100,7 +121,6 @@
                 <width>30</width>
                 <height>24</height>
                 <texture>VisualEqu/static/0.png</texture>
-                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 <visible>Player.HasAudio + !Player.Playing</visible>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
             </control>
@@ -111,7 +131,6 @@
                 <texture>common/logo_movies.png</texture>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                 <visible>Player.HasVideo</visible>
-                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
             </control>
             <control type="grouplist">
                 <posx>68</posx>
@@ -168,33 +187,6 @@
                     <scroll>true</scroll>
                     <pauseatend>7000</pauseatend>
                     <visible>Player.HasVideo + !IsEmpty(VideoPlayer.ChannelName)</visible>
-                </control>
-            </control>
-        </control>
-    </include>
-    <include name="Breadcrumbs_Furniture">
-        <control type="group">
-            <control type="button" id="4051">
-                <include>HiddenObject</include>
-                <visible>![Container.Scrolling | Container.OnScrollNext | Container.OnScrollPrevious]</visible>
-                <animation effect="fade" end="100" time="0">Visible</animation>
-                <animation effect="fade" time="400">Hidden</animation>
-            </control>
-            <control type="group">
-                <control type="grouplist">
-                    <width>1900</width>
-                    <align>right</align>
-                    <aligny>center</aligny>
-                    <orientation>horizontal</orientation>
-                    <control type="label">
-                        <width min="15" max="1920">auto</width>
-                        <height>38</height>
-                        <label>[COLOR $VAR[BreadCrumbsContentColorVar]] $INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •  [/COLOR][COLOR=$VAR[TitleColorVar]]$INFO[System.Time][/COLOR]</label>
-                        <font>Font_Reg30_Caps</font>
-                        <shadowcolor>bcshadow</shadowcolor>
-                        <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
-                        <scroll>false</scroll>
-                    </control>
                 </control>
             </control>
         </control>

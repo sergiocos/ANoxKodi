@@ -13,7 +13,6 @@
     <include file="Viewtype_TriPanel.xml" />
     <include file="Viewtype_TriPanelSquare.xml" />
     <include file="Viewtype_Wall.xml" />
-    <include file="Viewtype_Posters.xml" />
     <include file="Viewtype_AddonWall.xml" />
     <include file="Viewtype_BigFan.xml" />
     <include file="Viewtype_Episode.xml" />
@@ -356,15 +355,15 @@
         <width>470</width>
         <height>45</height>
         <textoffsetx>15</textoffsetx>
-        <textoffsety>0</textoffsety>
+        <textoffsety>12</textoffsety>
+        <aligny>bottom</aligny>
         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus border="5">settings/listselect_nf3.png</texturenofocus>
+        <texturenofocus>-</texturenofocus>
         <alttexturefocus>views/tripanel/listselect_fo.png</alttexturefocus>
-        <alttexturenofocus border="5">settings/listselect_nf3.png</alttexturenofocus>
+        <alttexturenofocus>-</alttexturenofocus>
         <font>Font_Bold26_Caps</font>
         <textcolor>$VAR[FontColorVar]</textcolor>
         <disabledcolor>$VAR[FontColorVar]</disabledcolor>
-        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
         <focusedcolor>white6</focusedcolor>
     </include>
     <include name="ShutdownNoGlow">
@@ -782,7 +781,6 @@
         <onload>Skin.SetString(LibraryStructure,2)</onload>
         <onload>Skin.SetString(TriPanelSquarePosition,1)</onload>
         <onload>Skin.SetString(TriPanelPosition,1)</onload>
-        <onload>Skin.SetBool(alternativerss)</onload>
         <onload>Skin.SetBool(DisableGlowbar)</onload>
         <onload>Skin.SetBool(colortext)</onload>
         <onload>Skin.SetBool(AutoScroll)</onload>
@@ -892,9 +890,9 @@
     </include>
     <include name="DialogBackFade">
         <control type="image">
-            <texture>diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[SpotColorVar2]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
-            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+            <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
             <animation effect="fade" start="100" end="0" time="240" condition="Window.IsVisible(fullscreenvideo)">Conditional</animation>
             <animation effect="fade" end="100" time="560">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
@@ -902,9 +900,9 @@
     </include>
     <include name="ContextMenuOverlay">
         <control type="image">
-            <texture>diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[SpotColorVar2]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
-            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+            <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
             <animation effect="fade" end="100" time="560">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
             <visible>Window.IsActive(contextmenu)</visible>

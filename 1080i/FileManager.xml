@@ -285,7 +285,6 @@
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>
             <include>BreadcrumbsContent</include>
-            <include>Breadcrumbs_Furniture</include>
             <control type="grouplist">
                 <width>1920</width>
                 <align>center</align>
@@ -295,6 +294,7 @@
                 <orientation>horizontal</orientation>
                 <animation effect="fade" time="320" delay="320">Visible</animation>
                 <animation effect="fade" time="320">Hidden</animation>
+                <include>Animation_WindowFade200</include>
                 <control type="image">
                     <width>34</width>
                     <height>42</height>

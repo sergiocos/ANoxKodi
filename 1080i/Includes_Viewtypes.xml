@@ -14,7 +14,7 @@
                 <colordiffuse>$VAR[ExtendedColorDiffuseVar]</colordiffuse>
             </control>
             <control type="group" id="8860">
-                <visible>![Control.IsVisible(512) | Control.IsVisible(510)]</visible>
+                <visible>!Control.IsVisible(512)</visible>
                 <animation effect="slide" time="800" start="1200,0" end="0,0" tween="cubic">WindowOpen</animation>
                 <animation effect="slide" time="800" end="1200,0" tween="cubic">WindowClose</animation>
                 <control type="image">
@@ -43,7 +43,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>![Control.IsVisible(510) | Control.IsVisible(57)]</visible>
+                <visible>!Control.IsVisible(57)</visible>
                 <visible>!Control.HasFocus(109)</visible>
                 <animation effect="slide" end="0,-400" time="560" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
                 <animation effect="fade" time="350">VisibleChange</animation>
@@ -402,7 +402,7 @@
     <include name="Furniture_DarkGradient">
         <control type="grouplist" id="24000">
             <visible>[SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
-            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
+            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(503)</visible>
             <animation effect="slide" time="0" end="-280" tween="cubic" condition="Control.IsVisible(57)">Conditional</animation>
             <animation effect="slide" time="300" end="0,-30" tween="cubic" condition="ControlGroup(24000).HasFocus">Conditional</animation>
             <!--
@@ -430,7 +430,6 @@
             <texture>views/showcase_gradient.png</texture>
             <include>Animation_CommonFade</include>
             <visible>[Control.IsVisible(8857) | Control.IsVisible(8860)] + ![Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(518) | Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506)]</visible>
-            <animation effect="slide" time="160" end="1440" tween="cubic" condition="Control.IsVisible(510)">Conditional</animation>
         </control>
         <control type="grouplist">
             <animation effect="slide" start="0,70" end="0" delay="50" time="340" tween="cubic">VisibleChange</animation>
@@ -524,7 +523,7 @@
             <height>40</height>
             <width>975</width>
             <visible>![SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
-            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
+            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(503)</visible>
             <animation effect="fade" start="100" end="0" time="320" condition="![Control.HasFocus(61)]">Conditional</animation>
             <onup>50</onup>
             <ondown condition="!Control.IsVisible(500)">109</ondown>
@@ -740,34 +739,18 @@
             <visible>Window.IsActive(1112) | Control.IsVisible(197) | Control.HasFocus(7000) | Stringcompare(Control.GetLabel(4421),infopanelon)</visible>
             <visible>Control.IsVisible(9900)</visible>
             <visible>Control.IsVisible(508) | Control.IsVisible(503) | Control.IsVisible(509) | Control.IsVisible(501) | [Control.IsVisible(57) + Skin.HasSetting(smallshiftview)]</visible>
-            <animation effect="slide" start="0,-1200" end="0,0" time="600" tween="cubic">VisibleChange</animation>
+            <animation type="Visible">
+                <effect type="fade" delay="300" end="100" time="360" />
+                <effect type="slide" start="0,-1200" end="0,0" time="600" tween="cubic"/>
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" end="0" time="360" />
+                <effect type="slide" start="0,0" end="0,-1200" time="300" tween="cubic" easing="in"/>
+            </animation>
             <animation effect="slide" end="0,45" time="320" easing="inout" tween="cubic" condition="Control.IsVisible(503) | Control.IsVisible(508)">Conditional</animation>
             <animation effect="fade" time="200">WindowOpen</animation>
             <animation effect="slide" end="0,-1000" time="240" easing="in" tween="cubic">WindowClose</animation>
-            <animation effect="slide" end="0,35" time="400" easing="in" tween="cubic" condition="!Skin.HasSetting(no_infopane_panel) + Control.IsVisible(503)">Conditional</animation>
             <animation effect="slide" end="0,60" time="400" easing="in" tween="cubic" condition="[Control.IsVisible(57) + Skin.HasSetting(smallshiftview)]">Conditional</animation>
-            <animation effect="slide" end="0,65" time="400" easing="in" tween="cubic" condition="!Skin.HasSetting(no_infopane_panel) + Control.IsVisible(503) + [Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]">Conditional</animation>
-            <animation effect="zoom" end="113" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(no_infopane_panel)">Conditional</animation>
-            <control type="group">
-                <visible>!Skin.HasSetting(no_infopane_panel)</visible>
-                <animation effect="fade" time="350">VisibleChange</animation>
-                <control type="image">
-                    <posx>112</posx>
-                    <width>1695</width>
-                    <height>1050</height>
-                    <texture>wall/wall_bg_glow.png</texture>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                    <include>PanelGlowFade</include>
-                </control>
-                <control type="image">
-                    <posx>112</posx>
-                    <width>1695</width>
-                    <height>1050</height>
-                    <texture>wall/wall_bg.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                </control>
-            </control>
             <control type="image">
                 <posx>112</posx>
                 <posy>8</posy>
@@ -812,7 +795,6 @@
             </control>
             <control type="group">
                 <visible>Container.Content(movies) | [Container.Content(tvshows) + Control.isVisible(8858)]</visible>
-                <visible>!Skin.HasSetting(no_infopane_panel)</visible>
                 <animation effect="fade" time="350">VisibleChange</animation>
                 <control type="label">
                     <posx>170</posx>
@@ -835,7 +817,7 @@
                 <fadetime>FanartCrossfadeTime</fadetime>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
-                <animation effect="zoom" end="108" center="1800,270" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(no_infopane_panel) + Control.IsVisible(503)">Conditional</animation>
+                <animation effect="zoom" end="108" center="1800,270" time="320" tween="cubic" easing="inout" condition="Control.IsVisible(503)">Conditional</animation>
                 <visible>StringCompare(Control.GetLabel(4420),fanart)</visible>
                 <animation type="VisibleChange">
                     <effect type="fade" end="100" delay="320" time="160" />
