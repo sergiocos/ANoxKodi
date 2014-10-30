@@ -999,7 +999,7 @@
             <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
             <visible>Substring(Control.GetLabel(4321),classic)</visible>
             <animation type="Conditional" condition="IsEmpty(Window(home).Property(scrolling))">
-                <effect type="zoom" start="150" delay="800" end="100" center="960,540" time="400" tween="cubic" />
+                <effect type="zoom" start="130" delay="800" end="100" center="960,540" time="400" tween="cubic" />
                 <effect type="fade" end="100" delay="800" time="240" />
             </animation>
             <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling)) | Control.HasFocus(5010)">
@@ -1119,7 +1119,7 @@
             <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
             <visible>Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),panel) | Substring(Control.GetLabel(4321),classic)</visible>
             <animation type="Conditional" condition="IsEmpty(Window(home).Property(scrolling))">
-                <effect type="zoom" start="150" delay="800" end="100" center="960,540" time="400" tween="cubic" />
+                <effect type="zoom" start="130" delay="800" end="100" center="960,540" time="400" tween="cubic" />
                 <effect type="fade" end="100" delay="800" time="240" />
             </animation>
             <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling)) | [Substring(Control.GetLabel(4321),classic) + !Control.HasFocus(5010)]">
@@ -2688,7 +2688,7 @@
             <visible>Substring(Control.GetLabel(4325),classic)</visible>
             <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
             <animation type="Conditional" condition="IsEmpty(Window(home).Property(scrolling))">
-                <effect type="zoom" start="150" delay="800" end="100" center="960,540" time="400" tween="cubic" />
+                <effect type="zoom" start="130" delay="800" end="100" center="960,540" time="400" tween="cubic" />
                 <effect type="fade" end="100" delay="800" time="240" />
             </animation>
             <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling)) | Control.HasFocus(6010)">
@@ -2808,7 +2808,7 @@
             <animation effect="fade" start="100" end="0" time="0" condition="Stringcompare(Container(6010).NumItems,0) + !Substring(Control.GetLabel(4325),featured) + !Window.IsAcive(1122)">Conditional</animation>-->
             <visible>Substring(Control.GetLabel(4325),featured) | Substring(Control.GetLabel(4325),panel) | Substring(Control.GetLabel(4325),classic)</visible>
             <animation type="Conditional" condition="IsEmpty(Window(home).Property(scrolling))">
-                <effect type="zoom" start="150" delay="800" end="100" center="960,540" time="400" tween="cubic" />
+                <effect type="zoom" start="130" delay="800" end="100" center="960,540" time="400" tween="cubic" />
                 <effect type="fade" end="100" delay="800" time="240" />
             </animation>
             <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling)) | [Substring(Control.GetLabel(4325),classic) + !Control.HasFocus(6010)]">
@@ -3478,7 +3478,7 @@
                 <width>450</width>
                 <height>30</height>
                 <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Artist]</label>
+                <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Artist]$INFO[ListItem.Property(Addon.Version)]$INFO[ListItem.Property(Addon.Creator), • ]</label>
                 <font>Font_Reg30_2</font>
                 <textcolor>grey2</textcolor>
             </control>
@@ -3487,7 +3487,7 @@
                 <posy>124</posy>
                 <width>400</width>
                 <height>210</height>
-                <label>$INFO[ListItem.Plot]$INFO[ListItem.Album_Description]$INFO[ListItem.Artist_Description]</label>
+                <label>$INFO[ListItem.Plot]$INFO[ListItem.Album_Description]$INFO[ListItem.Artist_Description]$INFO[ListItem.Property(Addon.Description)]</label>
                 <font>Font_Reg28</font>
                 <autoscroll time="AutoScrollTime" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
             </control>
@@ -3550,18 +3550,8 @@
                 <width>400</width>
                 <height>50</height>
                 <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.Label2]$INFO[ListItem.TVShowTitle]$INFO[ListItem.Premiered]</label>
+                <label>$INFO[ListItem.TVShowTitle]$INFO[ListItem.Property(Date)]</label>
                 <font>Font_MainClassic4</font>
-            </control>
-            <control type="label">
-                <posx>415</posx>
-                <posy>76</posy>
-                <width>340</width>
-                <height>30</height>
-                <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.Property(Channel)]</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>grey2</textcolor>
             </control>
             <control type="label">
                 <posx>562</posx>
@@ -3569,7 +3559,7 @@
                 <width>340</width>
                 <height>30</height>
                 <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.Episode, • ]</label>
+                <label>$INFO[ListItem.Season, • S] $INFO[ListItem.Episode,E]</label>
                 <font>Font_Reg30_2</font>
                 <textcolor>grey2</textcolor>
                 <visible>!IsEmpty(ListItem.Rating)</visible>
@@ -3588,7 +3578,7 @@
                 <posy>112</posy>
                 <width>355</width>
                 <height>205</height>
-                <label>$INFO[ListItem.Plot]</label>
+                <label>$INFO[ListItem.Plot]$INFO[ListItem.Property(Description)]</label>
                 <font>Font_Reg28</font>
                 <autoscroll time="AutoScrollTime" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
             </control>
@@ -3788,8 +3778,8 @@
             </control>
         </control>
         <control type="label">
-            <posx>399</posx>
-            <posy>106</posy>
+            <posx>35</posx>
+            <posy>107</posy>
             <width>728</width>
             <height>105</height>
             <align>center</align>

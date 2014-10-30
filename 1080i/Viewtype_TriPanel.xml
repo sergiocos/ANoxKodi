@@ -439,14 +439,14 @@
                                 <posy>5</posy>
                                 <width>90</width>
                                 <height>90</height>
-                                <include>OverlayVisibility0</include>
+                                <texture>$VAR[OverlayVisibility0]</texture>
                             </control>
                             <include>UnwatchedIcon</include>
                             <control type="image">
                                 <width>796</width>
                                 <height>151</height>
                                 <aspectratio align="center">stretch</aspectratio>
-                                <texture>common/black.png</texture>
+                                <texture>common/bgcolor.png</texture>
                                 <bordersize>5</bordersize>
                                 <colordiffuse>77FFFFFF</colordiffuse>
                             </control>
@@ -468,11 +468,17 @@
                                 <posx>-2</posx>
                                 <posy>6</posy>
                                 <width>800</width>
-                                <height>151</height>
+                                <height>149</height>
+                                <texture background="true" colordiffuse="$VAR[FocusTextureColorVar]">views/addonwall_select.png</texture>
+                                <visible>Control.HasFocus(52)</visible>
+                            </control>
+                            <control type="image">
+                                <posx>4</posx>
+                                <posy>9</posy>
+                                <width>788</width>
+                                <height>143</height>
                                 <aspectratio align="center">scale</aspectratio>
                                 <texture background="true">$VAR[BannerVar]</texture>
-                                <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                                <bordersize>7</bordersize>
                             </control>
                             <control type="image">
                                 <posx>35</posx>
@@ -499,7 +505,7 @@
                                 <posy>12</posy>
                                 <width>90</width>
                                 <height>90</height>
-                                <include>OverlayVisibility0</include>
+                                <texture>$VAR[OverlayVisibility0]</texture>
                             </control>
                             <control type="image">
                                 <posx>5</posx>
@@ -829,7 +835,8 @@
     </include>
     <include name="PostersView">
         <control type="group">
-            <animation effect="slide" time="880" start="1900,0" end="0,0" tween="cubic">VisibleChange</animation>
+            <animation effect="slide" delay="300" time="480" start="1200,0" end="0,0" tween="cubic">Visible</animation>
+            <animation effect="slide" time="380" start="0,0" end="1900,0" tween="cubic" easing="in">Hidden</animation>
             <animation effect="slide" time="880" start="1900,0" end="0,0" tween="cubic">WindowOpen</animation>
             <animation effect="slide" time="880" start="0,0" end="1900,0" tween="cubic">WindowClose</animation>
             <visible>Control.IsVisible(52) + Stringcompare(Skin.String(TriPanelPosition),4)</visible>
@@ -883,7 +890,7 @@
                                 <posy>24</posy>
                                 <width>30</width>
                                 <height>30</height>
-                                <include>OverlayVisibility9</include>
+                                <texture>$VAR[OverlayVisibility9]</texture>
                             </control>
                         </control>
                     </control>
@@ -927,7 +934,7 @@
                                 <posy>57</posy>
                                 <width>82</width>
                                 <height>82</height>
-                                <include>OverlayVisibility2</include>
+                                <texture>$VAR[OverlayVisibility2]</texture>
                             </control>
                         </control>
                     </control>
@@ -971,7 +978,7 @@
                                 <posy>62</posy>
                                 <width>90</width>
                                 <height>90</height>
-                                <include>OverlayVisibility1</include>
+                                <texture>$VAR[OverlayVisibility1]</texture>
                             </control>
                         </control>
                     </control>
@@ -1066,7 +1073,7 @@
                                 <posy>62</posy>
                                 <width>90</width>
                                 <height>90</height>
-                                <include>OverlayVisibility0</include>
+                                <texture>$VAR[OverlayVisibility0]</texture>
                             </control>
                         </control>
                     </control>
@@ -1118,7 +1125,7 @@
                                 <posy>24</posy>
                                 <width>30</width>
                                 <height>30</height>
-                                <include>OverlayVisibility8</include>
+                                <texture>$VAR[OverlayVisibility8]</texture>
                             </control>
                         </control>
                     </control>
@@ -1162,7 +1169,7 @@
                                 <posy>54</posy>
                                 <width>75</width>
                                 <height>75</height>
-                                <include>OverlayVisibility1</include>
+                                <texture>$VAR[OverlayVisibility1]</texture>
                             </control>
                         </control>
                     </control>
@@ -1199,7 +1206,7 @@
                                 <posy>57</posy>
                                 <width>82</width>
                                 <height>82</height>
-                                <include>OverlayVisibility0</include>
+                                <texture>$VAR[OverlayVisibility0]</texture>
                             </control>
                         </control>
                     </control>
@@ -1292,7 +1299,7 @@
                                 <posx>364</posx>
                                 <width>90</width>
                                 <height>90</height>
-                                <include>OverlayVisibility-1</include>
+                                <texture>$VAR[OverlayVisibility-1]</texture>
                             </control>
                         </control>
                     </control>
@@ -1337,7 +1344,7 @@
                                 <posy>54</posy>
                                 <width>75</width>
                                 <height>75</height>
-                                <include>OverlayVisibility2</include>
+                                <texture>$VAR[OverlayVisibility2]</texture>
                             </control>
                     </control>
                     <!-- Panel 2 -->
@@ -1377,7 +1384,7 @@
                                 <posy>57</posy>
                                 <width>82</width>
                                 <height>82</height>
-                                <include>OverlayVisibility1</include>
+                                <texture>$VAR[OverlayVisibility1]</texture>
                             </control>
                     </control>
                     <!-- Panel 1 -->
@@ -1418,7 +1425,7 @@
                                 <posy>62</posy>
                                 <width>90</width>
                                 <height>90</height>
-                                <include>OverlayVisibility0</include>
+                                <texture>$VAR[OverlayVisibility0]</texture>
                             </control>
                         </control>
                     </control>
