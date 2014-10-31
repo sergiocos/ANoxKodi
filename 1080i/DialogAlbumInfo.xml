@@ -6,8 +6,8 @@
     <onload>ClearProperty(Fanart,home)</onload>
     <onload>ClearProperty(Fanart2,home)</onload>
     <onload>ClearProperty(Fanart3,home)</onload>
-    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
-    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
+    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname='$ESCINFO[ListItem.Artist]',silent=False)</onload>
+    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>
     <include>Animation_OpenCloseZoom_New</include>
     <controls>
         <control id="9023" type="button">
@@ -71,15 +71,13 @@
             <posy>404</posy>
             <width>2220</width>
             <height>780</height>
-            <colordiffuse>black</colordiffuse>
-            <texture>home/nowplaying_shadow.png</texture>
+            <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
         </control>
         <control type="image">
             <width>2220</width>
             <height>170</height>
-            <texture flipy="true">home/nav_back_shadow.png</texture>
+            <texture colordiffuse="black" flipy="true">home/nav_back_shadow.png</texture>
             <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
-            <colordiffuse>black</colordiffuse>
         </control>
         <control type="group">
             <control type="group">
@@ -199,8 +197,7 @@
                                 <posy>29</posy>
                                 <width>1230</width>
                                 <height>506</height>
-                                <colordiffuse>aaffffff</colordiffuse>
-                                <texture>common/bgcolor.png</texture>
+                                <texture colordiffuse="AAFFFFFF">common/bgcolor.png</texture>
                                 <visible>Container.Content(albums)</visible>
                             </control>
                             <control type="group">
@@ -325,8 +322,7 @@
                                             <posy>86</posy>
                                             <width>150</width>
                                             <height>70</height>
-                                            <texture fallback="empty.png">$INFO[Window(home).Property(Album.Song.1.FileExtension),flags/audio/,.png]</texture>
-                                            <colordiffuse>white2</colordiffuse>
+                                            <texture colordiffuse="white2" fallback="empty.png">$INFO[Window(home).Property(Album.Song.1.FileExtension),flags/audio/,.png]</texture>
                                             <aspectratio>keep</aspectratio>
                                         </control>
                                         <control type="label">
@@ -347,9 +343,8 @@
                                         <posy>76</posy>
                                         <width>135</width>
                                         <height>88</height>
-                                        <texture fallback="flags/music/rating/rating0.png">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
+                                        <texture colordiffuse="white2" fallback="flags/music/rating/rating0.png">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
                                         <fadetime>IconCrossfadeTime2</fadetime>
-                                        <colordiffuse>white2</colordiffuse>
                                     </control>
                                     <control type="group">
                                         <posx>480</posx>
@@ -359,8 +354,7 @@
                                             <width>150</width>
                                             <height>90</height>
                                             <aspectratio>keep</aspectratio>
-                                            <texture>$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
-                                            <colordiffuse>white2</colordiffuse>
+                                            <texture colordiffuse="white2">$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
                                         </control>
                                         <control id="8670" type="label">
                                             <posy>83</posy>
@@ -387,9 +381,8 @@
                                             <width>175</width>
                                             <height>105</height>
                                             <posy>6</posy>
-                                            <texture>defaulticons/DefaultAddonMusic.png</texture>
+                                            <texture colordiffuse="white2">defaulticons/DefaultAddonMusic.png</texture>
                                             <aspectratio>keep</aspectratio>
-                                            <colordiffuse>white2</colordiffuse>
                                             <animation condition="true" effect="fade" end="30" start="100" time="40">Conditional</animation>
                                         </control>
                                         <control type="label">
@@ -606,8 +599,7 @@
                             <posy>59</posy>
                             <width>1290</width>
                             <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
                         </control>
                     </control>
                 </control>
@@ -648,8 +640,7 @@
                                 <posy>-31</posy>
                                 <width>530</width>
                                 <height>510</height>
-                                <texture>home/nav_back_shadow.png</texture>
-                                <colordiffuse>black</colordiffuse>
+                                <texture colordiffuse="black">home/nav_back_shadow.png</texture>
                             </control>
                             <control type="label">
                                 <posy>420</posy>
@@ -687,10 +678,9 @@
                                         <posy>10</posy>
                                         <width>240</width>
                                         <height>240</height>
-                                        <texture border="6">common/bgcolor.png</texture>
+                                        <texture colordiffuse="77FFFFFF" border="6">common/bgcolor.png</texture>
                                         <visible>Control.HasFocus(6010)</visible>
                                         <animation effect="fade" time="350">VisibleChange</animation>
-                                        <colordiffuse>77FFFFFF</colordiffuse>
                                     </control>
                                 </itemlayout>
                                 <focusedlayout height="240" width="245">
@@ -709,9 +699,8 @@
                                         <posy>10</posy>
                                         <width>236</width>
                                         <height>238</height>
-                                        <texture border="6">views/addonwall_select.png</texture>
+                                        <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                         <visible>Control.HasFocus(6010)</visible>
-                                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     </control>
                                 </focusedlayout>
                                 <content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
@@ -722,8 +711,7 @@
                             <posy>59</posy>
                             <width>1290</width>
                             <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
                         </control>
                     </control>
                 </control>
@@ -753,8 +741,7 @@
                             <width>1260</width>
                             <height>506</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture>$INFO[ListItem.Art(fanart)]</texture>
-                            <colordiffuse>44FFFFFF</colordiffuse>
+                            <texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(fanart)]</texture>
                         </control>
                         <control id="7001" type="group">
                             <posx>131</posx>
@@ -807,8 +794,7 @@
                             <posy>59</posy>
                             <width>1290</width>
                             <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
                         </control>
                     </control>
                 </control>
@@ -839,8 +825,7 @@
                             <width>1260</width>
                             <height>506</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture>$INFO[ListItem.Art(fanart)]</texture>
-                            <colordiffuse>44FFFFFF</colordiffuse>
+                            <texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(fanart)]</texture>
                         </control>
                         <control type="group">
                             <posx>131</posx>
@@ -976,8 +961,7 @@
                             <posy>59</posy>
                             <width>1290</width>
                             <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
                         </control>
                     </control>
                 </control>
@@ -1033,10 +1017,9 @@
                                         <posy>10</posy>
                                         <width>240</width>
                                         <height>240</height>
-                                        <texture border="6">common/bgcolor.png</texture>
+                                        <texture colordiffuse="55FFFFFF" border="6">common/bgcolor.png</texture>
                                         <visible>Control.HasFocus(5010)</visible>
                                         <animation effect="fade" time="350">VisibleChange</animation>
-                                        <colordiffuse>55FFFFFF</colordiffuse>
                                     </control>
                                 </itemlayout>
                                 <focusedlayout height="240" width="245">
@@ -1045,9 +1028,8 @@
                                         <posy>10</posy>
                                         <width>236</width>
                                         <height>238</height>
-                                        <texture border="6">views/addonwall_select.png</texture>
+                                        <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                         <visible>Control.HasFocus(5010)</visible>
-                                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     </control>
                                 </focusedlayout>
                                 <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
@@ -1058,8 +1040,7 @@
                             <posy>59</posy>
                             <width>1290</width>
                             <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
                         </control>
                     </control>
                 </control>
@@ -1087,8 +1068,7 @@
                             <width>1260</width>
                             <height>506</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture>$INFO[ListItem.Art(fanart)]</texture>
-                            <colordiffuse>44FFFFFF</colordiffuse>
+                            <texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(fanart)]</texture>
                         </control>
                         <control id="10001" type="group">
                             <posx>131</posx>
@@ -1140,8 +1120,7 @@
                                     <control type="image">
                                         <width>470</width>
                                         <height>140</height>
-                                        <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
-                                        <colordiffuse>60FFFFFF</colordiffuse>
+                                        <texture colordiffuse="60FFFFFF" fallback="XBMC_Logo.png">common/bgcolor.png</texture>
                                     </control>
                                     <control type="group">
                                         <posy>5</posy>
@@ -1186,8 +1165,7 @@
                                     <control type="image">
                                         <width>470</width>
                                         <height>140</height>
-                                        <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
-                                        <colordiffuse>60FFFFFF</colordiffuse>
+                                        <texture colordiffuse="60FFFFFF" fallback="XBMC_Logo.png">common/bgcolor.png</texture>
                                     </control>
                                     <control type="group">
                                         <posy>5</posy>
@@ -1226,8 +1204,7 @@
                                         <posy>0</posy>
                                         <width>470</width>
                                         <height>140</height>
-                                        <texture>common/blank.png</texture>
-                                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                        <texture colordiffuse="$VAR[FocusTextureColorVar]">common/blank.png</texture>
                                         <bordertexture border="5">views/addonwall_select.png</bordertexture>
                                         <bordersize>5</bordersize>
                                         <visible>Control.HasFocus(10010)</visible>
@@ -1244,8 +1221,7 @@
                                     <posy>-8</posy>
                                     <width>465</width>
                                     <height>465</height>
-                                    <texture>thumbs/boxes/cd_shadow_light_shadow.png</texture>
-                                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                                    <texture colordiffuse="$VAR[AreaColorVar]">thumbs/boxes/cd_shadow_light_shadow.png</texture>
                                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                                     <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
                                     <animation effect="fade" time="350">VisibleChange</animation>
@@ -1288,10 +1264,9 @@
                                         <posy>10</posy>
                                         <width>240</width>
                                         <height>240</height>
-                                        <texture border="6">common/bgcolor.png</texture>
+                                        <texture colordiffuse="55FFFFFF" border="6">common/bgcolor.png</texture>
                                         <visible>Control.HasFocus(10011)</visible>
                                         <animation effect="fade" time="350">VisibleChange</animation>
-                                        <colordiffuse>55FFFFFF</colordiffuse>
                                     </control>
                                 </itemlayout>
                                 <focusedlayout height="240" width="245">
@@ -1300,9 +1275,8 @@
                                         <posy>10</posy>
                                         <width>236</width>
                                         <height>238</height>
-                                        <texture border="6">views/addonwall_select.png</texture>
+                                        <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                         <visible>Control.HasFocus(10011)</visible>
-                                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     </control>
                                 </focusedlayout>
                                 <content>$VAR[YouTubeContentVar]</content>
@@ -1313,8 +1287,7 @@
                             <posy>59</posy>
                             <width>1290</width>
                             <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
                         </control>
                     </control>
                 </control>
@@ -1342,8 +1315,7 @@
                             <width>1260</width>
                             <height>506</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture>$INFO[ListItem.Art(fanart)]</texture>
-                            <colordiffuse>44FFFFFF</colordiffuse>
+                            <texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(fanart)]</texture>
                         </control>
                         <control id="11001" type="group">
                             <posx>131</posx>
@@ -1378,10 +1350,9 @@
                                         <posy>10</posy>
                                         <width>240</width>
                                         <height>240</height>
-                                        <texture border="6">common/bgcolor.png</texture>
+                                        <texture colordiffuse="55FFFFFF" border="6">common/bgcolor.png</texture>
                                         <visible>Control.HasFocus(11010)</visible>
                                         <animation effect="fade" time="350">VisibleChange</animation>
-                                        <colordiffuse>55FFFFFF</colordiffuse>
                                     </control>
                                 </itemlayout>
                                 <focusedlayout height="240" width="245">
@@ -1400,9 +1371,8 @@
                                         <posy>10</posy>
                                         <width>236</width>
                                         <height>238</height>
-                                        <texture border="6">views/addonwall_select.png</texture>
+                                        <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                         <visible>Control.HasFocus(11010)</visible>
-                                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     </control>
                                 </focusedlayout>
                                 <content target="Pictures">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</content>
@@ -1413,8 +1383,7 @@
                             <posy>59</posy>
                             <width>1290</width>
                             <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
                         </control>
                     </control>
                 </control>
@@ -1447,8 +1416,7 @@
                     <width>38</width>
                     <height>30</height>
                     <aspectratio>keep</aspectratio>
-                    <texture>common/featured_icon.png</texture>
-                    <colordiffuse>$VAR[BreadCrumbsContentColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[BreadCrumbsContentColorVar]">common/featured_icon.png</texture>
                 </control>
                 <control type="label">
                     <label>INFO</label>
@@ -1535,8 +1503,8 @@
                         <control id="6" type="radiobutton">
                             <label>$LOCALIZE[184]</label>
                             <selected>Control.HasFocus(6)</selected>
-                            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonReload.png</textureradioon>
-                            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/ButtonReload.png</textureradiooff>
+                            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/refresh2.png</textureradioon>
+                            <textureradiooff colordiffuse="grey">special://skin/extras/icons/refresh2.png</textureradiooff>
                             <include>Objects_MediaMenuButtonIcons</include>
                             <visible>Control.IsEnabled(6)</visible>
                         </control>

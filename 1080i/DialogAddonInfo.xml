@@ -101,8 +101,7 @@
                     <width>240</width>
                     <height>38</height>
                     <aspectratio>keep</aspectratio>
-                    <texture>$INFO[ListItem.Property(Addon.StarRating)]</texture>
-                    <colordiffuse>white2</colordiffuse>
+                    <texture colordiffuse="white2">$INFO[ListItem.Property(Addon.StarRating)]</texture>
                 </control>
                 <control type="label">
                     <posx>30</posx>
@@ -193,12 +192,10 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <label>518</label>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <focusedcolor>white2</focusedcolor>
                 </control>
                 <control type="button" id="9">
@@ -206,12 +203,10 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <label>24020</label>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <focusedcolor>white2</focusedcolor>
                 </control>
                 <control type="button" id="8">
@@ -219,12 +214,10 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <label>24069</label>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <focusedcolor>white2</focusedcolor>
                 </control>
                 <control type="button" id="6">
@@ -232,12 +225,10 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <label>24022</label>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <focusedcolor>white2</focusedcolor>
                 </control>
                 <control type="button" id="7">
@@ -245,12 +236,10 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <label>24021</label>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <focusedcolor>white2</focusedcolor>
                 </control>
                 <control type="button" id="11">
@@ -258,12 +247,10 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <label>24048</label>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <focusedcolor>white2</focusedcolor>
                 </control>
                 <control type="button" id="10">
@@ -271,12 +258,10 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <label>24036</label>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <focusedcolor>white2</focusedcolor>
                 </control>
             </control>

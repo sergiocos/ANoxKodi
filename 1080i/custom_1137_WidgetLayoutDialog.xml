@@ -25,17 +25,15 @@
                     <posx>-152</posx>
                     <width>1455</width>
                     <height>426</height>
-                    <texture>dialogs/addsource_back_glow.png</texture>
+                    <texture colordiffuse="$VAR[AreaColorVar]">dialogs/addsource_back_glow.png</texture>
                     <include>PanelGlowFade</include>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="image">
                     <posx>-152</posx>
                     <width>1455</width>
                     <height>426</height>
-                    <texture>dialogs/setcontent_back.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[DialogColorVar]">dialogs/setcontent_back.png</texture>
                 </control>
                 <control type="grouplist" id="5300">
                     <posx>-130</posx>
@@ -51,7 +49,6 @@
                         <textoffsetx>25</textoffsetx>
                         <label>Choose widget title</label>
                         <label2>$VAR[WidgetConfigLabelVar]</label2>
-                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
                         <textcolor>white3</textcolor>
                         <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title)</onclick>
@@ -62,7 +59,6 @@
                         <textoffsetx>25</textoffsetx>
                         <label>Choose widget style</label>
                         <label2>$VAR[WidgetStyleLabelVar]</label2>
-                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
                         <textcolor>white3</textcolor>
                         <onclick condition="Stringcompare(Window(home).Property(Transparency),glass)">SetProperty(Transparency,2,home)</onclick>
@@ -76,7 +72,6 @@
                         <height>62</height>
                         <textoffsetx>25</textoffsetx>
                         <label>Show small widget when not focused</label>
-                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
                         <selected>!IsEmpty(Window(home).Property(PreviewWidget))</selected>
                         <textcolor>white3</textcolor>
@@ -281,7 +276,6 @@
                         <width>263</width>
                         <height>62</height>
                         <textoffsetx>30</textoffsetx>
-                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
                         <label>186</label>
                         <onclick>Action(Close)</onclick>
@@ -291,7 +285,6 @@
                         <width>263</width>
                         <height>62</height>
                         <textoffsetx>30</textoffsetx>
-                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
                         <onclick>Action(Close)</onclick>
                         <onclick>ActivateWindow(1133)</onclick>

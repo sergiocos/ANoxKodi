@@ -37,8 +37,7 @@
                 <posx>-42</posx>
                 <width>462</width>
                 <height>1080</height>
-                <texture>dialogs/context_middle.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]">dialogs/context_middle.png</texture>
                 <animation type="Conditional" condition="Window.IsActive(1121)">
                     <effect type="zoom" end="66,100" time="320" easing="in" tween="cubic" />
                     <effect type="slide" end="-49" time="320" easing="in" tween="cubic" />
@@ -104,7 +103,6 @@
                     <width>219</width>
                     <height>79</height>
                         <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <include>PanelGlowFade</include>
                     <visible>Control.HasFocus(9011)</visible>
                 </control>
@@ -367,8 +365,7 @@
                     <width>75</width>
                     <height>75</height>
                     <aspectratio align="center">keep</aspectratio>
-                    <texture>$INFO[ListItem.Thumb]</texture>
-                    <colordiffuse>white3</colordiffuse>
+                    <texture colordiffuse="white3">$INFO[ListItem.Thumb]</texture>
                 </control>
                 <control type="label">
                     <posx>110</posx>
@@ -392,7 +389,6 @@
                     <height>115</height>
                         <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                     <visible>Control.HasFocus(9011)</visible>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <include>PanelGlowFade</include>
                 </control>
                 <control type="image">
@@ -401,8 +397,7 @@
                     <width>75</width>
                     <height>75</height>
                     <aspectratio align="center">keep</aspectratio>
-                    <texture>$INFO[ListItem.Thumb]</texture>
-                    <colordiffuse>white2</colordiffuse>
+                    <texture colordiffuse="white2">$INFO[ListItem.Thumb]</texture>
                 </control>
                 <control type="label">
                     <posx>110</posx>
@@ -427,7 +422,6 @@
                 <radioposx>90</radioposx>
                 <radioposy>-23</radioposy>
                 <radiowidth>41</radiowidth>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                 <texturenofocus>-</texturenofocus>
                 <textureradioon colordiffuse="white2">special://skin/extras/icons/settings2.png</textureradioon>
                 <textureradiooff colordiffuse="white2">special://skin/extras/icons/stop.png</textureradiooff>
