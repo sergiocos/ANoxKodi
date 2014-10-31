@@ -316,19 +316,6 @@
 			<property name="group">tvshows</property>
 		</item>
 		<item id="1">
-			<label>$LOCALIZE[19019]</label>
-			<label2>$ADDON[script.skinshortcuts 32017]</label2>
-			<icon>DefaultTVShows.png</icon>
-			<thumb />
-			<property name="labelID">19019</property>
-			<property name="defaultID">19019</property>
-			<visible>PVR.HasTVChannels</visible>
-			<onclick>ActivateWindow(TVChannels)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">livetv</property>
-		</item>
-		<item id="2">
 			<label>$LOCALIZE[22020]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -341,7 +328,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
-		<item id="3">
+		<item id="2">
 			<label>$LOCALIZE[19163]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -354,7 +341,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
-		<item id="4">
+		<item id="3">
 			<label>$LOCALIZE[19040]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -367,7 +354,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
-		<item id="5">
+		<item id="4">
 			<label>$LOCALIZE[137]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -1228,18 +1215,6 @@
 	</include>
 	<include name="skinshortcuts-group-livetv">
 		<item id="1">
-			<label>$LOCALIZE[19019]</label>
-			<label2>$ADDON[script.skinshortcuts 32017]</label2>
-			<icon>DefaultTVShows.png</icon>
-			<thumb />
-			<property name="labelID">19019</property>
-			<property name="defaultID">19019</property>
-			<visible>PVR.HasTVChannels</visible>
-			<onclick>ActivateWindow(TVChannels)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">livetv</property>
-		</item>
-		<item id="2">
 			<label>$LOCALIZE[22020]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -1251,7 +1226,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 		</item>
-		<item id="3">
+		<item id="2">
 			<label>$LOCALIZE[19163]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -1263,7 +1238,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 		</item>
-		<item id="4">
+		<item id="3">
 			<label>$LOCALIZE[19040]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -1275,7 +1250,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 		</item>
-		<item id="5">
+		<item id="4">
 			<label>$LOCALIZE[137]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -1290,19 +1265,6 @@
 	</include>
 	<include name="skinshortcuts-group-alt-livetv">
 		<item id="1">
-			<label>$LOCALIZE[19019]</label>
-			<label2>$ADDON[script.skinshortcuts 32017]</label2>
-			<icon>DefaultTVShows.png</icon>
-			<thumb />
-			<property name="labelID">19019</property>
-			<property name="defaultID">19019</property>
-			<visible>PVR.HasTVChannels</visible>
-			<onclick>ActivateWindow(TVChannels)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">livetv</property>
-		</item>
-		<item id="2">
 			<label>$LOCALIZE[22020]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -1315,7 +1277,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
-		<item id="3">
+		<item id="2">
 			<label>$LOCALIZE[19163]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -1328,7 +1290,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
-		<item id="4">
+		<item id="3">
 			<label>$LOCALIZE[19040]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -1341,7 +1303,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="group">livetv</property>
 		</item>
-		<item id="5">
+		<item id="4">
 			<label>$LOCALIZE[137]</label>
 			<label2>$ADDON[script.skinshortcuts 32017]</label2>
 			<icon>DefaultTVShows.png</icon>
