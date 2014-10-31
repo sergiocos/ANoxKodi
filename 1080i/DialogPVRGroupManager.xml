@@ -40,8 +40,7 @@
                                 <posy>0</posy>
                                 <width>489</width>
                                 <height>74</height>
-                                <texture>settings/settings_radiobuttonoff.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">settings/settings_radiobuttonoff.png</texture>
                             </control>
                             <control type="label">
                                 <posx>0</posx>
@@ -103,8 +102,7 @@
                                 <posy>0</posy>
                                 <width>489</width>
                                 <height>74</height>
-                                <texture>settings/settings_radiobuttonoff.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">settings/settings_radiobuttonoff.png</texture>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -112,9 +110,8 @@
                                 <width>74</width>
                                 <height>74</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
+                                <texture colordiffuse="88FFFFFF" background="true" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
                                 <bordersize>8</bordersize>
-                                <colordiffuse>88FFFFFF</colordiffuse>
                             </control>
                             <control type="label">
                                 <posx>74</posx>
@@ -133,8 +130,7 @@
                                 <posy>0</posy>
                                 <width>489</width>
                                 <height>74</height>
-                                <texture>settings/settings_radiobuttonoff.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">settings/settings_radiobuttonoff.png</texture>
                                 <visible>!Control.HasFocus(11)</visible>
                             </control>
                             <control type="image">
@@ -192,8 +188,7 @@
                                 <posy>0</posy>
                                 <width>489</width>
                                 <height>74</height>
-                                <texture>settings/settings_radiobuttonoff.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">settings/settings_radiobuttonoff.png</texture>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -201,9 +196,8 @@
                                 <width>74</width>
                                 <height>74</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
+                                <texture colordiffuse="88FFFFFF" background="true" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
                                 <bordersize>8</bordersize>
-                                <colordiffuse>88FFFFFF</colordiffuse>
                             </control>
                             <control type="label">
                                 <posx>74</posx>
@@ -222,8 +216,7 @@
                                 <posy>0</posy>
                                 <width>489</width>
                                 <height>74</height>
-                                <texture>settings/settings_radiobuttonoff.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">settings/settings_radiobuttonoff.png</texture>
                                 <visible>!Control.HasFocus(12)</visible>
                             </control>
                             <control type="image">
@@ -269,7 +262,6 @@
                         <height>74</height>
                         <textoffsetx>20</textoffsetx>
                         <textoffsety>18</textoffsety>
-                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                         <texturenofocus>-</texturenofocus>
                         <label>31012</label>
                         <font>Font_Bold34</font>
@@ -281,7 +273,6 @@
                         <height>74</height>
                         <textoffsetx>20</textoffsetx>
                         <textoffsety>18</textoffsety>
-                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                         <texturenofocus>-</texturenofocus>
                         <label>31013</label>
                         <font>Font_Bold34</font>
@@ -293,7 +284,6 @@
                         <height>74</height>
                         <textoffsetx>20</textoffsetx>
                         <textoffsety>18</textoffsety>
-                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                         <texturenofocus>-</texturenofocus>
                         <label>31014</label>
                         <font>Font_Bold34</font>
@@ -305,7 +295,6 @@
                         <height>74</height>
                         <textoffsetx>20</textoffsetx>
                         <textoffsety>18</textoffsety>
-                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                         <texturenofocus>-</texturenofocus>
                         <label>186</label>
                         <font>Font_Bold34</font>

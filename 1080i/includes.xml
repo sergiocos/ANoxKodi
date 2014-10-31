@@ -42,8 +42,7 @@
             <posy>-4</posy>
             <width>776</width>
             <height>147</height>
-            <texture>dialogs/scan_backg_shadow.png</texture>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[AreaColorVar]">dialogs/scan_backg_shadow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
             <animation effect="fade" time="350">VisibleChange</animation>
@@ -53,40 +52,25 @@
             <posy>-4</posy>
             <width>776</width>
             <height>147</height>
-            <texture>dialogs/scan_backg.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">dialogs/scan_backg.png</texture>
         </control>
     </include>
     <include name="Dialogs_Exclam">
         <control type="image">
             <posx>4</posx>
             <posy>18</posy>
-            <width>133</width>
+            <width>100</width>
             <height>100</height>
-            <aspectratio aligny="top">scale</aspectratio>
-            <texture>special://skin/extras/BigIcons/Exclamation.png</texture>
-            <colordiffuse>white</colordiffuse>
+            <texture colordiffuse="white">special://skin/extras/BigIcons/Exclamation.png</texture>
             <animation effect="fade" start="100" end="70" time="480" pulse="true" condition="true">Conditional</animation>
-        </control>
-    </include>
-    <include name="Dialogs_HardDrive">
-        <control type="image">
-            <posx>26</posx>
-            <posy>25</posy>
-            <width>90</width>
-            <height>90</height>
-            <texture>loader.gif</texture>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
         </control>
     </include>
     <include name="Dialogs_Settings">
         <control type="image">
             <posx>4</posx>
-            <width>133</width>
+            <width>100</width>
             <height>100</height>
-            <aspectratio aligny="top">scale</aspectratio>
-            <texture>special://skin/extras/BigIcons/Gears.png</texture>
-            <colordiffuse>white</colordiffuse>
+            <texture colordiffuse="white">special://skin/extras/icons/settings2.png</texture>
         </control>
     </include>
     <include name="Dialogs_Progress">
@@ -128,7 +112,6 @@
                 <height>250</height>
                 <texture border="6" fallback="DefaultArtist.png">$INFO[ListItem.Thumb]</texture>
                 <aspectratio aligny="top" align="center">scale</aspectratio>
-                <colordiffuse>FFFFFFFF</colordiffuse>
             </control>
             <control type="group">
                 <posx>235</posx>
@@ -137,9 +120,8 @@
                     <posy>1</posy>
                     <width>438</width>
                     <height>247</height>
-                    <texture>$INFO[ListItem.Property(Venue_Image)]</texture>
+                    <texture colordiffuse="FF555555">$INFO[ListItem.Property(Venue_Image)]</texture>
                     <aspectratio aligny="center" align="center">scale</aspectratio>
-                    <colordiffuse>FF555555</colordiffuse>
                 </control>
                 <control type="textbox">
                     <posy>0</posy>
@@ -192,9 +174,8 @@
                 <posy>1</posy>
                 <width>438</width>
                 <height>247</height>
-                <texture>$INFO[ListItem.Property(Venue_Image)]</texture>
+                <texture colordiffuse="FF555555">$INFO[ListItem.Property(Venue_Image)]</texture>
                 <aspectratio aligny="center" align="center">scale</aspectratio>
-                <colordiffuse>FF555555</colordiffuse>
             </control>
             <control type="image">
                 <width>670</width>
@@ -213,7 +194,6 @@
                 <height>250</height>
                 <texture border="6" fallback="DefaultArtist.png">$INFO[ListItem.Thumb]</texture>
                 <aspectratio aligny="top" align="center">scale</aspectratio>
-                <colordiffuse>FFFFFFFF</colordiffuse>
             </control>
             <control type="group">
                 <posx>235</posx>
@@ -269,9 +249,7 @@
         <height>60</height>
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus border="5">settings/listselect_nf.png</texturenofocus>
-        <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</alttexturefocus>
         <alttexturenofocus border="5">settings/listselect_nf.png</alttexturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
@@ -288,9 +266,7 @@
         <textoffsety>23</textoffsety>
         <textwidth>315</textwidth>
         <aligny>top</aligny>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus border="5">settings/listselect_nf2.png</texturenofocus>
-        <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</alttexturefocus>
         <alttexturenofocus border="5">settings/listselect_nf2.png</alttexturenofocus>
         <font>Font_Reg29</font>
         <textcolor>grey2</textcolor>
@@ -307,9 +283,7 @@
         <height>60</height>
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus border="5">settings/listselect_nf.png</texturenofocus>
-        <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</alttexturefocus>
         <alttexturenofocus border="5">settings/listselect_nf.png</alttexturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
@@ -322,9 +296,7 @@
         <height>60</height>
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus border="5">settings/listselect_nf.png</texturenofocus>
-        <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</alttexturefocus>
         <alttexturenofocus border="5">settings/listselect_nf.png</alttexturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
@@ -340,9 +312,7 @@
         <height>60</height>
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus border="5">settings/listselect_nf.png</texturenofocus>
-        <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</alttexturefocus>
         <alttexturenofocus border="5">settings/listselect_nf.png</alttexturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
@@ -542,8 +512,7 @@
             <width>360</width>
             <height>178</height>
             <aspectratio>keep</aspectratio>
-            <texture>XBMC_Logo.png</texture>
-            <colordiffuse>white</colordiffuse>
+            <texture colordiffuse="white">XBMC_Logo.png</texture>
         </control>
         <control type="image">
             <posx>49</posx>
@@ -559,9 +528,8 @@
             <posy>36</posy>
             <width>1846</width>
             <height>1006</height>
-            <texture>settings/settings_panelback_shadow.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">settings/settings_panelback_shadow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             <animation effect="fade" time="350">VisibleChange</animation>
         </control>
         <control type="image">
@@ -569,8 +537,7 @@
             <posy>34</posy>
             <width>1850</width>
             <height>1010</height>
-            <texture>settings/settings_panelback2.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">settings/settings_panelback2.png</texture>
         </control>
         <control type="image">
             <posx>80</posx>
@@ -578,8 +545,7 @@
             <width>400</width>
             <height>158</height>
             <aspectratio>keep</aspectratio>
-            <texture>XBMC_Logo.png</texture>
-            <colordiffuse>white</colordiffuse>
+            <texture colordiffuse="white">XBMC_Logo.png</texture>
         </control>
         <control type="image">
             <posx>49</posx>
@@ -593,7 +559,6 @@
         <width>1469</width>
         <height>74</height>
         <textoffsetx>40</textoffsetx>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
@@ -603,7 +568,6 @@
         <width>734</width>
         <height>74</height>
         <textoffsetx>30</textoffsetx>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
@@ -613,7 +577,6 @@
         <width>1469</width>
         <height>74</height>
         <textoffsetx>40</textoffsetx>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
@@ -623,7 +586,6 @@
         <width>1469</width>
         <height>74</height>
         <textoffsetx>40</textoffsetx>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
@@ -636,7 +598,6 @@
                 <textcolor>grey2</textcolor>
         <textoffsetx>40</textoffsetx>
         <aligny>center</aligny>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
         <font>Font_Reg29</font>
         <textcolor>white3</textcolor>
@@ -653,7 +614,6 @@
         <width>734</width>
         <height>74</height>
         <textoffsetx>30</textoffsetx>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
@@ -690,7 +650,6 @@
         <width>1172</width>
         <height>60</height>
         <textoffsetx>45</textoffsetx>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus border="3">osd/osd_settings_buttonnf.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
@@ -700,12 +659,10 @@
         <width>672</width>
         <height>60</height>
         <textoffsetx>25</textoffsetx>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus border="3">osd/osd_settings_buttonnf.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
         <radioposx>550</radioposx>
-        <colordiffuse></colordiffuse>
     </include>
     <include name="Objects_LetterButton">
         <width>32</width>
@@ -728,7 +685,6 @@
         <width>400</width>
         <height>60</height>
         <textoffsetx>45</textoffsetx>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus border="3">osd/osd_settings_buttonnf.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
@@ -861,13 +817,11 @@
         <textoffsety>4</textoffsety>
         <align>center</align>
         <aligny>top</aligny>
-        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus>button-nofocus.png</texturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey</textcolor>
         <disabledcolor>66868686</disabledcolor>
         <focusedcolor>white2</focusedcolor>
-        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
         <onup>600</onup>
     </include>
     <include name="DialogVideoInfoButtonSolid">
@@ -877,13 +831,12 @@
         <textoffsety>4</textoffsety>
         <align>center</align>
         <aligny>top</aligny>
-        <texturefocus>views/tripanel/listselect_fo_solid.png</texturefocus>
+        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo_solid.png</texturefocus>
         <texturenofocus>button-nofocus-solid.png</texturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey</textcolor>
         <disabledcolor>66868686</disabledcolor>
         <focusedcolor>white2</focusedcolor>
-        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
         <onup>600</onup>
     </include>
     <include name="DialogBackFade">
@@ -914,7 +867,7 @@
             <property name="Path" fallback="ReplaceWindow(Videos,MovieTitles,return)">$INFO[Skin.String(QuickNavItem1.Path)]</property>
             <property name="Type" fallback="custom">$INFO[Skin.String(QuickNavItem1.Type)]</property>
             <property name="DisableIcon">$INFO[Skin.String(QuickNavItem1.Disable)]</property>
-            <thumb fallback="special://skin/extras/BigIcons/Film.png">$INFO[Skin.String(QuickNavItem1.MultiFanart)]</thumb>
+            <thumb fallback="special://skin/extras/icons/video.png">$INFO[Skin.String(QuickNavItem1.MultiFanart)]</thumb>
             <onclick>SetProperty(MenuItem,QuickNavItem1,home)</onclick>
             <onclick>SetFocus(810)</onclick>
             <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickNavItem1.Disable))</visible>
@@ -924,7 +877,7 @@
             <property name="Path" fallback="ReplaceWindow(Videos,TVShowTitles,return)">$INFO[Skin.String(QuickNavItem2.Path)]</property>
             <property name="Type" fallback="custom">$INFO[Skin.String(QuickNavItem2.Type)]</property>
             <property name="DisableIcon">$INFO[Skin.String(QuickNavItem2.Disable)]</property>
-            <thumb fallback="special://skin/extras/BigIcons/Television.png">$INFO[Skin.String(QuickNavItem2.MultiFanart)]</thumb>
+            <thumb fallback="special://skin/extras/icons/tv1.png">$INFO[Skin.String(QuickNavItem2.MultiFanart)]</thumb>
             <onclick>SetProperty(MenuItem,QuickNavItem2,home)</onclick>
             <onclick>SetFocus(810)</onclick>
             <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickNavItem2.Disable))</visible>
@@ -934,7 +887,7 @@
             <property name="Path" fallback="ReplaceWindow(Music)">$INFO[Skin.String(QuickNavItem3.Path)]</property>
             <property name="Type" fallback="custom">$INFO[Skin.String(QuickNavItem3.Type)]</property>
             <property name="DisableIcon">$INFO[Skin.String(QuickNavItem3.Disable)]</property>
-            <thumb fallback="special://skin/extras/BigIcons/Headphone.png">$INFO[Skin.String(QuickNavItem3.MultiFanart)]</thumb>
+            <thumb fallback="special://skin/extras/icons/headphones2.png">$INFO[Skin.String(QuickNavItem3.MultiFanart)]</thumb>
             <onclick>SetProperty(MenuItem,QuickNavItem3,home)</onclick>
             <onclick>SetFocus(810)</onclick>
             <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickNavItem3.Disable))</visible>
@@ -951,10 +904,10 @@
         </item>
         <item>
             <label fallback="31017">$INFO[Skin.String(QuickNavItem5.Label)]</label>
-            <property name="Path" fallback="ActivateWindowAndFocus(PVR, 32,0, 11,0)">$INFO[Skin.String(QuickNavItem5.Path)]</property>
+            <property name="Path" fallback="ActivateWindow(TVChannels)">$INFO[Skin.String(QuickNavItem5.Path)]</property>
             <property name="Type" fallback="custom">$INFO[Skin.String(QuickNavItem5.Type)]</property>
             <property name="DisableIcon">$INFO[Skin.String(QuickNavItem5.Disable)]</property>
-            <thumb fallback="special://skin/extras/BigIcons/TV.png">$INFO[Skin.String(QuickNavItem5.MultiFanart)]</thumb>
+            <thumb fallback="special://skin/extras/icons/tv3.png">$INFO[Skin.String(QuickNavItem5.MultiFanart)]</thumb>
             <onclick>SetProperty(MenuItem,QuickNavItem5,home)</onclick>
             <onclick>SetFocus(810)</onclick>
             <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickNavItem5.Disable))</visible>
@@ -964,7 +917,7 @@
             <property name="Path" fallback="ReplaceWindow(Videos,Addons,return)">$INFO[Skin.String(QuickNavItem6.Path)]</property>
             <property name="Type" fallback="custom">$INFO[Skin.String(QuickNavItem6.Type)]</property>
             <property name="DisableIcon">$INFO[Skin.String(QuickNavItem6.Disable)]</property>
-            <thumb fallback="special://skin/extras/BigIcons/Camcorder.png">$INFO[Skin.String(QuickNavItem6.MultiFanart)]</thumb>
+            <thumb fallback="special://skin/extras/icons/camcorder.png">$INFO[Skin.String(QuickNavItem6.MultiFanart)]</thumb>
             <onclick>SetProperty(MenuItem,QuickNavItem6,home)</onclick>
             <onclick>SetFocus(810)</onclick>
             <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickNavItem6.Disable))</visible>
@@ -974,7 +927,7 @@
             <property name="Path" fallback="ReplaceWindow(Programs,addons)">$INFO[Skin.String(QuickNavItem7.Path)]</property>
             <property name="Type" fallback="custom">$INFO[Skin.String(QuickNavItem7.Type)]</property>
             <property name="DisableIcon">$INFO[Skin.String(QuickNavItem7.Disable)]</property>
-            <thumb fallback="special://skin/extras/BigIcons/Puzzle.png">$INFO[Skin.String(QuickNavItem7.MultiFanart)]</thumb>
+            <thumb fallback="special://skin/extras/icons/brick.png">$INFO[Skin.String(QuickNavItem7.MultiFanart)]</thumb>
             <onclick>SetProperty(MenuItem,QuickNavItem7,home)</onclick>
             <onclick>SetFocus(810)</onclick>
             <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickNavItem7.Disable))</visible>
@@ -994,7 +947,7 @@
             <property name="Path" fallback="ActivateWindow(favourites)">$INFO[Skin.String(QuickNavItem9.Path)]</property>
             <property name="Type" fallback="custom">$INFO[Skin.String(QuickNavItem9.Type)]</property>
             <property name="DisableIcon">$INFO[Skin.String(QuickNavItem9.Disable)]</property>
-            <thumb fallback="special://skin/extras/BigIcons/Star.png">$INFO[Skin.String(QuickNavItem9.MultiFanart)]</thumb>
+            <thumb fallback="special://skin/extras/icons/star.png">$INFO[Skin.String(QuickNavItem9.MultiFanart)]</thumb>
             <onclick>SetProperty(MenuItem,QuickNavItem9,home)</onclick>
             <onclick>SetFocus(810)</onclick>
             <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickNavItem9.Disable))</visible>
@@ -1006,18 +959,16 @@
             <posy>110</posy>
             <width>748</width>
             <height>683</height>
-            <texture>wall/wall_bg_glow.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
         </control>
         <control type="image">
             <posx>105</posx>
             <posy>110</posy>
             <width>748</width>
             <height>683</height>
-            <texture>wall/wall_bg.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
         </control>
         <control type="image">
             <posx>105</posx>
@@ -1031,8 +982,7 @@
             <posy>149</posy>
             <width>128</width>
             <height>540</height>
-            <texture>views/listpanel_detailwide.png</texture>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[AreaColorVar]">views/listpanel_detailwide.png</texture>
         </control>
     </include>
     <include name="FileBrowserPanel">
@@ -1041,9 +991,8 @@
             <posy>110</posy>
             <width>1132</width>
             <height>1056</height>
-            <texture>wall/wall_bg_glow.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             <animation effect="fade" time="350">VisibleChange</animation>
             <include>PanelGlowFade</include>
         </control>
@@ -1052,8 +1001,7 @@
             <posy>110</posy>
             <width>1132</width>
             <height>1056</height>
-            <texture>wall/wall_bg.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
         </control>
     </include>
     <include name="FullScreenInfoBar">
@@ -1102,8 +1050,7 @@
             <posy>945</posy>
             <width>1920</width>
             <height>135</height>
-            <texture>osd/osd_back.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">osd/osd_back.png</texture>
         </control>
         <control type="group">
             <posy>910</posy>
@@ -1131,10 +1078,9 @@
                     <posy>581</posy>
                     <width>335</width>
                     <height>504</height>
-                    <texture>thumbs/thumb_glass_shadow.png</texture>
+                    <texture colordiffuse="$VAR[AreaColorVar]">thumbs/thumb_glass_shadow.png</texture>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <include>PanelGlowFade</include>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <animation effect="fade" time="350">VisibleChange</animation>
                 </control>
                 <control type="image">
@@ -1266,8 +1212,7 @@
                     <posy>110</posy>
                     <width>180</width>
                     <height>36</height>
-                    <texture>$INFO[VideoPlayer.Rating,stars/,.png]</texture>
-                    <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[TitleColorVar]">$INFO[VideoPlayer.Rating,stars/,.png]</texture>
                 </control>
             </control>
         </control>
@@ -1721,8 +1666,7 @@
             <control type="image">
                 <width>1332</width>
                 <height>612</height>
-                <texture border="50">featured/panel_featured_shadow.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]" border="50">featured/panel_featured_shadow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
                 <animation effect="fade" time="350">VisibleChange</animation>
@@ -1750,7 +1694,6 @@
         <height>84</height>
         <textoffsetx>30</textoffsetx>
         <align>left</align>
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturenofocus>
         <alttexturefocus>-</alttexturefocus>
         <alttexturenofocus>-</alttexturenofocus>
@@ -1798,7 +1741,6 @@
                             <posx>15</posx>
                             <posy>330</posy>
                             <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
                             <height>13</height>
                             <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
                             <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
@@ -1813,7 +1755,6 @@
                             <posx>15</posx>
                             <posy>330</posy>
                             <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
                             <height>13</height>
                             <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
                             <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
@@ -1978,8 +1919,7 @@
                 <posy>100</posy>
                 <width>2</width>
                 <height>789</height>
-                <texture>dialogs/weatherline.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">dialogs/weatherline.png</texture>
             </control>
         </control>
     </include>

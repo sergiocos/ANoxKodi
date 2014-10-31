@@ -377,7 +377,6 @@
                                     <posx>720</posx>
                                     <posy>978</posy>
                                     <height>50</height>
-                                    <aligny>top</aligny>
                                     <label>$VAR[NowPlayingPlayLabelVar]</label>
                                     <font>Font_Reg31_Caps</font>
                                     <textcolor>$VAR[TitleColorVar]</textcolor>
@@ -1185,8 +1184,7 @@
                             <control type="image">
                                 <width>532</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -1198,8 +1196,7 @@
                             <control type="image">
                                 <width>532</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -1220,8 +1217,7 @@
                                 <posy>5</posy>
                                 <width>218</width>
                                 <height>340</height>
-                                <texture>common/bgcolor.png</texture>
-                                <colordiffuse>99FFFFFF</colordiffuse>
+                                <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                                 <animation effect="fade" time="350">VisibleChange</animation>
                                 <visible>Control.HasFocus(5010)</visible>
                             </control>
@@ -1238,8 +1234,7 @@
                             <control type="image">
                                 <width>228</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -1251,8 +1246,7 @@
                             <control type="image">
                                 <width>798</width>
                                 <height>180</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -1264,8 +1258,7 @@
                             <control type="image">
                                 <width>532</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -1277,8 +1270,7 @@
                             <control type="image">
                                 <width>532</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -1307,8 +1299,7 @@
                                     <posy>5</posy>
                                     <width>309</width>
                                     <height>309</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <colordiffuse>99FFFFFF</colordiffuse>
+                                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                                     <animation effect="fade" time="350">VisibleChange</animation>
                                     <visible>Control.HasFocus(5010)</visible>
                                 </control>
@@ -1350,8 +1341,7 @@
                             <control type="image">
                                 <width>319</width>
                                 <height>319</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -1362,8 +1352,7 @@
                                 <posy>5</posy>
                                 <width>389</width>
                                 <height>340</height>
-                                <texture>common/bgcolor.png</texture>
-                                <colordiffuse>99FFFFFF</colordiffuse>
+                                <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                                 <animation effect="fade" time="350">VisibleChange</animation>
                                 <visible>Control.HasFocus(5010)</visible>
                             </control>
@@ -1373,8 +1362,7 @@
                             <control type="image">
                                 <width>399</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -1387,8 +1375,7 @@
                                 <posy>10</posy>
                                 <width>532</width>
                                 <height>334</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -1400,8 +1387,7 @@
                             <control type="image">
                                 <width>798</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -1413,8 +1399,7 @@
                             <control type="image">
                                 <width>798</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -1440,9 +1425,8 @@
                         <posy>26</posy>
                         <width>610</width>
                         <height>350</height>
-                        <texture>common/white.png</texture>
+                        <texture colordiffuse="$VAR[FocusTextureColorVar]">common/white.png</texture>
                         <visible>Control.HasFocus(5050)</visible>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     </control>
                     <include condition="SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
                 </control>
@@ -1628,8 +1612,7 @@
                 <control type="image">
                     <width>614</width>
                     <height>340</height>
-                    <texture>common/bgcolor.png</texture>
-                    <colordiffuse>99FFFFFF</colordiffuse>
+                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                     <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>[Control.HasFocus(5011) | Control.HasFocus(5012)]</visible>
                 </control>
@@ -1666,8 +1649,7 @@
                 <control type="image">
                     <width>340</width>
                     <height>340</height>
-                    <texture>common/bgcolor.png</texture>
-                    <colordiffuse>99FFFFFF</colordiffuse>
+                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                     <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>[Control.HasFocus(5010) | Control.HasFocus(5012)]</visible>
                 </control>
@@ -1705,8 +1687,7 @@
                 <control type="image">
                     <width>614</width>
                     <height>340</height>
-                    <texture>common/bgcolor.png</texture>
-                    <colordiffuse>99FFFFFF</colordiffuse>
+                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                     <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>Control.HasFocus(5010) | Control.HasFocus(5011)</visible>
                 </control>
@@ -2538,7 +2519,6 @@
                 <control type="image">
                     <posx>11</posx>
                     <posy>30</posy>
-                    <fadetime>0</fadetime>
                     <width>247</width>
                     <height>371</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
@@ -2617,7 +2597,6 @@
                     <posy>30</posy>
                     <width>247</width>
                     <height>371</height>
-                    <fadetime>0</fadetime>
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                     <fadetime>IconCrossfadeTime</fadetime>
@@ -2672,8 +2651,7 @@
             <control type="image">
                 <width>367.5</width>
                 <height>470</height>
-                <texture border="6">views/addonwall_select.png</texture>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                 <animation effect="fade" time="200">VisibleChange</animation>
                 <visible>!ControlGroup(500).HasFocus</visible>
             </control>
@@ -2873,8 +2851,7 @@
                             <control type="image">
                                 <width>532</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -2886,8 +2863,7 @@
                             <control type="image">
                                 <width>532</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -2899,8 +2875,7 @@
                             <control type="image">
                                 <width>798</width>
                                 <height>180</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -2915,8 +2890,7 @@
                             <control type="image">
                                 <width>532</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -2928,8 +2902,7 @@
                             <control type="image">
                                 <width>532</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -2947,8 +2920,7 @@
                                 <posy>5</posy>
                                 <width>218</width>
                                 <height>340</height>
-                                <texture>common/bgcolor.png</texture>
-                                <colordiffuse>99FFFFFF</colordiffuse>
+                                <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                                 <animation effect="fade" time="350">VisibleChange</animation>
                                 <visible>Control.HasFocus(6010)</visible>
                             </control>
@@ -2965,8 +2937,7 @@
                             <control type="image">
                                 <width>228</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -2995,8 +2966,7 @@
                                     <posy>5</posy>
                                     <width>309</width>
                                     <height>309</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <colordiffuse>99FFFFFF</colordiffuse>
+                                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                                     <animation effect="fade" time="350">VisibleChange</animation>
                                     <visible>Control.HasFocus(6010)</visible>
                                 </control>
@@ -3038,8 +3008,7 @@
                             <control type="image">
                                 <width>319</width>
                                 <height>319</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -3050,8 +3019,7 @@
                                 <posy>5</posy>
                                 <width>389</width>
                                 <height>340</height>
-                                <texture>common/bgcolor.png</texture>
-                                <colordiffuse>99FFFFFF</colordiffuse>
+                                <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                                 <animation effect="fade" time="350">VisibleChange</animation>
                                 <visible>Control.HasFocus(6010)</visible>
                             </control>
@@ -3061,8 +3029,7 @@
                             <control type="image">
                                 <width>399</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -3075,8 +3042,7 @@
                                 <posy>10</posy>
                                 <width>532</width>
                                 <height>334</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -3088,8 +3054,7 @@
                             <control type="image">
                                 <width>798</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -3101,8 +3066,7 @@
                             <control type="image">
                                 <width>798</width>
                                 <height>350</height>
-                                <texture border="6">views/addonwall_select.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                                 <animation effect="fade" time="280" reversible="false">Focus</animation>
                             </control>
                         </focusedlayout>
@@ -3128,9 +3092,8 @@
                         <posy>26</posy>
                         <width>610</width>
                         <height>350</height>
-                        <texture>common/white.png</texture>
+                        <texture colordiffuse="$VAR[FocusTextureColorVar]">common/white.png</texture>
                         <visible>Control.HasFocus(6050)</visible>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     </control>
                     <include condition="SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
                 </control>
@@ -3266,8 +3229,7 @@
                 <control type="image">
                     <width>614</width>
                     <height>340</height>
-                    <texture>common/bgcolor.png</texture>
-                    <colordiffuse>99FFFFFF</colordiffuse>
+                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                     <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>[Control.HasFocus(6011) | Control.HasFocus(6012)]</visible>
                 </control>
@@ -3308,8 +3270,7 @@
                 <control type="image">
                     <width>340</width>
                     <height>340</height>
-                    <texture>common/bgcolor.png</texture>
-                    <colordiffuse>99FFFFFF</colordiffuse>
+                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                     <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>[Control.HasFocus(6010) | Control.HasFocus(6012)]</visible>
                 </control>
@@ -3351,8 +3312,7 @@
                 <control type="image">
                     <width>614</width>
                     <height>340</height>
-                    <texture>common/bgcolor.png</texture>
-                    <colordiffuse>99FFFFFF</colordiffuse>
+                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                     <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>[Control.HasFocus(6010) | Control.HasFocus(6011)]</visible>
                 </control>

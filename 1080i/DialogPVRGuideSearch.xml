@@ -11,8 +11,7 @@
         <control type="image">
             <width>1350</width>
             <height>885</height>
-            <texture>osd/osd_settings_back_glow.png</texture>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[AreaColorVar]">osd/osd_settings_back_glow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
         </control>
@@ -138,7 +137,6 @@
             <width>600</width>
             <height>50</height>
             <textoffsetx>10</textoffsetx>
-            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
             <label>19128</label>
             <font>Font_ContextMenuButton</font>
@@ -154,7 +152,6 @@
             <width>600</width>
             <height>50</height>
             <textoffsetx>10</textoffsetx>
-            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
             <label>19129</label>
             <font>Font_ContextMenuButton</font>
@@ -170,7 +167,6 @@
             <width>600</width>
             <height>50</height>
             <textoffsetx>10</textoffsetx>
-            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
             <label>19126</label>
             <font>Font_ContextMenuButton</font>
@@ -186,7 +182,6 @@
             <width>600</width>
             <height>50</height>
             <textoffsetx>10</textoffsetx>
-            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
             <label>19127</label>
             <font>Font_ContextMenuButton</font>

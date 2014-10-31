@@ -331,8 +331,7 @@
                         <width>120</width>
                         <height>82</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
                         <visible>!Container.Content(episodes)</visible>
                     </control>
                     <control type="label">
@@ -380,8 +379,7 @@
                         <width>170</width>
                         <height>27</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Rating,stars/,.png]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$INFO[ListItem.Rating,stars/,.png]</texture>
                     </control>
                     <control type="image">
                         <posx>1072</posx>
@@ -389,8 +387,7 @@
                         <width>45</width>
                         <height>45</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$VAR[WatchedIconVar]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                     </control>
                 </itemlayout>
                 <focusedlayout height="100" condition="!Skin.HasSetting(slimlist) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">
@@ -405,8 +402,7 @@
                         <posy>-1</posy>
                         <width>1118</width>
                         <height>100</height>
-                        <texture border="8">views/tripanel/listselect_fo.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                         <animation effect="fade" start="100" end="25" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(50)">Conditional</animation>
                     </control>
                     <control type="image">
@@ -469,8 +465,7 @@
                         <width>45</width>
                         <height>45</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$VAR[WatchedIconVar]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                     </control>
                 </focusedlayout>
                 <itemlayout height="100" condition="!Skin.HasSetting(slimlist) + [Container.Content(addons) | Container.Content(albums) | Container.Content(songs)]">
@@ -486,8 +481,7 @@
                         <width>120</width>
                         <height>82</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
                     </control>
                     <control type="image">
                         <posx>925</posx>
@@ -544,8 +538,7 @@
                         <width>170</width>
                         <height>27</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.StarRating]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$INFO[ListItem.StarRating]</texture>
                     </control>
                     <control type="image">
                         <posx>1072</posx>
@@ -553,8 +546,7 @@
                         <width>45</width>
                         <height>45</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$VAR[WatchedIconVar]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                         <visible>!Container.Content(songs)</visible>
                     </control>
                 </itemlayout>
@@ -579,8 +571,7 @@
                         <width>120</width>
                         <height>82</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
-                        <colordiffuse>white6</colordiffuse>
+                        <texture colordiffuse="white6">$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
                     </control>
                     <control type="image">
                         <posx>925</posx>
@@ -588,8 +579,7 @@
                         <width>45</width>
                         <height>42</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.DiscNumber,flags/discnumber/,.png]</texture>
-                        <colordiffuse>white</colordiffuse>
+                        <texture colordiffuse="white">$INFO[ListItem.DiscNumber,flags/discnumber/,.png]</texture>
                         <visible>Container.Content(songs)</visible>
                     </control>
                     <control type="label">
@@ -642,8 +632,7 @@
                         <width>45</width>
                         <height>45</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$VAR[WatchedIconVar]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                         <visible>!Container.Content(songs)</visible>
                     </control>
                 </focusedlayout>
@@ -688,8 +677,7 @@
                         <width>45</width>
                         <height>45</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$VAR[WatchedIconVar]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                     </control>
                     <control type="image">
                         <posx>49</posx>
@@ -745,16 +733,14 @@
                         <width>45</width>
                         <height>45</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$VAR[WatchedIconVar]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                     </control>
                     <control type="image">
                         <posx>49</posx>
                         <posy>5</posy>
                         <width>90</width>
                         <height>90</height>
-                        <texture>$VAR[SmallListIconVar]</texture>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[AreaColorVar]">$VAR[SmallListIconVar]</texture>
                     </control>
                 </focusedlayout>
                 <itemlayout height="61.5" condition="Skin.HasSetting(slimlist)">
@@ -798,8 +784,7 @@
                         <width>45</width>
                         <height>45</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$VAR[WatchedIconVar]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                     </control>
                     <control type="image">
                         <posx>60</posx>
@@ -858,8 +843,7 @@
                         <width>45</width>
                         <aspectratio>keep</aspectratio>
                         <height>45</height>
-                        <texture>$VAR[WatchedIconVar]</texture>
-                        <colordiffuse>grey</colordiffuse>
+                        <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                     </control>
                     <control type="image">
                         <posx>60</posx>
