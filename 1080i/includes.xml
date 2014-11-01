@@ -180,9 +180,8 @@
             <control type="image">
                 <width>670</width>
                 <height>250</height>
-                <texture>views/tripanel/listselect_fo.png</texture>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                 <animation effect="fade" time="280" reversible="false">Focus</animation>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
             </control>
             <control type="image">
                 <width>670</width>
@@ -238,8 +237,7 @@
             <control type="image">
                 <width>670</width>
                 <height>250</height>
-                <texture border="6">views/addonwall_select.png</texture>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                 <animation effect="fade" time="0" reversible="false">Focus</animation>
             </control>
         </focusedlayout>
@@ -696,6 +694,8 @@
         <height>60</height>
         <textoffsetx>20</textoffsetx>
         <textoffsety>8</textoffsety>
+        <texturenofocus>-</texturenofocus>
+        <texturefocus>-</texturefocus>
         <aligny>top</aligny>
         <font>Font_Reg28</font>
         <textcolor>$VAR[SubTitleColorVar]</textcolor>
@@ -1128,11 +1128,8 @@
             <posy>1002</posy>
             <width>1140</width>
             <height>22</height>
+            <animation effect="fade" start="100" end="30" time="0" condition="true">Conditional</animation>
             <info>Player.ProgressCache</info>
-            <texturebg>osd/info/osd_progress_back.png</texturebg>
-            <lefttexture border="1">osd/info/osd_progresscache_left.png</lefttexture>
-            <midtexture border="1">osd/info/osd_progresscache_mid.png</midtexture>
-            <righttexture border="1">osd/info/osd_progresscache_right.png</righttexture>
         </control>
         <control type="progress" id="23">
             <posx>390</posx>
@@ -1140,10 +1137,6 @@
             <width>1140</width>
             <height>22</height>
             <info>Player.Progress</info>
-            <texturebg>osd/info/osd_progress_back_cache.png</texturebg>
-            <lefttexture border="1">osd/info/osd_progress_left.png</lefttexture>
-            <midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
-            <righttexture border="1">osd/info/osd_progress_right.png</righttexture>
         </control>
         <control type="fadelabel">
             <posx>390</posx>
@@ -1283,11 +1276,8 @@
                 <posy>57</posy>
                 <width>1620</width>
                 <height>20</height>
+                <animation effect="fade" start="100" end="30" time="0" condition="true">Conditional</animation>
                 <info>Player.ProgressCache</info>
-                <texturebg>osd/info/osd_progress_back.png</texturebg>
-                <lefttexture border="1">osd/info/osd_progresscache_left.png</lefttexture>
-                <midtexture border="1">osd/info/osd_progresscache_mid.png</midtexture>
-                <righttexture border="1">osd/info/osd_progresscache_right.png</righttexture>
             </control>
             <control type="progress" id="23">
                 <posx>150</posx>
@@ -1295,11 +1285,6 @@
                 <width>1620</width>
                 <height>20</height>
                 <info>Player.Progress</info>
-                <texturebg>osd/info/osd_progress_back_cache.png</texturebg>
-                <lefttexture border="1">osd/info/osd_progress_left.png</lefttexture>
-                <midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
-                <righttexture border="1">osd/info/osd_progress_right.png</righttexture>
-                <overlaytexture>-</overlaytexture>
             </control>
             <control type="slider" id="87">
                 <posx>150</posx>
@@ -1307,7 +1292,10 @@
                 <width>1620</width>
                 <height>20</height>
                 <action>seek</action>
-            </control>
+        <texturesliderbar>-</texturesliderbar>
+        <textureslidernib>-</textureslidernib>
+        <textureslidernibfocus>-</textureslidernibfocus>
+                    </control>
             <control type="label">
                 <posx>135</posx>
                 <posy>45</posy>
@@ -1742,10 +1730,6 @@
                             <posy>330</posy>
                             <width>190</width>
                             <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
                             <info>ListItem.PercentPlayed</info>
                             <visible>!IsEmpty(ListItem.PercentPlayed) + !Stringcompare(ListItem.PercentPlayed,0)</visible>
                         </control>
@@ -1756,10 +1740,6 @@
                             <posy>330</posy>
                             <width>190</width>
                             <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
                             <info>ListItem.PercentPlayed</info>
                             <visible>!IsEmpty(ListItem.PercentPlayed) + !Stringcompare(ListItem.PercentPlayed,0)</visible>
                         </control>
@@ -1927,8 +1907,7 @@
         <control type="image">
             <width>435</width>
             <height>955</height>
-            <texture>views/tripanel/listselect_fo.png</texture>
-            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
         </control>
         <include>NextAiredItemLayout</include>
     </include>
