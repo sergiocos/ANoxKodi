@@ -194,35 +194,20 @@
         <texture fallback="flags/studios/default-studio.png">$INFO[VideoPlayer.Studio,flags/studios/,.png]</texture>
         <visible>!Skin.HasSetting(nostudioratingflags)</visible>
       </control>
-      <control type="progress" id="23">
-        <description>Progressbar</description>
+      <control type="progress" id="20">
         <posx>390</posx>
         <posy>62</posy>
         <width>1140</width>
         <height>22</height>
+        <animation effect="fade" start="100" end="30" time="0" condition="true">Conditional</animation>
         <info>Player.ProgressCache</info>
-        <texturebg>osd/info/osd_progress_back.png</texturebg>
-        <lefttexture>osd/info/osd_progresscache_left.png</lefttexture>
-        <midtexture>osd/info/osd_progresscache_mid.png</midtexture>
-        <righttexture>osd/info/osd_progresscache_right.png</righttexture>
-		<colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-        <overlaytexture>-</overlaytexture>
-        <visible>true</visible>
       </control>
-      <control type="progress" id="23">
-        <description>Progressbar</description>
+      <control type="progress" id="20">
         <posx>390</posx>
         <posy>62</posy>
         <width>1140</width>
         <height>22</height>
         <info>Player.Progress</info>
-        <texturebg>osd/info/osd_progress_back_cache.png</texturebg>
-        <lefttexture>osd/info/osd_progress_left.png</lefttexture>
-        <midtexture>osd/info/osd_progress_mid.png</midtexture>
-        <righttexture>osd/info/osd_progress_right.png</righttexture>
-		<colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-        <overlaytexture>-</overlaytexture>
-        <visible>true</visible>
       </control>
     </control>
          <control type="group" id="9002">
