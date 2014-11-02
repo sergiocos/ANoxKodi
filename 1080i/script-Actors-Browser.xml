@@ -307,15 +307,13 @@
                 <control type="image">
                     <width>780</width>
                     <height>330</height>
-                    <texture>dialogs/dialog_back.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[DialogColorVar]">dialogs/dialog_back.png</texture>
                 </control>
                 <control type="image">
                     <width>780</width>
                     <height>330</height>
-                    <texture>dialogs/dialog_back_shadow.png</texture>
+                    <texture colordiffuse="$VAR[AreaColorVar]">dialogs/dialog_back_shadow.png</texture>
                     <include>PanelGlowFade</include>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="image">

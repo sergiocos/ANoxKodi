@@ -7,8 +7,8 @@
     <controls>
         <control type="multiimage">
             <imagepath background="true">$VAR[MusicFanartVar]</imagepath>
-            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" reversible="false" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" reversible="false" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         </control>
         <include>CommonMediaPlayingBackground</include>
         <include>DialogBackFade</include>
@@ -17,8 +17,7 @@
                 <posy>472</posy>
                 <width>1920</width>
                 <height>608</height>
-                <texture>views/showcase_floor.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/showcase_floor.png</texture>
             </control>
             <control type="image">
                 <posx>-105</posx>

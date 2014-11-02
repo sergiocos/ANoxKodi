@@ -24,16 +24,14 @@
                 <posy>7</posy>
                 <width>1272</width>
                 <height>460</height>
-                <texture flipx="true">dialogs/scan_backg_shadow.png</texture>
+                <texture colordiffuse="$VAR[AreaColorVar]" flipx="true">dialogs/scan_backg_shadow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 <include>PanelGlowFade</include>
             </control>
             <control type="image">
                 <width>1292</width>
                 <height>474</height>
-                <texture flipx="true">dialogs/scrapersettings_back.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]" flipx="true">dialogs/scrapersettings_back.png</texture>
             </control>
             <control type="label">
                 <posx>267</posx>

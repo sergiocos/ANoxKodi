@@ -11,7 +11,7 @@
                 <width>1400</width>
                 <height>930</height>
                 <texture>wall/wall_bg_glow.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <colordiffuse colordiffuse="$VAR[AreaColorVar]">$VAR[AreaColorVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
             </control>
@@ -19,8 +19,7 @@
                 <left>260</left>
                 <width>1400</width>
                 <height>930</height>
-                <texture>wall/wall_bg.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
             </control>
             <control type="group">
                 <left>300</left>
@@ -31,16 +30,14 @@
                     <top>90</top>
                     <width>1042</width>
                     <height>167</height>
-                    <texture>info/guideinfo_panellines_livetv.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">info/guideinfo_panellines_livetv.png</texture>
                 </control>
                 <control type="image">
                     <left>1130</left>
                     <top>80</top>
                     <width>180</width>
                     <height>180</height>
-                    <texture>pvr/bg_channel_icon.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[DialogColorVar]">pvr/bg_channel_icon.png</texture>
                 </control>
                 <control type="image">
                     <left>1135</left>
@@ -145,21 +142,18 @@
                         <height>52</height>
                         <align>center</align>
                         <label>19165</label>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>
                     <control type="button" id="6">
                         <width>300</width>
                         <height>52</height>
                         <align>center</align>
                         <label>-</label>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>
                     <control type="button" id="7">
                         <width>300</width>
                         <height>52</height>
                         <align>center</align>
                         <label>186</label>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>
                 </control>
                 <control type="grouplist" id="9000">
@@ -180,7 +174,6 @@
                         <height>52</height>
                         <align>center</align>
                         <label>186</label>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>
                 </control>
             </control>
@@ -190,8 +183,8 @@
     <include name="PVRCommonBackground">
 		<control type="multiimage">
             <imagepath background="true">$VAR[LiveTVFanartVar]</imagepath>
-            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" reversible="false" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" reversible="false" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         </control>
         <control type="group">
             <include>Animation_OpenClose_Furniture</include>
@@ -219,8 +212,7 @@
                 <top>874</top>
                 <width>1920</width>
                 <height>206</height>
-                <texture>views/panel_spot.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/panel_spot.png</texture>
             </control>
             <include>Neon_Floor</include>
         </control>
@@ -283,15 +275,15 @@
 					<control type="radiobutton" id="28">
 						<description>Channel Groups</description>
 						<include>Objects_MediaMenuButtonIcons</include>
-						<textureradioon>special://skin/extras/BigIcons/Cabinet.png</textureradioon>
-						<textureradiooff>special://skin/extras/BigIcons/Cabinet.png</textureradiooff>
+						<textureradioon>special://skin/extras/icons/cabinet.png</textureradioon>
+						<textureradiooff>special://skin/extras/icons/cabinet.png</textureradiooff>
 						<label>-</label>
 					</control>
                     <control type="radiobutton" id="100">
 						<description>Channels</description>
 						<label>19019</label>
-						<textureradioon>special://skin/extras/BigIcons/Television.png</textureradioon>
-						<textureradiooff>special://skin/extras/BigIcons/Television.png</textureradiooff>
+						<textureradioon>special://skin/extras/icons/tv3.png</textureradioon>
+						<textureradiooff>special://skin/extras/icons/tv3.png</textureradiooff>
 						<include>Objects_MediaMenuButtonIcons</include>
 						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
 						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
@@ -300,8 +292,8 @@
 						<description>Guide</description>
                         <top>38</top>
                         <label>22020</label>
-                        <textureradioon>special://skin/extras/BigIcons/ButtonEPG.png</textureradioon>
-                        <textureradiooff>special://skin/extras/BigIcons/ButtonEPG.png</textureradiooff>
+                        <textureradioon>special://skin/extras/icons/ButtonEPG.png</textureradioon>
+                        <textureradiooff>special://skin/extras/icons/ButtonEPG.png</textureradiooff>
                         <include>Objects_MediaMenuButtonIcons</include>
                         <onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
 						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
@@ -310,8 +302,8 @@
                     <control type="radiobutton" id="102">
 						<description>Recordings</description>
                         <top>112</top>
-                        <textureradioon>special://skin/extras/BigIcons/ButtonRecord.png</textureradioon>
-                        <textureradiooff>special://skin/extras/BigIcons/ButtonRecord.png</textureradiooff>
+                        <textureradioon>special://skin/extras/icons/ButtonRecord.png</textureradioon>
+                        <textureradiooff>special://skin/extras/icons/ButtonRecord.png</textureradiooff>
                         <label>19163</label>
                         <include>Objects_MediaMenuButtonIcons</include>
 						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
@@ -321,8 +313,8 @@
                     <control type="radiobutton" id="103">
 						<description>Timers</description>
                         <top>150</top>
-                        <textureradioon>special://skin/extras/BigIcons/AlarmClock.png</textureradioon>
-                        <textureradiooff>special://skin/extras/BigIcons/AlarmClock.png</textureradiooff>
+                        <textureradioon>special://skin/extras/icons/alarm.png</textureradioon>
+                        <textureradiooff>special://skin/extras/icons/alarm.png</textureradiooff>
                         <label>19040</label>
                         <include>Objects_MediaMenuButtonIcons</include>
 						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
@@ -347,16 +339,16 @@
 					</control>
                     <control type="radiobutton" id="1664">
                         <label>31876</label>
-                        <textureradioon>special://skin/extras/BigIcons/Controlpanel.png</textureradioon>
-                        <textureradiooff>special://skin/extras/BigIcons/Controlpanel.png</textureradiooff>
+                        <textureradioon>special://skin/extras/icons/controlpanel.png</textureradioon>
+                        <textureradiooff>special://skin/extras/icons/controlpanel.png</textureradiooff>
                         <include>Objects_MediaMenuButtonIcons</include>
                         <onclick>SetFocus(50)</onclick>
                         <onclick>ActivateWindow(1128)</onclick>
                     </control>
 					<control type="radiobutton" id="327">
 						<label>Ext. Channel OSD</label>
-                        <textureradioon>special://skin/extras/BigIcons/Formatbullets.png</textureradioon>
-                        <textureradiooff>special://skin/extras/BigIcons/Formatbullets.png</textureradiooff>
+                        <textureradioon>special://skin/extras/icons/list2.png</textureradioon>
+                        <textureradiooff>special://skin/extras/icons/list2.png</textureradiooff>
 						<textwidth>330</textwidth>
 						<onclick>Skin.ToggleSetting(alternatetvosd)</onclick>
 						<selected>Skin.HasSetting(alternatetvosd)</selected>
@@ -1018,36 +1010,17 @@
 		<width>1800</width>
 		<height>1060</height>
 		<control type="image">
-			<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
 			<width>1800</width>
 			<height>1060</height>
-			<texture>wall/wall_bg.png</texture>
+			<texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
 		</control>
 		<control type="image">
 			<left>813</left>
 			<top>57</top>
 			<width>2</width>
 			<height>826</height>
-			<texture>views/tripanel/upright.png</texture>
-			<colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+			<texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/upright.png</texture>
 			<animation effect="fade" end="50" condition="true">Conditional</animation>
-		</control>
-		<control type="image">
-			<left>12</left>
-			<top>55</top>
-			<width>800</width>
-			<height>780</height>
-			<texture>views/listpanel_detailwide.png</texture>
-			<colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-			<visible>false</visible>
-		</control>
-		<control type="image">
-			<left>135</left>
-			<top>80</top>
-			<width>1530</width>
-			<height>2</height>
-			<texture>new_pvr/osd_back_pvr_line.png</texture>
-			<visible>false</visible>
 		</control>
 		<control type="label">
 			<left>80</left>
@@ -1088,8 +1061,7 @@
 					<top>3</top>
 					<width>975</width>
 					<height>59</height>
-					<texture>osd/osd_settings_buttonnf.png</texture>
-					<colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+					<texture colordiffuse="$VAR[AreaColorVar]">osd/osd_settings_buttonnf.png</texture>
 				</control>
 				<control type="label">
 					<left>55</left>
@@ -1338,10 +1310,9 @@
 			<width>725</width>
 			<height>1080</height>
             <control type="image">
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <width>725</width>
                 <height>1080</height>
-                <texture>dialogs/context_middle.png</texture>
+                <texture colordiffuse="$VAR[DialogColorVar]">dialogs/context_middle.png</texture>
             </control>
             <control type="group">
                 <left>55</left>
@@ -1381,8 +1352,7 @@
                 <top>75</top>
                 <width>670</width>
                 <height>60</height>
-                <texture>osd/osd_settings_buttonnf.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">osd/osd_settings_buttonnf.png</texture>
             </control>
             <control type="list" id="11">
                 <left>18</left>
@@ -1401,8 +1371,7 @@
                         <top>53</top>
                         <width>670</width>
                         <height>60</height>
-                        <texture>osd/osd_settings_buttonnf.png</texture>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[AreaColorVar]">osd/osd_settings_buttonnf.png</texture>
                     </control>
                     <control type="label">
                         <left>35</left>

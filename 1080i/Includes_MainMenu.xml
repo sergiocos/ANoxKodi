@@ -496,8 +496,7 @@
             <posy>453</posy>
             <width>1920</width>
             <height>225</height>
-            <texture>home/homemenu_overlay.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">home/homemenu_overlay.png</texture>
             <visible>Skin.HasSetting(glasshome)</visible>
         </control>
     </include>
@@ -516,13 +515,10 @@
         <hitrect x="-238" y="475" w="2400" h="130" />
         <onleft>9000</onleft>
         <onright>9000</onright>
-        <onup condition="Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</onup>
-        <onup condition="Skin.HasSetting(lowermainmenu)  + !Control.IsVisible(4444) + Control.IsVisible(4445)">4445</onup>
-        <onup condition="Skin.HasSetting(lowermainmenu)  + !Control.IsVisible(4444) + !Control.IsVisible(4445)">SetFocus(9000)</onup>
-        <onup condition="!Skin.HasSetting(lowermainmenu) + Control.IsVisible(4445)">4445</onup>
-        <onup condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(4445)">SetFocus(9000)</onup>
+        <onup condition="Control.IsVisible(4444)">4444</onup>
+        <onup condition="!Control.IsVisible(4444) + Control.IsVisible(4445)">4445</onup>
+        <onup condition="!Control.IsVisible(4444) + !Control.IsVisible(4445)">SetFocus(9000)</onup>
         <ondown>9010</ondown>
-        <ondown condition="IsEmpty(Window(home).Property(DisableWidgets)) + !IntegerGreaterThan(Container(9010).NumItems,0) + !Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>
         <scrolltime tween="quadratic">300</scrolltime>
         <include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
         <include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>

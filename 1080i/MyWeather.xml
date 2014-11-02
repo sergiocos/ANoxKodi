@@ -14,8 +14,8 @@
     <controls>
         <control type="multiimage">
             <imagepath background="true">$VAR[WeatherFanartVar]</imagepath>
-            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" reversible="false" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" reversible="false" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         </control>
         <control type="group">
             <include>Animation_OpenClose_Furniture</include>
@@ -67,8 +67,7 @@
                     <posy>82</posy>
                     <width>1695</width>
                     <height>1012</height>
-                    <texture>wall/wall_bg_glow.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <include>PanelGlowFade</include>
                     <animation effect="fade" time="350">VisibleChange</animation>
@@ -78,16 +77,14 @@
                     <posy>82</posy>
                     <width>1695</width>
                     <height>1012</height>
-                    <texture>wall/wall_bg.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
                 </control>
                 <control type="image">
                     <posx>960</posx>
                     <posy>136</posy>
                     <width>2</width>
                     <height>789</height>
-                    <texture>dialogs/weatherline.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">dialogs/weatherline.png</texture>
                 </control>
                 <control type="image">
                     <posx>112</posx>
@@ -1408,7 +1405,6 @@
                                 <texture>common/black.png</texture>
                                 <bordertexture border="15">common/white.png</bordertexture>
                                 <bordersize>15</bordersize>
-                                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                                 <visible>Control.HasFocus(5)</visible>
                             </control>
                             <control type="multiimage">

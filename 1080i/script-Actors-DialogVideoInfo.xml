@@ -49,8 +49,7 @@
                 <posx>729</posx>
                 <width>1192</width>
                 <height>1080</height>
-                <texture>info/info_rightpaneltop.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]">info/info_rightpaneltop.png</texture>
             </control>
             <!--Buttons-->
             <control type="group">
@@ -112,8 +111,7 @@
                         <posy>90</posy>
                         <width>1042</width>
                         <height>854</height>
-                        <texture>info/info_panellines_movie2.png</texture>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[AreaColorVar]">info/info_panellines_movie2.png</texture>
                     </control>
                     <control type="group">
                         <animation type="WindowOpen" reversible="false">
@@ -247,8 +245,7 @@
                             <posy>90</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture>info/infopanel_line.png</texture>
-                            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[AreaColorVar]">info/infopanel_line.png</texture>
                         </control>
                         <control type="grouplist">
                             <posx>-25</posx>
@@ -631,8 +628,7 @@
                             <posy>872</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture>info/infopanel_line.png</texture>
-                            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[AreaColorVar]">info/infopanel_line.png</texture>
                         </control>
                         <control type="grouplist">
                             <posx>-10</posx>
@@ -893,8 +889,7 @@
                             <posy>943</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture>info/infopanel_line.png</texture>
-                            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[AreaColorVar]">info/infopanel_line.png</texture>
                         </control>
                     </control>
                 </control>
@@ -1120,8 +1115,7 @@
                     <posx>709</posx>
                     <width>40</width>
                     <height>1080</height>
-                    <texture>common/topbar_top.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">common/topbar_top.png</texture>
                     <include>TopbarPulseAnimationLeft</include>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
@@ -1160,10 +1154,9 @@
                 <posx>709</posx>
                 <width>40</width>
                 <height>1080</height>
-                <texture>common/topbar_down.png</texture>
+                <texture colordiffuse="$VAR[AreaColorVar]">common/topbar_down.png</texture>
                 <animation effect="fade" time="320" delay="408">Visible</animation>
                 <animation effect="fade" time="80">Hidden</animation>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 <include>TopbarPulseAnimationRight</include>
                 <visible>!Skin.HasSetting(DisableGlowbar) + IsEmpty(Window(movieinformation).Property(FanartZoom))</visible>
             </control>
