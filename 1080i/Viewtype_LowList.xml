@@ -267,29 +267,6 @@
                     </control>
                 </control>
             </control>
-            <control type="group">
-                <posx>38</posx>
-                <posy>232</posy>
-                <visible>Player.HasVideo</visible>
-                <animation effect="slide" tween="cubic" easing="inout" time="1040" start="-1200,0" end="0,0" delay="800">Visible</animation>
-                <animation effect="slide" tween="cubic" easing="inout" time="1040" start="-1200,0" end="0,0" delay="800">WindowOpen</animation>
-                <animation effect="slide" end="0,-165" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
-                <include>Animation_CommonFade</include>
-                <control type="image">
-                    <posx>405</posx>
-                    <width>1110</width>
-                    <height>480</height>
-                    <texture>common/black.png</texture>
-                    <bordertexture colordiffuse="$VAR[AreaColorVar]" border="15">home/nowplaying/OverlayDialogBackground.png</bordertexture>
-                    <bordersize>15</bordersize>
-                </control>
-                <control type="videowindow">
-                    <posx>420</posx>
-                    <posy>15</posy>
-                    <width>1080</width>
-                    <height>450</height>
-                </control>
-            </control>
             <control type="image">
                 <posx>42</posx>
                 <posy>235</posy>
@@ -486,23 +463,13 @@
                 </itemlayout>
                 <focusedlayout height="66" width="825" condition="![Skin.HasSetting(lowlistbanner) + Container.Content(tvshows)]">
                     <control type="image">
-                        <posx>1</posx>
-                        <posy>64</posy>
-                        <width>795</width>
-                        <height>1</height>
-                        <texture>views/lowlistpanel_line.png</texture>
-                    </control>
-					<!--sergiu: bara custom-->				
-                    <control type="image">
-						<posx>0</posx>
-						<posy>-10</posy>
-                        <width>814</width>
-                        <height>81</height>
-                        <texture>views/lowlistpanel_selectbar.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <posy>-20</posy>
+                        <width>830</width>
+                        <height>110</height>
+                <texture border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texture>
                         <include>PanelGlowFade</include>
                         <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(511)">Conditional</animation>
-                    </control> <!--sergiu: bara custom end code, also deleted listselect_fo.png code-->
+                    </control>
                     <control type="label">
                         <posx>30</posx>
                         <width>645</width>
