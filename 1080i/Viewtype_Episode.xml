@@ -90,8 +90,7 @@
                     <width>540</width>
                     <height>800</height>
                     <align>center</align>
-                    <texture colordiffuse="$VAR[AreaColorVar]" background="true">thumbs/thumb_glass_shadow.png</texture>
-                    <bordersize>18</bordersize>
+                    <texture colordiffuse="$VAR[AreaColorVar]">thumbs/thumb_glass_shadow.png</texture>
                     <include>PanelGlowFade</include>
                     <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
@@ -131,7 +130,7 @@
                 <aligny>bottom</aligny>
                 <label>$VAR[EpisodeTitleVar]</label>
                 <font>Font_Reg42_Caps</font>
-                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
             </control>
             <control type="label">
                 <posx>330</posx>
@@ -179,7 +178,7 @@
                     <aligny>bottom</aligny>
                     <label>$VAR[EpisodeTitleVar]</label>
                     <font>Font_Reg42_Caps</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
                     <scrollspeed>40</scrollspeed>
                 </control>
                 <control type="label">
@@ -216,7 +215,7 @@
                 <aligny>bottom</aligny>
                 <label>$VAR[EpisodeTitleVar]</label>
                 <font>Font_Reg42_Caps</font>
-                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
             </control>
             <control type="label">
                 <posx>330</posx>
@@ -398,7 +397,7 @@
                     <aligny>bottom</aligny>
                     <label>$INFO[ListItem.Title]</label>
                     <font>Font_Reg42_Caps</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
                     <scrollspeed>40</scrollspeed>
                     <visible>!IsEmpty(ListItem.Title)</visible>
                 </control>
@@ -467,7 +466,7 @@
                     <aligny>bottom</aligny>
                     <label>$INFO[ListItem.Title]</label>
                     <font>Font_Reg42_Caps</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
                     <scrollspeed>40</scrollspeed>
                     <visible>!IsEmpty(ListItem.Title)</visible>
                 </control>

@@ -47,7 +47,7 @@
                 <height>60</height>
                 <label>$LOCALIZE[31687]</label>
                 <font>Font_Bold33</font>
-                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
             </control>
             <control type="grouplist" id="450">
                 <posx>375</posx>
@@ -110,13 +110,6 @@
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(mainmenufixedlist)</onclick>
                     <selected>!Skin.HasSetting(mainmenufixedlist)</selected>
-                    <visible>Stringcompare(Window.Property(actualItem),MainMenu)</visible>
-                </control>
-                <control type="radiobutton" id="457">
-                    <label>31814</label>
-                    <include>Objects_CommonSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(showsubmenu)</onclick>
-                    <selected>Skin.HasSetting(showsubmenu)</selected>
                     <visible>Stringcompare(Window.Property(actualItem),MainMenu)</visible>
                 </control>
                 <control type="button" id="470">

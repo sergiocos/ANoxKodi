@@ -434,7 +434,7 @@
                 <width>32</width>
                 <height>40</height>
                 <aspectratio>keep</aspectratio>
-                <texture colordiffuse="$VAR[TitleColorVar]">breadcrumbs/items.png</texture>
+                <texture colordiffuse="$VAR[FontColorVar]">breadcrumbs/items.png</texture>
                 <include>Animation_WindowFade200</include>
             </control>
             <control type="label">
@@ -451,7 +451,7 @@
                 <width>34</width>
                 <height>36</height>
                 <aspectratio>keep</aspectratio>
-                <texture colordiffuse="$VAR[TitleColorVar]">breadcrumbs/pages.png</texture>
+                <texture colordiffuse="$VAR[FontColorVar]">breadcrumbs/pages.png</texture>
                 <include>Animation_WindowFade200</include>
                 <visible>!Stringcompare(Container.NumPages,1)</visible>
             </control>
@@ -752,7 +752,7 @@
                         <width>420</width>
                         <height>22</height>
                         <label>$VAR[FanartPanelDetail1Var]</label>
-                        <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                     </control>
                     <control type="label">
                         <width>300</width>
@@ -764,7 +764,7 @@
                         <width>420</width>
                         <height>22</height>
                         <label>$VAR[FanartPanelDetail3Var]</label>
-                        <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                     </control>
                     <control type="label">
                         <width>300</width>
@@ -776,7 +776,7 @@
                         <width>420</width>
                         <height>22</height>
                         <label>$VAR[FanartPanelDetail5Var]</label>
-                        <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                     </control>
                     <control type="label">
                         <width>300</width>
@@ -793,7 +793,7 @@
                         <width>420</width>
                         <height>22</height>
                         <label>$VAR[FanartPanelDetail2Var]</label>
-                        <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                     </control>
                     <control type="label">
                         <width>300</width>
@@ -805,7 +805,7 @@
                         <width>420</width>
                         <height>22</height>
                         <label>$VAR[FanartPanelDetail4Var]</label>
-                        <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                     </control>
                     <control type="fadelabel">
                         <width>300</width>
@@ -827,7 +827,7 @@
                         <width>420</width>
                         <height>22</height>
                         <label>$VAR[FanartPanelDetail6Var]</label>
-                        <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                     </control>
                     <control type="label">
                         <width>300</width>
@@ -883,7 +883,7 @@
                             <height>22</height>
                             <font>Font_Reg28</font>
                             <label>$VAR[FanartPanelDetail1Var]</label>
-                            <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
                         </control>
                         <control type="label">
                             <aligny>top</aligny>
@@ -898,7 +898,7 @@
                             <font>Font_Reg28</font>
                             <height>22</height>
                             <label>$VAR[FanartPanelDetail2Var]</label>
-                            <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
                         </control>
                         <control type="label">
                             <width>420</width>
@@ -913,7 +913,7 @@
                             <height>22</height>
                             <font>Font_Reg28</font>
                             <label>$VAR[PosterPanelDetail3Var]</label>
-                            <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
                         </control>
                         <control type="label">
                             <width>420</width>
@@ -928,7 +928,7 @@
                             <height>22</height>
                             <font>Font_Reg28</font>
                             <label>$VAR[FanartPanelDetail4Var]</label>
-                            <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
                         </control>
                         <control type="fadelabel">
                             <width>422</width>
@@ -943,7 +943,7 @@
                             <height>22</height>
                             <font>Font_Reg28</font>
                             <label>$VAR[PosterPanelDetail5Var]</label>
-                            <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
                         </control>
                         <control type="label">
                             <width>300</width>
@@ -958,7 +958,7 @@
                             <height>22</height>
                             <font>Font_Reg28</font>
                             <label>$VAR[PosterPanelDetail6Var]</label>
-                            <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
                         </control>
                         <control type="label">
                             <width>420</width>
@@ -973,7 +973,7 @@
                             <height>22</height>
                             <font>Font_Reg28</font>
                             <label>$VAR[PosterPanelDetail7Var]</label>
-                            <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
                         </control>
                         <control type="label">
                             <width>420</width>
@@ -1113,25 +1113,6 @@
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
                     </control>
-                </control>
-            </control>
-            <control type="group">
-                <posx>915</posx>
-                <posy>75</posy>
-                <animation effect="slide" end="-348,-22" reversible="false" condition="StringCompare(Control.GetLabel(4420),poster) | StringCompare(Control.GetLabel(4420),extrathumbs)">Conditional</animation>
-                <animation effect="zoom" center="auto" start="100" end="92" time="480" tween="back" reversible="false" condition="StringCompare(Control.GetLabel(4420),poster) | StringCompare(Control.GetLabel(4420),extrathumbs)">Conditional</animation>
-                <animation effect="slide" end="-358,-38" reversible="false" condition="StringCompare(Control.GetLabel(4420),fourthumbs)">Conditional</animation>
-                <animation effect="zoom" center="auto" start="100" end="88" time="480" tween="back" reversible="false" condition="StringCompare(Control.GetLabel(4420),fourthumbs)">Conditional</animation>
-                <visible>Player.HasVideo</visible>
-                <animation effect="fade" end="100" time="0" delay="880">Visible</animation>
-                <control type="image">
-                    <width>786</width>
-                    <height>442</height>
-                    <texture>common/black.png</texture>
-                </control>
-                <control type="videowindow" id="2">
-                    <width>786</width>
-                    <height>442</height>
                 </control>
             </control>
         </control>

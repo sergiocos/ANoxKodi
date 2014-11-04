@@ -22,11 +22,6 @@
             <onfocus>SetProperty(Widget1Content,$INFO[Container(9000).ListItem.Property(WidgetContent)],home)</onfocus>
             <onfocus>SetProperty(Widget2Content,$INFO[Container(9000).ListItem.Property(Widget2Content)],home)</onfocus>
             <onfocus>SetFocus(9000)</onfocus>
-            <onleft>SetFocus(9000)</onleft>
-            <onright>SetFocus(9000)</onright>
-            <ondown>SetFocus(9000)</ondown>
-            <onup>SetFocus(9000)</onup>
-            <onclick>SetFocus(9000)</onclick>
         </control>
         <control type="button" id="9006">
             <include>HiddenObject</include>
@@ -48,10 +43,6 @@
             <onfocus>SetProperty(WidgetType,$INFO[Control.GetLabel(4325)],home)</onfocus>
             <onfocus condition="Substring(Control.GetLabel(4325),movie) + IsEmpty(Container(6010).ListItem.DBID)">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(6010).ListItem.Property(ID)],imdbid=$INFO[Container(6010).ListItem.Property(imdbid)])</onfocus>
             <onfocus>RunScript(script.home,container=6010,focuscontrol=5055)</onfocus>
-        </control>
-        <control type="button" id="9011">
-            <include>HiddenObject</include>
-            <onfocus>SetFocus(9000)</onfocus>
         </control>
         <include>MainMenuCommonContent</include>
         <!--Fanart-->
@@ -131,7 +122,6 @@
             </control>
         </control>
         <control type="group">
-            <posy>260</posy>
             <animation type="WindowOpen" reversible="false" condition="Window.Previous(Startup)">
                 <effect type="zoom" start="150" end="100" center="960,540" delay="2000" time="800" tween="cubic" />
                 <effect type="fade" delay="2000" start="50" end="100" time="240" />
@@ -145,8 +135,8 @@
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
             <control type="group" id="8995">
+                <posy>260</posy>
                 <posx>22</posx>
-                <posy>-0</posy>
                 <control type="group">
                     <visible>Player.HasAudio</visible>
                     <animation type="Visible">
@@ -158,14 +148,7 @@
                         <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
                     </animation>
                     <control type="group">
-                        <animation effect="zoom" end="32" center="-20,700" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
-                        <control type="image">
-                            <posy>656</posy>
-                            <width>423</width>
-                            <height>420</height>
-                            <texture colordiffuse="$VAR[AreaColorVar]">thumbs/cd_shadow_glow.png</texture>
-                            <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                        </control>
+                        <animation effect="zoom" end="34" center="-30,700" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
                         <control type="image">
                             <animation effect="slide" start="-150" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
                             <animation type="WindowClose">
@@ -203,7 +186,7 @@
                     <control type="label">
                         <posy>695</posy>
                         <label>$INFO[MusicPlayer.Artist]</label>
-                        <font>Font_Reg36_Caps</font>
+                        <font>Font_Reg38</font>
                         <posx>170</posx>
                         <width>700</width>
                         <height>38</height>
@@ -239,148 +222,179 @@
                     </control>
                 </control>
                 <control type="group" id="8994">
-                    <posx>-8</posx>
-                    <posy>-22</posy>
-                    <visible>Player.HasVideo</visible>
-                    <include>Animation_CommonFade</include>
                     <control type="group">
-                        <animation effect="zoom" end="32" center="-20,720" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
-                        <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(episodes)</visible>
+                        <visible>Player.HasVideo</visible>
+                        <include>Animation_CommonFade</include>
                         <control type="image">
-                            <posx>108</posx>
-                            <posy>710</posy>
-                            <width>330</width>
-                            <height>330</height>
+                            <posx>-160</posx>
+                            <posy>700</posy>
+                            <width>250</width>
+                            <height>250</height>
                             <aligny>top</aligny>
                             <aspectratio>keep</aspectratio>
                             <texture background="true" fallback="common/cdart/bd.png">$INFO[Player.Art(discart)]</texture>
                             <fadetime>300</fadetime>
                             <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+                            <include>Animation_CommonFade</include>
+                            <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos)</visible>
                         </control>
                         <control type="image">
-                            <posx>30</posx>
-                            <posy>686</posy>
-                            <width>260</width>
-                            <height>390</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$VAR[PlayerPosterVar]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control>
-                        <control type="image">
-                            <posx>10.5</posx>
-                            <posy>666.5</posy>
-                            <width>299</width>
-                            <height>429</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <animation effect="zoom" end="32" center="-20,720" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
-                        <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
-                        <control type="image">
-                            <posx>15</posx>
-                            <posy>723</posy>
-                            <width>498</width>
-                            <height>318</height>
-                            <aspectratio>scale</aspectratio>
-                            <texture>common/bgcolor.png</texture>
-                            <animation effect="fade" end="30" condition="true">conditional</animation>
-                            <bordersize>9</bordersize>
-                        </control>
-                        <control type="image">
-                            <posx>24</posx>
-                            <posy>732</posy>
-                            <width>480</width>
-                            <height>300</height>
+                            <posx>-70</posx>
+                            <posy>690</posy>
+                            <width>200</width>
+                            <height>170</height>
+                            <aligny>top</aligny>
                             <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideo.png">$INFO[VideoPlayer.Cover]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                            <visible>!IsEmpty(VideoPlayer.Cover)</visible>
+                            <texture background="true">$INFO[Player.Art(tvshow.characterart)]</texture>
+                            <fadetime>300</fadetime>
+                            <visible>VideoPlayer.Content(episodes)</visible>
+                            <include>Animation_CommonFade</include>
                         </control>
-                    </control>
-                    <control type="label">
-                        <aligny>top</aligny>
-                        <posx>160</posx>
-                        <posy>710</posy>
-                        <height>50</height>
-                        <label>$VAR[NowPlayingPlayLabelVar]</label>
-                        <font>Font_Reg28</font>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>160</posx>
-                        <posy>740</posy>
-                        <width>800</width>
-                        <aligny>top</aligny>
-                        <height>50</height>
-                        <label>$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.ChannelName,, - ]$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</label>
-                        <font>Font_Reg37_Caps</font>
-                        <textcolor>white3</textcolor>
-                        <wrapmultiline>true</wrapmultiline>
-                    </control>
-                    <control type="label">
-                        <aligny>top</aligny>
-                        <posx>160</posx>
-                        <posy>780</posy>
-                        <height>50</height>
-                        <label>$INFO[VideoPlayer.Genre]</label>
-                        <font>Font_Reg25</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="progress">
-                        <posx>160</posx>
-                        <posy>815</posy>
-                        <width>200</width>
-                        <height>7</height>
-                        <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
-                        <midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
-                        <aligny>bottom</aligny>
-                        <info>Player.Progress</info>
+                        <control type="group">
+                            <animation effect="zoom" end="40" center="-70,675" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
+                            <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
+                            <include>Animation_CommonFade</include>
+                            <control type="image">
+                                <posx>7</posx>
+                                <posy>701</posy>
+                                <width>498</width>
+                                <height>318</height>
+                                <aspectratio>scale</aspectratio>
+                                <texture>common/bgcolor.png</texture>
+                                <animation effect="fade" end="30" condition="true">conditional</animation>
+                                <bordersize>9</bordersize>
+                            </control>
+                            <control type="image">
+                                <posx>16</posx>
+                                <posy>710</posy>
+                                <width>480</width>
+                                <height>300</height>
+                                <aspectratio>scale</aspectratio>
+                                <texture fallback="DefaultVideo.png">$INFO[VideoPlayer.Cover]</texture>
+                                <fadetime>IconCrossfadeTime</fadetime>
+                                <visible>!IsEmpty(VideoPlayer.Cover)</visible>
+                            </control>
+                        </control>
+                        <control type="label">
+                            <aligny>top</aligny>
+                            <posx>127</posx>
+                            <posy>701</posy>
+                            <height>50</height>
+                            <label>$INFO[VideoPlayer.Premiered]$INFO[VideoPlayer.Year]$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.Rating,  •  ]</label>
+                            <font>Font_Reg25</font>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
+                        </control>
+                        <control type="label">
+                            <posx>125</posx>
+                            <posy>726</posy>
+                            <width>800</width>
+                            <aligny>top</aligny>
+                            <height>50</height>
+                            <label>$INFO[VideoPlayer.Season]$INFO[VideoPlayer.Episode,x,: ][UPPERCASE]$INFO[VideoPlayer.Title][/UPPERCASE]</label>
+                            <font>Font_Reg38</font>
+                            <textcolor>white3</textcolor>
+                            <wrapmultiline>true</wrapmultiline>
+                        </control>
+                        <control type="label">
+                            <aligny>top</aligny>
+                            <posx>127</posx>
+                            <posy>768</posy>
+                            <height>50</height>
+                            <label>$INFO[VideoPlayer.Genre]$INFO[VideoPlayer.TVShowTitle]</label>
+                            <font>Font_Reg25</font>
+                            <textcolor>grey2</textcolor>
+                        </control>
+                        <control type="progress">
+                            <posx>125</posx>
+                            <posy>803</posy>
+                            <width>200</width>
+                            <height>7</height>
+                            <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                            <midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
+                            <aligny>bottom</aligny>
+                            <info>Player.Progress</info>
+                        </control>
                     </control>
                 </control>
                 <control type="grouplist">
                     <visible>Player.HasAudio</visible>
                     <posx>1055</posx>
-                    <posy>702</posy>
+                    <posy>700</posy>
                     <width>950</width>
                     <height>1080</height>
                     <orientation>vertical</orientation>
-                    <itemgap>4</itemgap>
-                    <!--
                     <control type="label">
-                        <width>900</width>
+                        <width>830</width>
                         <align>right</align>
-                        <height>27</height>
-                        <label>[UPPERCASE]$LOCALIZE[31889][/UPPERCASE]</label>
-                        <font>Font_Reg25</font>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <height>26</height>
+                        <label>[B][UPPERCASE]$LOCALIZE[31889][/UPPERCASE][/B]</label>
+                        <font>Font_Reg23</font>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                         <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
-                    </control>-->
-                    <control type="label">
-                        <width>830</width>
-                        <height>28</height>
-                        <align>right</align>
-                        <label>$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]]$INFO[MusicPlayer.Offset(1).Duration, - ,][/COLOR]</label>
-                        <font>Font_Reg25</font>
                     </control>
                     <control type="label">
                         <width>830</width>
-                        <height>28</height>
+                        <height>26</height>
                         <align>right</align>
-                        <label>$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]]$INFO[MusicPlayer.Offset(2).Duration, - ,][/COLOR]</label>
-                        <font>Font_Reg25</font>
+                        <label>$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(1).Duration, - ,][/COLOR]</label>
+                        <font>Font_Reg23</font>
                     </control>
                     <control type="label">
                         <width>830</width>
-                        <height>28</height>
+                        <height>26</height>
                         <align>right</align>
-                        <label>$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]]$INFO[MusicPlayer.Offset(3).Duration, - ,][/COLOR]</label>
-                        <font>Font_Reg25</font>
+                        <label>$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(2).Duration, - ,][/COLOR]</label>
+                        <font>Font_Reg23</font>
+                    </control>
+                    <control type="label">
+                        <width>830</width>
+                        <height>26</height>
+                        <align>right</align>
+                        <label>$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(3).Duration, - ,][/COLOR]</label>
+                        <font>Font_Reg23</font>
                     </control>
                 </control>
+                <control type="image">
+                    <posx>1570</posx>
+                    <posy>680</posy>
+                    <width>300</width>
+                    <height>140</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture fallback="DefaultVideo.png">$VAR[PlayerLogoVar]</texture>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
+                    <visible>!IsEmpty(VideoPlayer.Cover)</visible>
+                </control>
+                <!--
+                <control type="grouplist">
+                    <visible>VideoPlayer.Content(movies)</visible>
+                    <posx>825</posx>
+                    <posy>710</posy>
+                    <width>855</width>
+                    <height>1080</height>
+                    <orientation>vertical</orientation>
+                    <control type="label">
+                        <width>830</width>
+                        <height>26</height>
+                        <align>right</align>
+                        <label>$INFO[VideoPlayer.Genre]  [COLOR $VAR[FontColorVar]]  -  Genre[/COLOR]</label>
+                        <font>Font_Reg23</font>
+                    </control>
+                    <control type="label">
+                        <width>830</width>
+                        <height>26</height>
+                        <align>right</align>
+                        <label>$INFO[VideoPlayer.Director]  [COLOR $VAR[FontColorVar]]  -  Director[/COLOR]</label>
+                        <font>Font_Reg23</font>
+                    </control>
+                    <control type="label">
+                        <width>830</width>
+                        <height>26</height>
+                        <align>right</align>
+                        <label>$INFO[VideoPlayer.Writer]  [COLOR $VAR[FontColorVar]]  -  Writer[/COLOR]</label>
+                        <font>Font_Reg23</font>
+                    </control>
+                </control>-->
                 <control type="grouplist">
                     <visible>VideoPlayer.Content(LiveTV)</visible>
                     <posx>1055</posx>
@@ -389,26 +403,26 @@
                     <height>1080</height>
                     <orientation>vertical</orientation>
                     <itemgap>4</itemgap>
-                <control type="textbox">
-                    <width>830</width>
-                    <height>77</height>
-                    <label fallback="31003">$INFO[VideoPlayer.Plot]</label>
-                    <font>Font_Reg25</font>
-                    <autoscroll delay="5000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
-                </control>
+                    <control type="textbox">
+                        <width>830</width>
+                        <height>77</height>
+                        <label fallback="31003">$INFO[VideoPlayer.Plot]</label>
+                        <font>Font_Reg25</font>
+                        <align>right</align>
+                        <autoscroll delay="5000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    </control>
                     <control type="label">
                         <width>830</width>
                         <height>28</height>
                         <align>right</align>
-                        <label>Next: $INFO[VideoPlayer.NextTitle,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]]$INFO[VideoPlayer.NextStartTime,, - ]$INFO[VideoPlayer.NextEndTime]$INFO[VideoPlayer.NextDuration, (,)][/COLOR]</label>
+                        <label>Next: $INFO[VideoPlayer.NextTitle,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[VideoPlayer.NextStartTime,, - ]$INFO[VideoPlayer.NextEndTime]$INFO[VideoPlayer.NextDuration, (,)][/COLOR]</label>
                         <font>Font_Reg25</font>
                     </control>
-
                 </control>
             </control>
             <control type="textbox">
                 <posx>550</posx>
-                <posy>20</posy>
+                <posy>280</posy>
                 <width>570</width>
                 <height>311</height>
                 <aligny>top</aligny>
@@ -419,7 +433,7 @@
             </control>
         </control>
         <control type="group">
-            <posy>610</posy>
+            <posy>602</posy>
             <visible>!Skin.HasSetting(DisableRSS)</visible>
             <visible>!Player.HasMedia</visible>
             <visible>System.getbool(lookandfeel.enablerssfeeds) | Skin.HasSetting(ActorBirthdayRSS)</visible>
@@ -438,7 +452,7 @@
                 <effect type="fade" start="100" end="0" time="240" />
                 <effect type="slide" end="0,-40" time="240" tween="cubic" easing="inout" />
             </animation>
-            <visible>[!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]] | Skin.HasSetting(rsshomelow)</visible>
+            <visible>!Control.HasFocus(9010) | Skin.HasSetting(rsshomelow)</visible>
             <control type="group">
                 <animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 <control type="image">
@@ -457,8 +471,8 @@
                         <height>40</height>
                         <textoffsetx>5</textoffsetx>
                         <label>[COLOR=C0C0C0C0][B]$INFO[Window(home).Property(NextAired.1.Label),,  ][/B][/COLOR]$INFO[Window(home).Property(NextAired.1.AirTime),,  ]$INFO[Window(home).Property(NextAired.1.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.1.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.1.Status),(,)  ]$INFO[Window(home).Property(NextAired.2.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.2.AirTime),,  ]$INFO[Window(home).Property(NextAired.2.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.2.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.2.Status),(,)  ]$INFO[Window(home).Property(NextAired.3.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.3.AirTime),,  ]$INFO[Window(home).Property(NextAired.3.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.3.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.3.Status),(,)  ]$INFO[Window(home).Property(NextAired.4.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.4.AirTime),,  ]$INFO[Window(home).Property(NextAired.4.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.4.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.4.Status),(,)  ]$INFO[Window(home).Property(NextAired.5.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.5.AirTime),,  ]$INFO[Window(home).Property(NextAired.5.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.5.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.5.Status),(,)  ]$INFO[Window(home).Property(NextAired.6.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.6.AirTime),,  ]$INFO[Window(home).Property(NextAired.6.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.6.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.6.Status),(,)  ]$INFO[Window(home).Property(NextAired.7.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.7.AirTime),,  ]$INFO[Window(home).Property(NextAired.7.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.7.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.7.Status),(,)  ]$INFO[Window(home).Property(NextAired.8.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.8.AirTime),,  ]$INFO[Window(home).Property(NextAired.8.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.8.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.8.Status),(,)  ]$INFO[Window(home).Property(NextAired.9.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.9.AirTime),,  ]$INFO[Window(home).Property(NextAired.9.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.9.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.9.Status),(,)  ]$INFO[Window(home).Property(NextAired.10.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.10.AirTime),,  ]$INFO[Window(home).Property(NextAired.10.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.10.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.10.Status),(,)  ,    •    ][COLOR=C0C0C0C0][B]$INFO[Window(Home).Property(NextAired.NextTitle),,  ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.AirTime),, • ]$INFO[Window(Home).Property(NextAired.NextDate),,  •    ][COLOR=C0C0C0C0][B]$INFO[Window(Home).Property(NextAired.LatestTitle),,  ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.Status),, • ]$INFO[Window(Home).Property(NextAired.LatestDate)]</label>
-                        <font>Font_Reg26</font>
-                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                        <font>Font_Reg25</font>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                         <scroll>true</scroll>
                         <wrapmultiline>false</wrapmultiline>
                         <scrollspeed>40</scrollspeed>
@@ -469,12 +483,12 @@
                         <width>1920</width>
                         <height>50</height>
                         <aligny>center</aligny>
-                        <font>Font_Reg26</font>
-                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                        <font>Font_Reg25</font>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                         <urlset>1</urlset>
                         <headlinecolor>grey</headlinecolor>
-                        <highlightcolor>$VAR[HomeMenuWidgetTextVar]</highlightcolor>
-                        <titlecolor>$VAR[HomeMenuWidgetTextVar]</titlecolor>
+                        <highlightcolor>$VAR[FontColorVar]</highlightcolor>
+                        <titlecolor>$VAR[FontColorVar]</titlecolor>
                         <scrollspeed>40</scrollspeed>
                         <visible>!Skin.HasSetting(ActorBirthdayRSS)</visible>
                     </control>
@@ -626,7 +640,7 @@
         </control>-->
         <control type="group">
             <control type="group">
-                <posy>472</posy>
+                <posy>466</posy>
                 <control type="list" id="43260">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -648,7 +662,7 @@
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <control type="image">
                         <posy>0</posy>
-                        <width>794</width>
+                        <width>664</width>
                         <height>87</height>
                         <texture colordiffuse="$VAR[ExtendedColorVar]" flipy="true" flipx="true">home/timepanel_mid_shadow.png</texture>
                         <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
@@ -658,11 +672,11 @@
                     </control>
                     <control type="label">
                         <posx>15</posx>
-                        <width>703</width>
+                        <width>640</width>
                         <height>36</height>
                         <label>$VAR[LibraryStatsVar]</label>
-                        <font>Font_Reg28_Caps</font>
-                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                        <font>Font_Reg25</font>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                         <scroll>true</scroll>
                         <visible>!IsEmpty(Control.GetLabel(4323))</visible>
                         <animation type="VisibleChange">
@@ -683,50 +697,29 @@
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" start="750" end="0" time="240">VisibleChange</animation>
                     <control type="image">
-                        <posx>-45</posx>
+                        <posx>390</posx>
                         <posy>-46</posy>
-                        <width>794</width>
+                        <width>394</width>
                         <height>87</height>
                         <texture colordiffuse="$VAR[ExtendedColorVar]">home/timepanel_mid_shadow.png</texture>
                         <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     </control>
                     <control type="label">
-                        <posx>734</posx>
-                        <width>600</width>
+                        <posx>735</posx>
+                        <width>430</width>
                         <height>36</height>
                         <align>right</align>
                         <label>[COLOR grey]$INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</label>
-                        <font>Font_Reg28_Caps</font>
-                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                    </control>
-                    <control type="grouplist">
-                        <posx>30</posx>
-                        <visible>Weather.IsFetched</visible>
-                        <animation effect="fade" time="350">VisibleChange</animation>
-                        <orientation>horizontal</orientation>
-                        <usecontrolcoords>true</usecontrolcoords>
-                        <control type="label">
-                            <width min="0" max="700">auto</width>
-                            <height>36</height>
-                            <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey]• [/COLOR]</label>
-                            <font>Font_Reg28_Caps</font>
-                            <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                        </control>
-                        <control type="image">
-                            <posx>-10</posx>
-                            <posy>-8</posy>
-                            <width>55</width>
-                            <height>55</height>
-                            <texture colordiffuse="white2">weather/small/$INFO[Weather.FanartCode].png</texture>
-                        </control>
+                        <font>Font_Reg25</font>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                     </control>
                 </control>
             </control>
             <control type="group">
                 <include>FullscreenDimensions</include>
                 <include>Animation_OpenCloseZoom</include>
-                <posy>338</posy>
+                <posy>330</posy>
                 <control type="group">
                     <animation effect="zoom" end="80" center="960,520" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
                     <!--Submenu-->
@@ -736,13 +729,13 @@
                         <width>50</width>
                         <height>15</height>
                         <texture colordiffuse="white">arrowdown.png</texture>
-                        <visible>Control.HasFocus(9000) + !Skin.HasSetting(showsubmenu) + IntegerGreaterThan(Container(9010).NumItems,0)</visible>
+                        <visible>Control.HasFocus(9000) + IntegerGreaterThan(Container(9010).NumItems,0)</visible>
                         <animation effect="zoom" start="100,0" end="100,100" time="400" delay="160" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
                     </control>
                     <control type="group" id="9001">
                         <animation effect="zoom" end="120" center="960,610" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
-                        <animation effect="fade" start="100" end="0" time="240" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
-                        <animation effect="slide" end="0,-60" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
+                        <animation effect="fade" start="100" end="0" time="240" condition="!Control.HasFocus(9010) | !IntegerGreaterThan(Container(9010).NumItems,0)">conditional</animation>
+                        <animation effect="slide" end="0,-60" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) | !IntegerGreaterThan(Container(9010).NumItems,0)">conditional</animation>
                         <control type="image">
                             <posx>190</posx>
                             <posy>612</posy>
@@ -795,7 +788,7 @@
                                     <align>center</align>
                                     <label>$INFO[ListItem.Label]</label>
                                     <font>Font_Reg28_Caps</font>
-                                    <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
+                                    <textcolor>$VAR[FontColorVar]</textcolor>
                                     <animation effect="zoom" center="135,25" start="100" end="130" time="160" tween="quadratic">Focus</animation>
                                     <animation effect="zoom" center="135,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
                                     <scroll>true</scroll>
@@ -826,12 +819,6 @@
                             <texture colordiffuse="$VAR[AreaColorVar]">home/homemenu_back_glow.png</texture>
                             <include>PanelGlowFade</include>
                         </control>
-                    </control>
-                    <!--Home Menu-->
-                    <control type="button" id="8993">
-                        <include>HiddenObject</include>
-                        <onfocus>ClearProperty(PanelWidgetInfo,Home)</onfocus>
-                        <onfocus>SetFocus(9000)</onfocus>
                     </control>
                     <!--focus first widget-->
                     <control type="button" id="4444">
