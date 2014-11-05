@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-    <allowoverlay>yes</allowoverlay>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <defaultcontrol always="false">2</defaultcontrol>
     <coordinates>
@@ -2438,12 +2437,7 @@
             <include>Animation_CommonFade</include>
             <visible>![Control.IsVisible(57) | Control.IsVisible(52)]</visible>
         </control>
-        <control type="group">
-            <include>Animation_HideBreadCrumbs</include>
-            <include>Breadcrumbs_BackBar</include>
-            <include>BreadcrumbsContent</include>
-        </control>
-        <include>Furniture_NowPlayingWidget</include>
+        <include>BreadcrumbsContent</include>
         <!-- Media Menu -->
         <control type="group" id="9000">
             <control type="group">

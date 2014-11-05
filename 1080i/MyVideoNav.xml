@@ -7,7 +7,6 @@
     <onload>RunScript(script.tv.show.next.aired,backend=True)</onload>
     <onload>ClearProperty(BrowseActors,home)</onload>
     <backgroundcolor>backgroundcolor</backgroundcolor>
-    <allowoverlay>no</allowoverlay>
     <views>50,52,53,57,500,501,503,508,509,511,512,514,516,518</views>
     <controls>
         <control type="button" id="10">
@@ -303,12 +302,7 @@
             </control> -->
             <include>Furniture_DarkGradient</include>
         </control>
-        <control type="group">
-            <include>Animation_HideBreadCrumbs</include>
-            <include>Breadcrumbs_BackBar</include>
-            <include>BreadcrumbsContent</include>
-        </control>
-        <include>Furniture_NowPlayingWidget</include>
+        <include>BreadcrumbsContent</include>
         <include>Media_Menu</include>
         <include>ContextMenuOverlay</include>
     </controls>

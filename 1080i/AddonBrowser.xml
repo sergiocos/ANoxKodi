@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol>50</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
     <views>50,57,500,505,509,511,512,53,518</views>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
     <controls>
@@ -60,8 +59,7 @@
             <include>ShiftView</include>
             <include>TriPanelSquare</include>
             <include>LowList</include>
-            <!-- view id=57 -->
-        </control>
+            <!--view id=57--></control>
         <include>FloorLabels</include>
         <include>Furniture_DarkGradient</include>
         <control type="button" id="7000">
@@ -69,12 +67,7 @@
             <onfocus>SetFocus(9000)</onfocus>
             <visible>Control.IsVisible(509)</visible>
         </control>
-        <control type="group">
-            <include>Animation_HideBreadCrumbs</include>
-            <include>Breadcrumbs_BackBar</include>
-            <include>BreadcrumbsContent</include>
-        </control>
-        <include>Furniture_NowPlayingWidget</include>
+        <include>BreadcrumbsContent</include>
         <include>Media_Menu</include>
         <include>ContextMenuOverlay</include>
     </controls>
