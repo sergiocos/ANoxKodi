@@ -59,7 +59,6 @@
                 <posy>20</posy>
                 <width>180</width>
                 <height>36</height>
-				<colordiffuse>$VAR[SubTitleColorVar]</colordiffuse>
                 <texture>$INFO[VideoPlayer.Rating,stars/,.png]</texture>
               </control>
               <control type="label">
@@ -106,7 +105,6 @@
         <align>center</align>
         <aligny>top</aligny>
         <font>Font_Reg18_Caps</font>
-        <textcolor>$VAR[SubTitleColorVar]</textcolor>
         <label>[UPPERCASE]$INFO[VideoPlayer.Tagline][/UPPERCASE]</label>
         <scroll>true</scroll>
         <visible>VideoPlayer.Content(movies)</visible>
@@ -119,7 +117,6 @@
         <align>center</align>
         <aligny>center</aligny>
         <font>Font_Reg18</font>
-		<textcolor>$VAR[SubTitleColorVar]</textcolor>
         <label>$INFO[VideoPlayer.Season, $LOCALIZE[20373] ,] $INFO[VideoPlayer.Episode, $LOCALIZE[20359] ,]</label>
         <scroll>true</scroll>
         <visible>VideoPlayer.Content(episodes)</visible>
@@ -238,7 +235,6 @@
             <posy>110</posy>
             <width>180</width>
             <height>36</height>
-			<colordiffuse>$VAR[SubTitleColorVar]</colordiffuse>
             <texture>$INFO[VideoPlayer.Rating,stars/,.png]</texture>
           </control>
         </control>
@@ -261,7 +257,6 @@
           <width>1140</width>
           <height>38</height>
           <font>Font_Reg18_Caps</font>
-          <textcolor>$VAR[SubTitleColorVar]</textcolor>
           <align>left</align>
           <label>$INFO[System.Time]</label>
         </control>
@@ -280,7 +275,6 @@
           <width>1140</width>
           <height>38</height>
           <font>Font_Reg18_Caps</font>
-          <textcolor>$VAR[SubTitleColorVar]</textcolor>
           <align>right</align>
           <label>$INFO[Player.FinishTime]</label>
         </control>
