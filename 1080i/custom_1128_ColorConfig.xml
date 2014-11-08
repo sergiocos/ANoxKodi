@@ -32,7 +32,7 @@
                     <posx>-4</posx>
                     <posy>-24</posy>
                     <width>776</width>
-                    <height>520</height>
+                    <height>475</height>
                     <texture colordiffuse="$VAR[AreaColorVar]" border="22">dialogs/scan_backg_shadow.png</texture>
                     <include>PanelGlowFade</include>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
@@ -42,7 +42,7 @@
                     <posx>-4</posx>
                     <posy>-24</posy>
                     <width>776</width>
-                    <height>520</height>
+                    <height>475</height>
                     <texture colordiffuse="$VAR[DialogColorVar]" border="22">dialogs/scan_backg.png</texture>
                 </control>
             </control>
@@ -99,24 +99,6 @@
                     <include>ColorChooserButton</include>
                     <onclick>SetProperty(colordialog,font_color,skinsettings)</onclick>
                     <onclick>ActivateWindow(1138)</onclick>
-                </control>
-                <control type="button" id="17">
-                    <label>$LOCALIZE[31090]</label>
-                    <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(BackgroundDarkness)][/COLOR]</label2>
-                    <include>ColorChooserButton</include>
-                    <onclick>RunScript(script.color.picker,Skin.SetString(BackgroundDarkness,$INFO[Skin.String(BackgroundDarkness)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
-                    <onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
-                    <visible>Window.IsActive(script-HomeWindow Script-main.xml)</visible>
-                </control>
-                <control type="button" id="18">
-                    <label>$LOCALIZE[31090]</label>
-                    <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(diffuse_color)][/COLOR]</label2>
-                    <include>ColorChooserButton</include>
-                    <enable>!Skin.HasSetting(randomcolor)</enable>
-                    <onclick>SetProperty(ColorPicker,True,skinsettings)</onclick>
-                    <onclick>RunScript(script.color.picker,Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_color)]),Transparency&amp;Min=70&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
-                    <onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31910])</onclick>
-                    <visible>!Window.IsActive(script-HomeWindow Script-main.xml)</visible>
                 </control>
                 <control type="button" id="19">
                     <label>$LOCALIZE[31708]</label>
