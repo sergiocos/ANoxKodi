@@ -584,6 +584,12 @@
         <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">common/cdart/bd.png</value>
         <value condition="!IsEmpty(ListItem.VideoResolution)">common/cdart/default.png</value>
     </variable>
+    <variable name="NowPlayingDiscVar">
+        <value condition="!IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
+        <value condition="IntegerGreaterThan(VideoPlayer.VideoResolution,719)">common/cdart/bd.png</value>
+        <value condition="!IsEmpty(VideoPlayer.VideoResolution)">common/cdart/default.png</value>
+        <value condition="Player.HasAudio">$INFO[Player.FolderPath]cdart.png</value>
+    </variable>
     <variable name="PlayerPosterVar">
         <value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.poster)]</value>
         <value>$INFO[VideoPlayer.Cover]</value>
@@ -896,12 +902,10 @@
         <value>$VAR[MultiFanartVar]</value>
     </variable>
     <variable name="WidgetTypeVar">
-        <value condition="Window.IsActive(1154)">none</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget)]</value>
         <value>$INFO[Window(home).Property(Widget1Type)]</value>
     </variable>
     <variable name="Widget2TypeVar">
-        <value condition="Window.IsActive(1154)">none</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2)]</value>
         <value>$INFO[Window(home).Property(Widget2Type)]</value>
     </variable>
@@ -913,31 +917,19 @@
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.SubMenu)]</value>
         <value>$INFO[Container(9000).ListItem.Property(submenuVisibility)]</value>
     </variable>
-    <variable name="WidgetBackVar">
-        <value condition="Substring(Control.GetLabel(4321),glass)">keyboard/keyboard_back_classic.png</value>
-        <value>keyboard/keyboard_back.png</value>
-    </variable>
-    <variable name="Widget2BackVar">
-        <value condition="Substring(Control.GetLabel(4325),glass)">keyboard/keyboard_back_classic.png</value>
-        <value>keyboard/keyboard_back.png</value>
-    </variable>
     <variable name="WeatherWidgetBackVar">
-        <value condition="Substring(Control.GetLabel(4321),glass)">keyboard/numeric_back_classic.png</value>
         <value condition="Substring(Control.GetLabel(4321),default)">keyboard/numeric_back.png</value>
         <value>-</value>
     </variable>
     <variable name="WeatherWidget2BackVar">
-        <value condition="Substring(Control.GetLabel(4325),glass)">keyboard/numeric_back_classic.png</value>
         <value condition="Substring(Control.GetLabel(4325),default)">keyboard/numeric_back.png</value>
         <value>-</value>
     </variable>
     <variable name="PanelWidgetBackVar">
-        <value condition="Substring(Control.GetLabel(4321),glass)">featured/featured_classic.png</value>
         <value condition="Substring(Control.GetLabel(4321),default)">featured/panel_featured.png</value>
         <value>-</value>
     </variable>
     <variable name="PanelWidget2BackVar">
-        <value condition="Substring(Control.GetLabel(4325),glass)">featured/featured_classic.png</value>
         <value condition="Substring(Control.GetLabel(4325),default)">featured/panel_featured.png</value>
         <value>-</value>
     </variable>
@@ -1797,11 +1789,6 @@
         <value condition="Control.HasFocus(22222) + Stringcompare(Window(home).Property(WidgetPosition),Widget1)">$INFO[Container(5010).ListItem.Thumb]</value>
         <value condition="Control.HasFocus(22222)">$INFO[Container(6010).ListItem.Thumb]</value>
         <value>-</value>
-    </variable>
-    <variable name="AddonWallCasesLabelVar">
-        <value condition="Skin.HasSetting(useclearcasesinfowall)">$LOCALIZE[31282]</value>
-        <value condition="Skin.HasSetting(usecasesinfowall)">$LOCALIZE[31248]</value>
-        <value>$LOCALIZE[106]</value>
     </variable>
     <variable name="VideoFanArtLabelVar">
         <value condition="[Container.Content(seasons) + Skin.HasSetting(extrafanartseasons)] | [Container.Content(tvshows) + Skin.HasSetting(extrafanarttvshows)] | [Container.Content(episodes) + Skin.HasSetting(extrafanartepisodes)] | [Container.Content(movies) + Skin.HasSetting(extrafanartmovies)] | [Container.Content(musicvideos) + Skin.HasSetting(extrafanartmusicvideos)]">$LOCALIZE[31047]</value>

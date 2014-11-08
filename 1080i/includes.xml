@@ -259,7 +259,6 @@
         <textwidth>315</textwidth>
         <aligny>top</aligny>
         <texturenofocus border="5">settings/listselect_nf2.png</texturenofocus>
-        <alttexturenofocus border="5">settings/listselect_nf2.png</alttexturenofocus>
         <font>Font_Reg29</font>
         <textcolor>grey2</textcolor>
         <focusedcolor>white6</focusedcolor>
@@ -456,7 +455,7 @@
                 <posy>472</posy>
                 <width>1920</width>
                 <height>608</height>
-                <texture colordiffuse="$VAR[ExtendedColorDiffuseVar]">views/showcase_floor.png</texture>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/showcase_floor.png</texture>
             </control>
             <control type="image">
                 <posy>874</posy>
@@ -464,13 +463,18 @@
                 <height>206</height>
                 <texture colordiffuse="$VAR[SpotColorVar2]">views/panel_spot.png</texture>
             </control>
-            <include>Neon_Floor</include>
             <control type="image">
                 <posy>-100</posy>
                 <width>1920</width>
                 <height>608</height>
                 <texture colordiffuse="black" flipy="true">views/showcase_glow.png</texture>
             </control>
+            <control type="image">
+                <width>1920</width>
+                <height>1080</height>
+                <texture colordiffuse="vignette">views/showcase_vignette.png</texture>
+            </control>
+            <include>Neon_Floor</include>
         </control>
     </include>
     <include name="Furniture_SettingsBackPanel">
@@ -724,7 +728,6 @@
         <onload>Skin.SetBool(smallerdialogs)</onload>
         <onload>Skin.SetBool(musicfanartslideshow)</onload>
         <onload>Skin.SetBool(itemsplaylist)</onload>
-        <onload>Skin.SetBool(showcasewrap)</onload>
         <onload>Skin.SetBool(showcaseinfoon)</onload>
         <onload>Skin.SetBool(showcaseinfoontv)</onload>
         <onload>Skin.SetBool(fanartinfopane)</onload>
