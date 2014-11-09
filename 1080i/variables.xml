@@ -1996,6 +1996,10 @@
         <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_top_shutdown_glow.png</value>
         <value>dialogs/context_top_shutdown.png</value>
     </variable>
+    <variable name="ShutdownBottomVar">
+        <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_bottom_glow.png</value>
+        <value>dialogs/context_bottom.png</value>
+    </variable>
     <variable name="MasterLockLabelVar">
         <value condition="!System.IsMaster">$LOCALIZE[20045]</value>
         <value>$LOCALIZE[20046]</value>
