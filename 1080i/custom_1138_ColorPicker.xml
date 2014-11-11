@@ -7,16 +7,7 @@
     <onload condition="Substring(Skin.CurrentTheme,whit) + StringCompare(Window(skinsettings).Property(colordialog),font_color)">SetProperty(ColorTarget,white_font_,home)</onload>
     <onunload condition="StringCompare(Window(skinsettings).Property(colordialog),diffuse_color)">SetProperty(ColorOrigin,$INFO[Skin.String(diffuse_color)],home)</onunload>
     <onunload condition="StringCompare(Window(skinsettings).Property(colordialog),font_color)">SetProperty(ColorOrigin,$INFO[Skin.String(font_color)],home)</onunload>
-    <onunload condition="!IsEmpty(Window(home).Property(colorallareas)) | [Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)]">Skin.SetString($INFO[Window(home).Property(ColorTarget)]music,$INFO[Window(home).Property(ColorOrigin)])</onunload>
-    <onunload condition="!IsEmpty(Window(home).Property(colorallareas)) | Window.IsActive(videos)">Skin.SetString($INFO[Window(home).Property(ColorTarget)]videolibrary,$INFO[Window(home).Property(ColorOrigin)])</onunload>
-    <onunload condition="!IsEmpty(Window(home).Property(colorallareas)) | Window.IsActive(PVR)">Skin.SetString($INFO[Window(home).Property(ColorTarget)]PVR,$INFO[Window(home).Property(ColorOrigin)])</onunload>
-    <onunload condition="!IsEmpty(Window(home).Property(colorallareas)) | Window.IsActive(pictures)">Skin.SetString($INFO[Window(home).Property(ColorTarget)]pictures,$INFO[Window(home).Property(ColorOrigin)])</onunload>
-    <onunload condition="!IsEmpty(Window(home).Property(colorallareas)) | Window.IsActive(addonbrowser)">Skin.SetString($INFO[Window(home).Property(ColorTarget)]addons,$INFO[Window(home).Property(ColorOrigin)])</onunload>
-    <onunload condition="!IsEmpty(Window(home).Property(colorallareas)) | [Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)]">Skin.SetString($INFO[Window(home).Property(ColorTarget)]programs,$INFO[Window(home).Property(ColorOrigin)])</onunload>
-    <onunload condition="!IsEmpty(Window(home).Property(colorallareas)) | Window.IsActive(musicplaylist)">Skin.SetString($INFO[Window(home).Property(ColorTarget)]musicplaylist,$INFO[Window(home).Property(ColorOrigin)])</onunload>
-    <onunload condition="!IsEmpty(Window(home).Property(colorallareas)) | Window.IsActive(videoplaylist)">Skin.SetString($INFO[Window(home).Property(ColorTarget)]videoplaylist,$INFO[Window(home).Property(ColorOrigin)])</onunload>
-    <onunload condition="!IsEmpty(Window(home).Property(colorallareas)) | Window.IsActive(script-HomeWindow Script-main.xml)">Skin.SetString($INFO[Window(home).Property(ColorTarget)]mainmenu,$INFO[Window(home).Property(ColorOrigin)])</onunload>
-    <onunload condition="!IsEmpty(Window(home).Property(colorallareas)) | Window.IsActive(weather)">Skin.SetString($INFO[Window(home).Property(ColorTarget)]weather,$INFO[Window(home).Property(ColorOrigin)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(ColorTarget)]mainmenu,$INFO[Window(home).Property(ColorOrigin)])</onunload>
     <onunload>ClearProperty(colorallareas,home)</onunload>
     <onunload>ClearProperty(colordialog,skinsettings)</onunload>
     <include>Animation_DialogPopupOpenClose</include>
@@ -51,7 +42,7 @@
             <include>Dialogs_Settings</include>
             <control type="panel" id="10">
                 <posx>142</posx>
-                <posy>4</posy>
+                <posy>54</posy>
                 <width>600</width>
                 <height>300</height>
                 <orientation>vertical</orientation>
@@ -205,22 +196,11 @@
                     </item>
                 </content>
             </control>
-            <control type="radiobutton" id="11">
-                <posx>137</posx>
-                <posy>270</posy>
-                <label>$LOCALIZE[31088]</label>
-                <onup>10</onup>
-                <ondown>10</ondown>
-                <include>ColorChooserButton</include>
-                <onclick condition="IsEmpty(Window(home).Property(colorallareas))">SetProperty(colorallareas,1,home)</onclick>
-                <onclick condition="!IsEmpty(Window(home).Property(colorallareas))">ClearProperty(colorallareas,home)</onclick>
-                <selected>!IsEmpty(Window(home).Property(colorallareas))</selected>
-            </control>
             <control type="label">
                 <posx>120</posx>
-                <posy>225</posy>
+                <posy>275</posy>
                 <align>center</align>
-                <label>$INFO[Container(10).ListItem.Label]</label>
+                <label>[UPPERCASE]$INFO[Container(10).ListItem.Label][/UPPERCASE]</label>
                 <visible>!Control.HasFocus(11)</visible>
                 <include>Dialogs_Label3</include>
             </control>
