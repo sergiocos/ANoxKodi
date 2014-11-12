@@ -288,7 +288,7 @@
         <textoffsety>2</textoffsety>
         <texturenofocus border="5">settings/listselect_nf.png</texturenofocus>
         <alttexturenofocus border="5">settings/listselect_nf.png</alttexturenofocus>
-        <font>Font_Reg30_2</font>
+        <font>Font_Reg30</font>
         <textcolor>grey2</textcolor>
         <focusedcolor>white6</focusedcolor>
         <onleft>Dialog.Close(1126)</onleft>
@@ -314,7 +314,7 @@
         <width>470</width>
         <height>45</height>
         <textoffsetx>15</textoffsetx>
-        <textoffsety>12</textoffsety>
+        <textoffsety>6</textoffsety>
         <aligny>bottom</aligny>
         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
         <texturenofocus>-</texturenofocus>
@@ -547,7 +547,7 @@
         <height>74</height>
         <textoffsetx>40</textoffsetx>
         <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
-        <font>Font_Reg32</font>
+        <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
         <radioposx>1330</radioposx>
     </include>
@@ -556,7 +556,7 @@
         <height>74</height>
         <textoffsetx>30</textoffsetx>
         <texturenofocus border="5">settings/settings_radiobuttonoff.png</texturenofocus>
-        <font>Font_Reg32</font>
+        <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
         <radioposx>565</radioposx>
     </include>
@@ -565,7 +565,7 @@
         <height>74</height>
         <textoffsetx>40</textoffsetx>
         <texturenofocus border="5">osd/osd_settings_buttonnf.png</texturenofocus>
-        <font>Font_Reg32</font>
+        <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
     </include>
     <include name="Default_SettingSpinControlButton">
@@ -574,14 +574,14 @@
         <height>74</height>
         <textoffsetx>40</textoffsetx>
         <texturenofocus border="5">osd/osd_settings_buttonnf.png</texturenofocus>
-        <font>Font_Reg32</font>
+        <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
         <spinposx>8</spinposx>
     </include>
     <include name="Default_SettingSliderButton">
         <width>1469</width>
         <height>74</height>
-        <font>Font_Reg32</font>
+        <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
         <textoffsetx>40</textoffsetx>
         <aligny>center</aligny>
@@ -602,7 +602,7 @@
         <height>74</height>
         <textoffsetx>30</textoffsetx>
         <texturenofocus border="5">settings/settings_radiobuttonoff.png</texturenofocus>
-        <font>Font_Reg32</font>
+        <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
     </include>
     <include name="Default_PlaylistDialogButton">
@@ -638,7 +638,7 @@
         <height>60</height>
         <textoffsetx>45</textoffsetx>
         <texturenofocus border="3">osd/osd_settings_buttonnf.png</texturenofocus>
-        <font>Font_Reg32</font>
+        <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
         <radioposx>1020</radioposx>
     </include>
@@ -647,7 +647,7 @@
         <height>60</height>
         <textoffsetx>25</textoffsetx>
         <texturenofocus border="3">osd/osd_settings_buttonnf.png</texturenofocus>
-        <font>Font_Reg32</font>
+        <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
         <radioposx>550</radioposx>
     </include>
@@ -789,7 +789,7 @@
     </include>
     <include name="DialogBackFade">
         <control type="image">
-            <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
             <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
             <animation effect="fade" start="100" end="0" time="240" condition="Window.IsVisible(fullscreenvideo)">Conditional</animation>
@@ -799,7 +799,7 @@
     </include>
     <include name="ContextMenuOverlay">
         <control type="image">
-            <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
             <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
             <animation effect="fade" end="100" time="560">WindowOpen</animation>
@@ -994,16 +994,12 @@
             <textcolor>FF363636</textcolor>
             <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
         </control>
-        <control type="image">
-            <posy>945</posy>
-            <width>1920</width>
-            <height>135</height>
-            <texture colordiffuse="$VAR[DialogColorVar]">osd/osd_back.png</texture>
-        </control>
-        <control type="group">
-            <posy>910</posy>
-            <include>Neon_Topbar</include>
-        </control>
+            <control type="image">
+                <posy>780</posy>
+                <width>2100</width>
+                <height>300</height>
+                <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
+            </control>
         <control type="image" id="888777">
             <texture>$INFO[VideoPlayer.Cover]</texture>
             <include>HiddenObject</include>
@@ -1303,6 +1299,7 @@
         <control type="group" id="703">
             <visible>VideoPlayer.Content(LiveTV)</visible>
             <control type="grouplist" id="70030">
+                <posx>50</posx>
                 <posy>2</posy>
                 <width>1920</width>
                 <height>135</height>
@@ -1400,7 +1397,7 @@
             </control>
             <control type="grouplist" id="70042">
                 <posy>2</posy>
-                <width>1920</width>
+                <width>1870</width>
                 <height>135</height>
                 <align>right</align>
                 <itemgap>7</itemgap>
@@ -1437,6 +1434,7 @@
         <control type="group">
             <visible>!VideoPlayer.Content(LiveTV)</visible>
             <control type="grouplist" id="201">
+                <posx>50</posx>
                 <posy>2</posy>
                 <width>1920</width>
                 <height>135</height>
@@ -1522,7 +1520,7 @@
             </control>
             <control type="grouplist" id="203">
                 <posy>2</posy>
-                <width>1920</width>
+                <width>1870</width>
                 <height>135</height>
                 <align>right</align>
                 <itemgap>7</itemgap>

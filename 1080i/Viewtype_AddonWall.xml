@@ -358,10 +358,10 @@
                     <onright>9000</onright>
                 </control>
                 <control type="group">
-                    <posx>-22</posx>
+                    <posx>-17</posx>
                     <control type="image" id="8827">
                         <posx>1290</posx>
-                        <posy>140</posy>
+                        <posy>157</posy>
                         <width>450</width>
                         <height>110</height>
                         <aspectratio>keep</aspectratio>
@@ -372,7 +372,7 @@
                     </control>
                     <control type="image" id="8827">
                         <posx>1290</posx>
-                        <posy>138</posy>
+                        <posy>143</posy>
                         <width>450</width>
                         <height>108</height>
                         <aspectratio>keep</aspectratio>
@@ -396,8 +396,8 @@
                     <control type="group">
                         <visible>[Control.IsVisible(8827) + !Container.OnNext + !Container.OnPrevious + Stringcompare(Control.GetLabel(8827),empty.png)] | !Control.IsVisible(8827)</visible>
                         <control type="label">
-                            <posx>1260</posx>
-                            <posy>154</posy>
+                            <posx>1265</posx>
+                            <posy>159</posy>
                             <width>570</width>
                             <height>20</height>
                             <aligny>top</aligny>
@@ -408,8 +408,8 @@
                             <animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
                         </control>
                         <control type="label">
-                            <posx>1260</posx>
-                            <posy>202</posy>
+                            <posx>1265</posx>
+                            <posy>207</posy>
                             <width>570</width>
                             <height>20</height>
                             <aligny>top</aligny>
@@ -420,8 +420,8 @@
                             <animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
                         </control>
                         <control type="image">
-                            <posx>1245</posx>
-                            <posy>190</posy>
+                            <posx>1250</posx>
+                            <posy>200</posy>
                             <width>600</width>
                             <height>60</height>
                             <texture border="5">osd/osd_settings_buttonnf.png</texture>
@@ -429,10 +429,10 @@
                     </control>
                     <control type="group">
                         <control type="textbox">
-                            <posx>1260</posx>
-                            <posy>260</posy>
+                            <posx>1265</posx>
+                            <posy>270</posy>
                             <width>570</width>
-                            <height>338</height>
+                            <height>335</height>
                             <label>$VAR[InfoWallTextboxVar]</label>
                             <font>Font_Reg30_2</font>
                             <textcolor>white6</textcolor>
@@ -440,7 +440,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <posx>1252</posx>
+                        <posx>1257</posx>
                         <posy>622</posy>
                         <control type="image">
                             <posx>-15</posx>
