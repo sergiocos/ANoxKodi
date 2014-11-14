@@ -15,16 +15,16 @@
             <animation effect="slide" end="0,218" time="240" tween="quadratic" condition="Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList) | Window.IsVisible(1100)">Conditional</animation>
             <control type="group" id="5800">
                 <posy>940</posy>
-                <animation effect="slide" end="0,200" time="400" tween="cubic" condition="!ControlGroup(650).HasFocus + !ControlGroup(651).HasFocus+ !ControlGroup(652).HasFocus">Conditional</animation>
                 <include>ClassicMusicOSD</include>
-<!--                 <control type="grouplist" id="996">
+                <!--
+                <control type="grouplist" id="996">
                     <width>462</width>
                     <height max="1080">auto</height>
-                        <visible>Control.HasFocus(500)</visible>
+                    <visible>Control.HasFocus(500)</visible>
                     <control type="button" id="2001">
                         <include>ContextMenuButton</include>
                         <label>Visualisation Settings</label>
-                        <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+                        <onclimck>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
                     </control>
                     <control type="button" id="2002">
                         <include>ContextMenuButton</include>
@@ -36,14 +36,84 @@
                         <label>Visualisation Settings</label>
                         <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
                     </control>
-                </control> -->
+                </control>--></control>
+        </control>
+        <control type="group">
+            <posx>0</posx>
+            <posy>-490</posy>
+            <animation effect="fade" time="350">WindowOpen</animation>
+            <animation effect="fade" time="350">WindowClose</animation>
+            <control type="list" id="8010">
+                <posx>980</posx>
+                <posy>680</posy>
+                <width>1000</width>
+                <height>479</height>
+                <onup>10002</onup>
+                <ondown>8012</ondown>
+                <onleft>87</onleft>
+                <onright>87</onright>
+                <orientation>vertical</orientation>
+                <pagecontrol>61</pagecontrol>
+                <focusposition>0</focusposition>
+                <scrolltime tween="cubic" easing="inout">400</scrolltime>
+                <preloaditems>2</preloaditems>
+                <itemlayout height="60" width="1000">
+                    <control type="label">
+                        <posx>700</posx>
+                        <posy>0</posy>
+                        <width>110</width>
+                        <height>80</height>
+                        <align>right</align>
+                        <label>$INFO[ListItem.Duration]</label>
+                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
+                        <font>font28</font>
+                        <textcolor>grey</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>60</posx>
+                        <posy>0</posy>
+                        <width>650</width>
+                        <height>80</height>
+                        <align>left</align>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font28</font>
+                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
+                        <textcolor>grey</textcolor>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="60" width="1000">
+                    <control type="group">
+                        <animation effect="zoom" start="100" end="110" time="150" center="430,50">Focus</animation>
+                        <animation effect="zoom" end="100" start="110" time="150" center="430,50">UnFocus</animation>
+                        <control type="label">
+                            <posx>700</posx>
+                            <posy>0</posy>
+                            <width>110</width>
+                            <height>80</height>
+                            <align>right</align>
+                        <animation effect="fade" end="70" start="100" time="150" condition="!Control.HasFocus(8010)">Conditional</animation>
+                            <label>$INFO[ListItem.Duration]</label>
+                            <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
+                            <font>font28</font>
+                            <textcolor>white2</textcolor>
+                        </control>
+                        <control type="label">
+                            <posx>60</posx>
+                            <posy>0</posy>
+                            <width>650</width>
+                        <animation effect="fade" end="70" start="100" time="150" condition="!Control.HasFocus(8010)">Conditional</animation>
+                            <height>80</height>
+                            <align>left</align>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>font28</font>
+                            <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
+                            <textcolor>white2</textcolor>
+                        </control>
+                    </control>
+                </focusedlayout>
+                <content>playlistmusic://</content>
             </control>
         </control>
-<!--         <control type="group">
-            <posx>-160</posx>
-            <posy>-470</posy>
-            <include>NextTracksList</include>
-        </control> -->
         <!--
         <control type="textbox">
             <posx>922</posx>
@@ -57,15 +127,20 @@
             <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
         </control>-->
         <control type="slider" id="87">
-            <posx>500</posx>
-            <posy>500</posy>
-            <width>1210</width>
-            <height>50</height>
-            <texturesliderbar></texturesliderbar>
-                                <info>Player.Progress</info>
-                    <action>seek</action>
-        <textureslidernib>settings/orb_nofo.png</textureslidernib>
-        <textureslidernibfocus>settings/orb_fo.png</textureslidernibfocus>
+            <posx>83</posx>
+            <posy>884</posy>
+            <width>1754</width>
+            <height>45</height>
+            <onup>8010</onup>
+            <ondown>650</ondown>
+            <controloffsetx>75</controloffsetx>
+            <controloffsety>0</controloffsety>
+            <texturesliderbar colordiffuse="00FFFFFF">settings/slider_back.png</texturesliderbar>
+            <textureslidernib>settings/orb_nofo.png</textureslidernib>
+            <textureslidernibfocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">settings/orb_fo.png</textureslidernibfocus>
+            <info>Player.Progress</info>
+            <action>seek</action>
+            <include>Animation_WindowFade200</include>
         </control>
     </controls>
 </window>
