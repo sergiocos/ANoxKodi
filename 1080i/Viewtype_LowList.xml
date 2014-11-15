@@ -440,7 +440,7 @@
                         <posx>30</posx>
                         <width>645</width>
                         <height>66</height>
-                        <label>$INFO[ListItem.Label]</label>
+                        <label>[B]$INFO[ListItem.Label][/B]</label>
                         <font>Font_Reg30_2</font>
                         <textcolor>grey2</textcolor>
                     </control>
@@ -474,7 +474,7 @@
                         <posx>30</posx>
                         <width>645</width>
                         <height>33</height>
-                        <label>$INFO[ListItem.Label]</label>
+                        <label>[B]$INFO[ListItem.Label][/B]</label>
                         <font>Font_Reg30_2</font>
                     </control>
                     <control type="label">
