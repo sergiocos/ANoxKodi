@@ -374,6 +374,18 @@
         <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
         <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
     </include>
+    <include name="ContextMenuButtonMusic">
+        <width>462</width>
+        <height>58</height>
+        <textoffsety>12</textoffsety>
+        <align>center</align>
+        <font>Font_Reg30_2</font>
+        <textcolor>context</textcolor>
+        <focusedcolor>white2</focusedcolor>
+        <pulseonselect>false</pulseonselect>
+        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">dialogs/context_highlight.png</texturefocus>
+        <texturenofocus>dialogs/context_nofocus.png</texturenofocus>
+    </include>
     <include name="Objects_ShutdownMenuButton">
         <width>550</width>
         <height>75</height>
@@ -478,13 +490,11 @@
     </include>
     <include name="Furniture_SettingsBackPanel">
         <control type="image">
-            <posx>36</posx>
-            <posy>36</posy>
-            <width>1846</width>
-            <height>1006</height>
+            <posx>40</posx>
+            <posy>38</posy>
+            <width>1838</width>
+            <height>1001</height>
             <texture colordiffuse="$VAR[AreaColorVar]">settings/settings_panelback_shadow.png</texture>
-            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <animation effect="fade" time="350">VisibleChange</animation>
         </control>
         <control type="image">
             <posx>34</posx>
@@ -696,10 +706,10 @@
     </include>
     <include name="AutoConfig">
         <onload>Skin.ResetSettings</onload>
-        <onload>Skin.SetString(diffuse_mainmenu,FF6db9e5)</onload>
-        <onload>Skin.SetString(diffuse_color,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_color,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_mainmenu,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_mainmenu,FFFFA500)</onload>
+        <onload>Skin.SetString(diffuse_color,FFFFA500)</onload>
+        <onload>Skin.SetString(font_color,FFFFA500)</onload>
+        <onload>Skin.SetString(font_mainmenu,FFFFA500)</onload>
         <onload>Skin.SetString(LibraryStructure,2)</onload>
         <onload>Skin.SetString(TriPanelSquarePosition,1)</onload>
         <onload>Skin.SetString(TriPanelPosition,1)</onload>
@@ -1018,14 +1028,12 @@
                     <effect type="fade" start="100" end="0" time="480" />
                 </animation>
                 <control type="image">
-                    <posx>12</posx>
+                    <posx>13</posx>
                     <posy>581</posy>
-                    <width>335</width>
-                    <height>504</height>
+                    <width>333</width>
+                    <height>503</height>
                     <texture colordiffuse="$VAR[AreaColorVar]">thumbs/thumb_glass_shadow.png</texture>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <include>PanelGlowFade</include>
-                    <animation effect="fade" time="350">VisibleChange</animation>
                 </control>
                 <control type="image">
                     <posx>25</posx>

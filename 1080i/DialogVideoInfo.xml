@@ -83,7 +83,7 @@
                         <posy>90</posy>
                         <width>1042</width>
                         <height>854</height>
-                        <texture colordiffuse="$VAR[AreaColorVar]">info/info_panellines_movie2.png</texture>
+                        <texture>info/info_panellines_movie2.png</texture>
                     </control>
                     <control type="group">
                         <animation type="WindowOpen" reversible="false">
@@ -93,13 +93,6 @@
                         <control type="group">
                             <visible>!IsEmpty(ListItem.Top250)</visible>
                             <posy>-30</posy>
-                            <control type="image">
-                                <posx>-20</posx>
-                                <width>120</width>
-                                <height>120</height>
-                                <texture colordiffuse="white2">common/imdb.png</texture>
-                                <include>AudioFlagsVars</include>
-                            </control>
                             <control type="label">
                                 <posx>-20</posx>
                                 <posy>-13</posy>
@@ -124,7 +117,7 @@
                                 <width>1018</width>
                                 <height>50</height>
                                 <label>$INFO[ListItem.Title]</label>
-                                <font>Font_Reg57_Caps</font>
+                                <font>Font_Bold56</font>
                                 <animation effect="slide" start="0,0" end="0,30" time="0" condition="[Container.Content(movies) | Container.Content(tvshows)] + IsEmpty(ListItem.Genre)">Conditional</animation>
                                 <animation effect="slide" start="0,0" end="0,30" time="0" condition="[Container.Content(musicvideos) + IsEmpty(ListItem.Artist)]">Conditional</animation>
                                 <scroll>true</scroll>
@@ -224,7 +217,7 @@
                             <posy>90</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture colordiffuse="$VAR[AreaColorVar]">info/infopanel_line.png</texture>
+                            <texture>info/infopanel_line.png</texture>
                         </control>
                         <control type="grouplist">
                             <posx>-25</posx>
@@ -276,20 +269,21 @@
                             <control type="group">
                                 <width>155</width>
                                 <visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows)</visible>
-                                <control type="image">
-                                    <posy>5</posy>
-                                    <width>155</width>
-                                    <height>67</height>
-                                    <texture colordiffuse="white2">flags/IMDB.png</texture>
-                                    <aspectratio>keep</aspectratio>
-                                </control>
                                 <control type="label">
-                                    <posy>29</posy>
+                                    <posy>12</posy>
                                     <width>155</width>
                                     <height>38</height>
                                     <align>center</align>
                                     <label fallback="?">$INFO[ListItem.Rating]</label>
                                     <font>Font_Bold34</font>
+                                </control>
+                                <control type="label">
+                                    <posy>37</posy>
+                                    <width>155</width>
+                                    <height>38</height>
+                                    <align>center</align>
+                                    <label fallback="?">$INFO[ListItem.Votes] Votes</label>
+                                    <font>Font_Reg22_Caps</font>
                                 </control>
                             </control>
                             <control type="image">
@@ -308,21 +302,21 @@
                             <control type="group">
                                 <width>155</width>
                                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
-                                <control type="image">
-                                    <posy>5</posy>
+                                <control type="label">
+                                    <posy>12</posy>
                                     <width>155</width>
-                                    <height>68</height>
-                                    <aspectratio>keep</aspectratio>
-                                    <texture colordiffuse="white2">flags/time.png</texture>
+                                    <height>38</height>
+                                    <align>center</align>
+                                    <label fallback="?">$INFO[ListItem.Duration]</label>
+                                    <font>Font_Bold34</font>
                                 </control>
                                 <control type="label">
-                                    <posx>0</posx>
-                                    <posy>18</posy>
+                                    <posy>37</posy>
                                     <width>155</width>
-                                    <height>60</height>
+                                    <height>38</height>
                                     <align>center</align>
-                                    <label>$INFO[ListItem.Duration]</label>
-                                    <font>Font_Bold34</font>
+                                    <label>Minutes</label>
+                                    <font>Font_Reg22_Caps</font>
                                 </control>
                             </control>
                             <control type="image">
@@ -334,20 +328,21 @@
                             <control type="group">
                                 <visible>!Container.Content(episodes)</visible>
                                 <width>155</width>
-                                <control type="image">
-                                    <posy>5</posy>
+                                <control type="label">
+                                    <posy>12</posy>
                                     <width>155</width>
-                                    <height>68</height>
-                                    <aspectratio>keep</aspectratio>
-                                    <texture colordiffuse="white2">flags/year.png</texture>
+                                    <height>38</height>
+                                    <align>center</align>
+                                    <label fallback="?">$INFO[ListItem.Year]</label>
+                                    <font>Font_Bold34</font>
                                 </control>
                                 <control type="label">
-                                    <posy>18</posy>
+                                    <posy>37</posy>
                                     <width>155</width>
-                                    <height>60</height>
+                                    <height>38</height>
                                     <align>center</align>
-                                    <label fallback="-">$INFO[ListItem.Year]</label>
-                                    <font>Font_Bold34</font>
+                                    <label>Year</label>
+                                    <font>Font_Reg22_Caps</font>
                                 </control>
                             </control>
                             <control type="image">
@@ -582,7 +577,7 @@
                             <posy>872</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture colordiffuse="$VAR[AreaColorVar]">info/infopanel_line.png</texture>
+                            <texture>info/infopanel_line.png</texture>
                         </control>
                         <control type="grouplist">
                             <posx>-10</posx>
@@ -619,24 +614,12 @@
                                 <width>126</width>
                                 <height>62</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="white2">$VAR[AudioFlagVar,flags/audio/,.png]</texture>
+                                <texture colordiffuse="white2">$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
                                 <visible>!IsEmpty(Control.GetLabel(900013))</visible>
                             </control>
                             <control type="image">
                                 <include>Furniture_FlagUpright</include>
                                 <visible>!IsEmpty(Control.GetLabel(900013))</visible>
-                            </control>
-                            <control type="image" id="90013">
-                                <posy>5</posy>
-                                <width>126</width>
-                                <height>62</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="white2">$INFO[Window.Property(AudioCodec.2),flags/audio/]$INFO[Window.Property(AudioChannels.2),,.png]</texture>
-                                <visible>!IsEmpty(Control.GetLabel(90013)) + ![Stringcompare(Window.Property(AudioCodec.1),Window.Property(AudioCodec.2)) + Stringcompare(Window.Property(AudioChannels.1),Window.Property(AudioChannels.2))]</visible>
-                            </control>
-                            <control type="image">
-                                <include>Furniture_FlagUpright</include>
-                                <visible>Control.IsVisible(90013)</visible>
                             </control>
                             <control type="image" id="900014">
                                 <posy>5</posy>
@@ -835,7 +818,7 @@
                             <posy>943</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture colordiffuse="$VAR[AreaColorVar]">info/infopanel_line.png</texture>
+                            <texture>info/infopanel_line.png</texture>
                         </control>
                     </control>
                 </control>
@@ -1168,6 +1151,7 @@
                     <textcolor>white5</textcolor>
                     <scroll>true</scroll>
                     <haspath>true</haspath>
+                    <visible>ControlGroup(6000).HasFocus | ControlGroup(6100).HasFocus</visible>
                 </control>
                 <control type="image">
                     <posx>709</posx>

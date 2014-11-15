@@ -167,7 +167,7 @@
     <include name="Furniture_FlagUpright">
         <width>2</width>
         <height>71</height>
-        <texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/upright.png</texture>
+        <texture>views/tripanel/upright.png</texture>
     </include>
     <include name="AudioFlagsVars">
         <width>135</width>
@@ -181,6 +181,7 @@
         <control type="grouplist">
             <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
             <orientation>vertical</orientation>
+            <posy>10</posy>
             <control type="image">
                 <width>26</width>
                 <height>22</height>
@@ -193,13 +194,6 @@
                 <height>22</height>
                 <aspectratio>scale</aspectratio>
                 <texture>$INFO[Window(movieinformation).Property(AudioLanguage.2),flags/language/,.png]</texture>
-                <fadetime>400</fadetime>
-            </control>
-            <control type="image">
-                <width>26</width>
-                <height>22</height>
-                <aspectratio>scale</aspectratio>
-                <texture>$INFO[Window(movieinformation).Property(AudioLanguage.3),flags/language/,.png]</texture>
                 <fadetime>400</fadetime>
             </control>
         </control>
@@ -280,7 +274,7 @@
                     </control>
                     <control type="image">
                         <posx>1750</posx>
-                        <texture>$VAR[AudioFlagVar,flags/audio/,.png]</texture>
+                        <texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
                         <!--Audio logo-->
                         <include>AudioFlagsVars</include>
                     </control>
@@ -381,19 +375,24 @@
                 <control type="group">
                     <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
                     <animation effect="slide" end="-975" condition="Control.IsVisible(512)">Conditional</animation>
-                    <control type="image">
-                        <posx>1600</posx>
-                        <texture>flags/IMDB.png</texture>
-                        <include>AudioFlagsVars</include>
-                    </control>
                     <control type="label">
                         <posx>1600</posx>
-                        <posy>21</posy>
+                        <posy>5</posy>
                         <width>135</width>
                         <height>38</height>
                         <align>center</align>
                         <label fallback="?">$INFO[ListItem.Rating]</label>
                         <font>Font_Bold40</font>
+                        <textcolor>floor</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>1600</posx>
+                        <posy>35</posy>
+                        <width>135</width>
+                        <height>38</height>
+                        <align>center</align>
+                        <label fallback="?">$INFO[ListItem.Votes] Votes</label>
+                        <font>Font_Reg22_Caps</font>
                         <textcolor>floor</textcolor>
                     </control>
                     <control type="image">
@@ -480,7 +479,7 @@
             </control>
             <control type="image">
                 <posx>1740</posx>
-                <texture>$VAR[AudioFlagVar,flags/audio/,.png]</texture>
+                <texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
                 <include>OSDFlagVars</include>
                 <visible>!ListItem.IsFolder</visible>
             </control>
@@ -523,7 +522,6 @@
                     </control> 	
 					<control type="label">	  	
                         <posx>282</posx>  	
-                        <posy>-1</posy>	  	
                         <width>330</width>	  	
                         <height>90</height>	  	
                        <align>right</align>	  	
@@ -847,13 +845,9 @@
                 <control type="group">
                     <visible>!IsEmpty(ListItem.Rating)</visible>
                     <posx>1400</posx>
-                    <control type="image">
-                        <texture>flags/IMDB.png</texture>
-                        <include>AudioFlagsVars</include>
-                    </control>
                     <control type="label">
                         <posx>-1</posx>
-                        <posy>20</posy>
+                        <posy>5</posy>
                         <width>135</width>
                         <height>38</height>
                         <align>center</align>
@@ -861,10 +855,20 @@
                         <font>Font_Bold37</font>
                         <textcolor>floor</textcolor>
                     </control>
+                    <control type="label">
+                        <posx>-1</posx>
+                        <posy>32</posy>
+                        <width>135</width>
+                        <height>38</height>
+                        <align>center</align>
+                        <label fallback="?">$INFO[ListItem.Votes] Votes</label>
+                        <font>Font_Reg22_Caps</font>
+                        <textcolor>floor</textcolor>
+                    </control>
                 </control>
                 <control type="image">
                     <posx>1535</posx>
-                    <texture>$VAR[AudioFlagVar,flags/audio/,.png]</texture>
+                    <texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
                     <include>AudioFlagsVars</include>
                 </control>
                 <control type="image">
