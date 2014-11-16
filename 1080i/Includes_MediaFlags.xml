@@ -204,6 +204,15 @@
             <visible>Control.IsVisible(508) | [Control.IsVisible(503) + !Skin.HasSetting(landscapeonelogo)]  | Control.IsVisible(501) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(516)</visible>
             <visible>![SubString(Container.FolderPath,addons://) | SubString(Container.FolderPath,plugin.video)]</visible>
             <posy>1000</posy>
+                                <control type="image">
+                <posy>-280</posy>
+                <width>1920</width>
+                <height>367</height>
+                <visible>Control.IsVisible(500)</visible>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/diffuse_bottom.png</texture>
+                <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
+                <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
+            </control>
             <control type="group">
                 <visible>!ListItem.IsFolder</visible>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
@@ -538,6 +547,15 @@
             <posy>988</posy>
             <visible>!Control.IsVisible(506)</visible>
             <include>Animation_FlagSlideDown</include>
+                                <control type="image">
+                <posy>-275</posy>
+                <width>1920</width>
+                <height>367</height>
+                <visible>Control.IsVisible(500)</visible>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/diffuse_bottom.png</texture>
+                <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
+                <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
+            </control>
             <control type="group">
                 <visible>Container.Content(artists) + !IsEmpty(ListItem.DBID)</visible>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
@@ -896,17 +914,22 @@
                 <control type="group">
                     <width>120</width>
                     <posx>-20</posx>
-                    <control type="image">
-                        <texture>flags/IMDB.png</texture>
-                        <include>AudioFlagsVars</include>
-                    </control>
                     <control type="label">
-                        <posy>22</posy>
+                        <posy>5</posy>
                         <width>135</width>
                         <height>38</height>
                         <align>center</align>
                         <label fallback="?">$INFO[ListItem.Rating]</label>
                         <font>Font_Bold40</font>
+                        <textcolor>floor</textcolor>
+                    </control>
+                    <control type="label">
+                        <posy>34</posy>
+                        <width>135</width>
+                        <height>38</height>
+                        <align>center</align>
+                        <label fallback="?">$INFO[ListItem.Votes] Votes</label>
+                        <font>Font_Reg22_Caps</font>
                         <textcolor>floor</textcolor>
                     </control>
                 </control>

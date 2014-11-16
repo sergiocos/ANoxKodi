@@ -11,7 +11,7 @@
                     <posy>164</posy>
                     <width>46</width>
                     <height>787</height>
-                    <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
+                    <texturesliderbackground colordiffuse="$VAR[AreaColorVar]">views/scrollbarbacklist.png</texturesliderbackground>
                     <onleft>512</onleft>
                     <onright>9000</onright>
                 </control>
@@ -422,6 +422,7 @@
                             <label>$VAR[InfoWallSubTitleVar]</label>
                             <textcolor>white3</textcolor>
                             <scroll>true</scroll>
+                            <font>Font_Reg28_2</font>
                             <animation effect="fade" end="100" time="80" delay="80" reversible="false">Visible</animation>
                             <animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
                         </control>
