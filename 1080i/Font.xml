@@ -73,7 +73,7 @@
             <filename>OpenSansCond.ttf</filename>
             <style>uppercase</style>
             <size>22</size>
-            <linespacing>0.80</linespacing>
+            <linespacing>0.90</linespacing>
         </font>
         <font>
             <name>Font_Reg19_Caps</name>
@@ -134,6 +134,11 @@
             <name>Font_Reg57</name>
             <filename>OpenSansCond.ttf</filename>
             <size>57</size>
+        </font>
+        <font>
+            <name>Font_Reg47_2</name>
+            <filename>OpenSans-Regular.ttf</filename>
+            <size>47</size>
         </font>
         <font>
             <name>Font_Reg42</name>
@@ -200,6 +205,11 @@
             <name>Font_Info</name>
             <filename>OpenSansCond.ttf</filename>
             <size>28</size>
+        </font>
+        <font>
+            <name>Font_Reg26_2</name>
+            <filename>OpenSans-Regular.ttf</filename>
+            <size>26</size>
         </font>
         <font>
             <name>Font_Reg26</name>
