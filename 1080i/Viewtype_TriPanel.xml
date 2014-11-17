@@ -13,13 +13,6 @@
                 <control type="image">
                     <width>650</width>
                     <height>1080</height>
-                    <texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/info_panel_alt_glow.png</texture>
-                    <include>PanelGlowFade</include>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                </control>
-                <control type="image">
-                    <width>650</width>
-                    <height>1080</height>
                     <texture colordiffuse="$VAR[DialogColorVar]">views/tripanel/info_panel_alt.png</texture>
                 </control>
                 <control type="grouplist">
@@ -83,9 +76,9 @@
                     </control>
                 </control>
                 <control type="textbox">
-                    <posx>145</posx>
+                    <posx>148</posx>
                     <posy>286</posy>
-                    <width>434</width>
+                    <width>428</width>
                     <height>550</height>
                     <label>$VAR[GlobalPlotVar]</label>
                     <font>Font_Reg28_2</font>
@@ -93,9 +86,9 @@
                     <visible>!Skin.HasSetting(tripanelextrafanart)</visible>
                 </control>
                 <control type="textbox">
-                    <posx>145</posx>
+                    <posx>148</posx>
                     <posy>287</posy>
-                    <width>434</width>
+                    <width>428</width>
                     <height>264</height>
                     <label>$VAR[GlobalPlotVar]</label>
                     <font>Font_Reg28_2</font>
@@ -140,15 +133,6 @@
                 <visible>Control.IsVisible(52)</visible>
                 <visible>Stringcompare(Skin.String(TriPanelPosition),1) + !Container.Content(years) + !Container.Content(countries)</visible>
                 <control type="image">
-                    <posx>15</posx>
-                    <posy>-48</posy>
-                    <width>610</width>
-                    <height>1080</height>
-                    <texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/info_panel_glow.png</texture>
-                    <include>PanelGlowFade</include>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                </control>
-                <control type="image">
                     <posx>55</posx>
                     <posy>827</posy>
                     <width>530</width>
@@ -184,15 +168,6 @@
                 <animation effect="slide" end="-1320,0" time="320" tween="cubic" easing="inout" condition="Stringcompare(Skin.String(TriPanelPosition),3)">Conditional</animation>
                 <visible>[Stringcompare(Skin.String(TriPanelPosition),2) | Stringcompare(Skin.String(TriPanelPosition),3)] + !Container.Content(years) + !Container.Content(countries)</visible>
                 <animation effect="slide" end="-500,0" time="640" easing="inout" tween="circle" condition="IsEmpty(Container.FolderPath) + Stringcompare(Skin.String(TriPanelPosition),2)">Conditional</animation>
-                <control type="image">
-                    <posx>15</posx>
-                    <posy>-44</posy>
-                    <width>560</width>
-                    <height>995</height>
-                    <texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/info_panel_glow.png</texture>
-                    <include>PanelGlowFade</include>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                </control>
                 <control type="image">
                     <posx>52</posx>
                     <posy>762</posy>
@@ -232,13 +207,6 @@
                 <visible>Control.IsVisible(52)</visible>
                 <visible>Stringcompare(Skin.String(TriPanelPosition),2)</visible>
                 <visible>Control.IsVisible(9900)</visible>
-                <control type="image">
-                    <width>650</width>
-                    <height>1080</height>
-                    <texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/info_panel_glow.png</texture>
-                    <include>PanelGlowFade</include>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                </control>
                 <control type="image">
                     <width>650</width>
                     <height>1080</height>
@@ -306,9 +274,9 @@
                     </control>
                 </control>
                 <control type="textbox">
-                    <posx>102</posx>
+                    <posx>103</posx>
                     <posy>290</posy>
-                    <width>480</width>
+                    <width>470</width>
                     <height>550</height>
                     <label>$VAR[GlobalPlotVar]</label>
                     <font>Font_Reg28_2</font>
@@ -316,9 +284,9 @@
                     <autoscroll delay="10000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
                 <control type="textbox">
-                    <posx>102</posx>
+                    <posx>103</posx>
                     <posy>292</posy>
-                    <width>480</width>
+                    <width>470</width>
                     <height>264</height>
                     <font>Font_Reg28_2</font>
                     <label>$VAR[GlobalPlotVar]</label>
@@ -363,15 +331,6 @@
                 <visible>Control.IsVisible(52)</visible>
                 <animation effect="slide" time="560" start="-1275,0" end="0,0" tween="cubic">VisibleChange</animation>
                 <animation effect="fade" time="160" start="100" end="0">Hidden</animation>
-                <control type="image">
-                    <posx>44</posx>
-                    <posy>37</posy>
-                    <width>860</width>
-                    <height>987</height>
-                    <texture colordiffuse="$VAR[AreaColorVar]" border="33,33,33,148">wall/wall_bg_glow.png</texture>
-                    <include>PanelGlowFade</include>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                </control>
                 <control type="image">
                     <posx>42</posx>
                     <posy>37</posy>

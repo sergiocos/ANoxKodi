@@ -488,13 +488,6 @@
     </include>
     <include name="Furniture_SettingsBackPanel">
         <control type="image">
-            <posx>40</posx>
-            <posy>38</posy>
-            <width>1838</width>
-            <height>1001</height>
-            <texture colordiffuse="$VAR[AreaColorVar]">settings/settings_panelback_shadow.png</texture>
-        </control>
-        <control type="image">
             <posx>34</posx>
             <posy>34</posy>
             <width>1850</width>
@@ -910,15 +903,6 @@
         </item>
     </include>
     <include name="FileManagerPanels">
-        <control type="image">
-            <posx>105</posx>
-            <posy>110</posy>
-            <width>748</width>
-            <height>683</height>
-            <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
-            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <include>PanelGlowFade</include>
-        </control>
         <control type="image">
             <posx>105</posx>
             <posy>110</posy>
