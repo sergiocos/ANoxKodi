@@ -9,10 +9,14 @@
     <onunload>ClearProperty(FanartZoom,movieinformation)</onunload>
     <controls>
         <control type="group">
-            <animation effect="slide" start="1242,0" end="0,0" time="320" tween="quadratic">WindowOpen</animation>
-            <animation effect="slide" end="1242,0" time="320" tween="quadratic">WindowClose</animation>
-            <animation effect="slide" start="1242,0" end="0,0" time="320" tween="quadratic" condition="!Window.IsVisible(script-Actors-DialogVideoInfo.xml) + !Window.IsVisible(DialogTextViewer.xml) + !Window.IsVisible(script-Actors-DialogInfo.xml)">Conditional</animation>
-            <animation effect="slide" end="1242,0" time="320" tween="quadratic" condition="Window.IsVisible(script-Actors-DialogVideoInfo.xml) | Window.IsVisible(script-Actors-DialogInfo.xml)">Conditional</animation>
+            <control type="button" id="2600">
+                <include>HiddenObject</include>
+                <visible>Window.IsVisible(script-Actors-DialogVideoInfo.xml) | Window.IsVisible(DialogTextViewer.xml) | Window.IsVisible(script-Actors-DialogInfo.xml)</visible>
+            </control>
+            <animation effect="slide" start="1242,0" end="0,0" time="450" tween="sine">WindowOpen</animation>
+            <animation effect="slide" end="1242,0" time="450" tween="sine">WindowClose</animation>
+            <animation effect="slide" start="1242,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
+            <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
             <control type="image">
                 <posx>729</posx>
                 <width>1192</width>
@@ -56,7 +60,7 @@
                         <label>-</label>
                         <label></label>
                         <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31172])</onclick>
-                        <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.metadata.actors,$INFO[ListItem.Director]))</onclick>
+                        <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director]))</onclick>
                         <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31096])</onclick>
                         <onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Director],home)|ActivateWindow(1168))</onclick>
                         <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31197])</onclick>
@@ -70,7 +74,7 @@
                         <texturenofocus>-</texturenofocus>
                         <label>-</label>
                         <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31172])</onclick>
-                        <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.metadata.actors,$INFO[ListItem.Writer]))</onclick>
+                        <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer]))</onclick>
                         <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31096])</onclick>
                         <onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Writer],home)|ActivateWindow(1168))</onclick>
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Writer])</onclick>
@@ -799,7 +803,7 @@
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31172])</onclick>
-                    <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.metadata.actors,$INFO[Container(50).ListItem.Label]))</onclick>
+                    <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label]))</onclick>
                     <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31096])</onclick>
                     <onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(listcontent,$INFO[Container(50).ListItem.Label],home)|ActivateWindow(1168))</onclick>
                     <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31197])</onclick>
@@ -1081,10 +1085,10 @@
             </control>
         </control>
         <control type="group">
-            <animation effect="slide" start="-729,0" end="0,0" time="320" tween="quadratic">WindowOpen</animation>
-            <animation effect="slide" end="-729,0" time="320" tween="quadratic">WindowClose</animation>
-            <animation effect="slide" start="-729,0" end="0,0" time="320" tween="quadratic" condition="!Window.IsVisible(script-Actors-DialogVideoInfo.xml) + !Window.IsVisible(DialogTextViewer.xml) + !Window.IsVisible(script-Actors-DialogInfo.xml)">Conditional</animation>
-            <animation effect="slide" end="-729,0" time="320" tween="quadratic" condition="Window.IsVisible(script-Actors-DialogVideoInfo.xml) | Window.IsVisible(script-Actors-DialogInfo.xml)">Conditional</animation>
+            <animation effect="slide" start="-729,0" end="0,0" time="450" tween="sine">WindowOpen</animation>
+            <animation effect="slide" end="-729,0" time="450" tween="sine">WindowClose</animation>
+            <animation effect="slide" start="-729,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
+            <animation effect="slide" end="-729,0" time="450" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
             <control type="image">
                 <width>729</width>
                 <height>1080</height>
