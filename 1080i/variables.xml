@@ -22,6 +22,10 @@
         <value condition="Substring(Skin.CurrentTheme,whit)">FFAAAAAA</value>
         <value>$VAR[AreaColorVar]</value>
     </variable>
+    <variable name="VideoInfoColorVar">
+        <value condition="Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)">$INFO[Window(home).Property(ActorInfo.ImageColor)]</value>
+            <value>$INFO[Window(home).Property(movie.ImageColor)]</value>
+        </variable>
     <variable name="DialogColorVar">
         <value condition="Skin.HasSetting(colordialogs) + !Substring(Skin.CurrentTheme,whit)">$VAR[AreaColorVar]</value>
         <value>FFFFFFFF</value>
@@ -1373,7 +1377,7 @@
         <value condition="Window.IsActive(weather)">$LOCALIZE[8]</value>
         <value condition="Window.IsActive(pictures)">$LOCALIZE[1213]</value>
         <value condition="Window.IsActive(filemanager)">$LOCALIZE[10003]</value>
-        <value condition="Window.IsActive(PVR)">$LOCALIZE[31017]$INFO[Control.GetLabel(29), / ]$INFO[Control.GetLabel(30), / ]</value>
+        <value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels) | Window.IsActive(TVGuide) | Window.IsActive(RadioGuide) | Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings) | Window.IsActive(TVTimers) | Window.IsActive(RadioTimers) | Window.IsActive(TVSearch) | Window.IsActive(RadioSearch)">$LOCALIZE[31017]$INFO[Control.GetLabel(29), / ]$INFO[Control.GetLabel(30), / ]</value>
         <value condition="Window.IsActive(script-NextAired-TVGuide.xml)">$LOCALIZE[31290]</value>
         <value condition="Window.IsActive(script-globalsearch-main.xml)">$LOCALIZE[283]</value>
         <value condition="Window.IsActive(script-Rom_Collection_Browser-main.xml)">Rom Collection Browser $INFO[ListItem.Property(romcollection), / ]</value>
