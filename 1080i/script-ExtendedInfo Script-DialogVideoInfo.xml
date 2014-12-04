@@ -1,44 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol always="true">4000</defaultcontrol>
-    <onload>RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(movie.Poster)]"',radius=20,prefix=movie)</onload>
     <!--
     <onload condition="System.HasAddon(script.videoextras) + !IsEmpty(Window(home).Property(movie.DBID))">XBMC.RunScript(script.videoextras,check,"$INFO[Window(home).Property(FilenameAndPath)]")</onload>-->
-    <onunload>ClearProperty(movie.ImageColor,home)</onunload>
-    <onunload>ClearProperty(movie.ImageFilter,home)</onunload>
     <controls>
-        <control type="image">
-            <posx>0</posx>
-            <width>1920</width>
-            <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
-            <height>1080</height>
-            <aspectratio align="center">scale</aspectratio>
-            <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
-            <include>Animation_WindowFade200</include>
-            <visible>!Control.Isvisible(2600)</visible>
-            <animation effect="fade" time="250">VisibleChange</animation>
-        </control>
-        <!--
-        <control type="image">
+<!--         <control type="image">
             <posx>0</posx>
             <width>1920</width>
             <height>1080</height>
             <aspectratio align="center">scale</aspectratio>
-            <texture>$INFO[Window(home).Property(movie.Logo)]</texture>
+            <texture>$INFO[Window(home).Property(movie.Fanart)]</texture>
             <include>Animation_WindowFade200</include>
-            <visible>!Control.Isvisible(2600)</visible>
             <animation effect="fade" time="250">VisibleChange</animation>
-        </control>-->
+        </control> -->
         <control type="group">
-            <control type="button" id="2600">
-                <include>HiddenObject</include>
-                <visible>Window.IsVisible(DialogTextViewer.xml)</visible>
-            </control>
             <animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine">WindowOpen</animation>
             <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
             <animation effect="slide" end="0,1080" time="450" tween="sine" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">WindowClose</animation>
-            <animation effect="slide" start="1242,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
-            <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
             <animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
             <control type="image">
                 <posx>729</posx>
@@ -277,14 +255,6 @@
                                 <include>Furniture_FlagUpright</include>
                                 <visible>!IsEmpty(Control.GetLabel(900015))</visible>
                             </control>
-                            <control type="image">
-                                <posy>5</posy>
-                                <width>100</width>
-                                <height>62</height>
-                                <aspectratio aligny="center" align="center">keep</aspectratio>
-                                <texture colordiffuse="white2">flags/cc.png</texture>
-                                <visible>!IsEmpty(Window(home).Property(movie.SubtitleLanguage)) + IsEmpty(Window.Property(SubtitleLanguage.1))</visible>
-                            </control>
                             <!--Language flags-->
                             <control type="grouplist">
                                 <orientation>vertical</orientation>
@@ -294,19 +264,92 @@
                                     <width>600</width>
                                     <height>25</height>
                                     <align>left</align>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                     <itemgap>2</itemgap>
                                     <orientation>horizontal</orientation>
-                                    <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+                                    <!--
+                                    <visible>!IsEmpty(Window(home).Property(movie.AudioLanguage.1))</visible>-->
                                     <control type="label">
                                         <width>110</width>
                                         <height>24</height>
                                         <align>right</align>
+                                        <textoffsetx>10</textoffsetx>
                                         <posy>3</posy>
                                         <label>$LOCALIZE[445]:</label>
                                         <font>Font_Reg19_Caps</font>
                                     </control>
-                                    <include>LanguageFlags</include>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.1),flags/language/,.png]</texture>
+                                        <visible>!IsEmpty(Window(home).Property(movie.AudioLanguage.1))</visible>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.2),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.3),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.4),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.5),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.6),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.7),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.8),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.9),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.10),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.11),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.AudioLanguage.12),flags/language/,.png]</texture>
+                                    </control>
                                 </control>
                                 <!--Subtitle flags-->
                                 <control type="grouplist" id="12000">
@@ -322,6 +365,7 @@
                                         <posy>3</posy>
                                         <height>24</height>
                                         <align>right</align>
+                                        <textoffsetx>10</textoffsetx>
                                         <aligny>bottom</aligny>
                                         <label>$LOCALIZE[287]:</label>
                                         <font>Font_Reg19_Caps</font>
@@ -334,9 +378,80 @@
                                         <label>31003</label>
                                         <textcolor>grey</textcolor>
                                         <font>Font_Reg19_Caps</font>
-                                        <visible>IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1)) + IsEmpty(Window(movieinformation).Property(SubtitleLanguage.2))</visible>
+                                        <visible>IsEmpty(Window(home).Property(movie.SubtitleLanguage.1)) + IsEmpty(Window(home).Property(movie.SubtitleLanguage.2))</visible>
                                     </control>
-                                    <include>SubtitleFlags</include>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.1),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.2),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.3),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.4),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.5),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.6),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.7),flags/language/,.png]</texture>
+                                        <aspectratio>keep</aspectratio>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.8),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.9),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.10),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.11),flags/language/,.png]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>28</width>
+                                        <height>28</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture>$INFO[Window(home).Property(movie.SubtitleLanguage.12),flags/language/,.png]</texture>
+                                    </control>
                                 </control>
                             </control>
                         </control>
@@ -902,7 +1017,8 @@
                                     </control>
                                     <control type="image">
                                         <posy>28</posy>
-                                        <width>373</width>
+                                        <posx>30</posx>
+                                        <width>313</width>
                                         <height>100</height>
                                         <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Label,flags/studios/,.png]</texture>
                                         <aspectratio aligny="center" align="center">keep</aspectratio>
@@ -938,7 +1054,8 @@
                                     </control>
                                     <control type="image">
                                         <posy>28</posy>
-                                        <width>373</width>
+                                        <posx>30</posx>
+                                        <width>313</width>
                                         <height>100</height>
                                         <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Label,flags/studios/,.png]</texture>
                                         <aspectratio aligny="center" align="center">keep</aspectratio>
@@ -1223,9 +1340,9 @@
                     <posy>22</posy>
                     <visible>!Control.HasFocus(132) + !ControlGroup(5000).HasFocus + !IsEmpty(Window(home).Property(movie.Logo))</visible>
                     <animation effect="fade" time="250">VisibleChange</animation>
-
-<!--                     <control type="image">
-                    <visible>!Control.HasFocus(132) + !ControlGroup(5000).HasFocus + !IsEmpty(Window(home).Property(movie.Logo))</visible>
+                    <!--
+                    <control type="image">
+                        <visible>!Control.HasFocus(132) + !ControlGroup(5000).HasFocus + !IsEmpty(Window(home).Property(movie.Logo))</visible>
                         <posx>1500</posx>
                         <posy>0</posy>
                         <width>230</width>
@@ -1240,7 +1357,7 @@
                             <effect type="slide" start="0,0" end="4600" time="700" tween="quadratic" easing="out" />
                             <effect type="rotate" start="0" center="1615,115" end="-720" time="700" tween="quadratic" easing="out" />
                         </animation>
-                    </control> -->
+                    </control>-->
                     <control type="image">
                         <posx>1020</posx>
                         <posy>-20</posy>
@@ -1287,8 +1404,8 @@
                                 <height>50</height>
                                 <label>$INFO[Window(home).Property(movie.Title)]</label>
                                 <font>Font_Bold56</font>
-                                <animation effect="slide" start="0,0" end="0,30" time="0" condition="Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))">Conditional</animation>
-                                <scroll>true</scroll>
+<!--                                 <animation effect="slide" start="0,0" end="0,30" time="0" condition="Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))">Conditional</animation>
+ -->                                <scroll>true</scroll>
                             </control>
                             <control type="grouplist">
                                 <posx>0</posx>
@@ -1299,8 +1416,8 @@
                                 <itemgap>0</itemgap>
                                 <orientation>horizontal</orientation>
                                 <usecontrolcoords>true</usecontrolcoords>
-                                <visible>!Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))</visible>
-                                <control type="image" id="12020">
+<!--                                 <visible>!Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))</visible>
+ -->                                <control type="image" id="12020">
                                     <posx>0</posx>
                                     <posy>6</posy>
                                     <width>42</width>
@@ -1310,10 +1427,11 @@
                                     <fadetime>200</fadetime>
                                     <visible>!IsEmpty(Control.GetLabel(12020))</visible>
                                 </control>
-                                <control type="label">
+                                <control type="fadelabel">
                                     <width>995</width>
                                     <height>40</height>
                                     <label>$INFO[Window(home).Property(movie.OriginalTitle)]</label>
+                                    <label>$INFO[Window(home).Property(movie.Status)]</label>
                                     <font>Font_Reg28_2</font>
                                     <textcolor>grey</textcolor>
                                 </control>
@@ -1488,8 +1606,6 @@
         <control type="group">
             <animation effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine">WindowOpen</animation>
             <animation effect="slide" end="-1500,0" time="900" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
-            <animation effect="slide" start="-1500,0" end="0,0" time="900" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
-            <animation effect="slide" end="-1500,0" time="900" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
             <animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
             <control type="image">
                 <posx>-10</posx>
