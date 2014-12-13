@@ -88,6 +88,14 @@
                             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                             <bordersize>19.5</bordersize>
                         </control>
+                    <control type="image">
+                        <width>55</width>
+                        <height>55</height>
+                        <posy>30</posy>
+                        <posx>149</posx>
+                        <texture>flags/local.png</texture>
+                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
                         <control type="textbox">
                             <width>228</width>
                             <height>69</height>
@@ -95,17 +103,6 @@
                             <align>center</align>
                             <font>Font_Reg25_2</font>
                             <label>$INFO[ListItem.Label]$INFO[ListItem.Property(User_Rating),[CR][COLOR grey],[/COLOR]]</label>
-                            <textcolor>green</textcolor>
-                            <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                        </control>
-                        <control type="textbox">
-                            <width>228</width>
-                            <height>69</height>
-                            <posy>320</posy>
-                            <align>center</align>
-                            <font>Font_Reg25_2</font>
-                            <label>$INFO[ListItem.Label]$INFO[ListItem.Property(User_Rating),[CR][COLOR grey],[/COLOR]]</label>
-                            <visible>IsEmpty(ListItem.Property(DBID))</visible>
                         </control>
                     </control>
                 </itemlayout>
@@ -134,20 +131,15 @@
                             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                             <bordersize>19.5</bordersize>
                         </control>
-                    </control>
-                    <control type="textbox">
-                        <posx>80</posx>
-                        <width>228</width>
-                        <height>69</height>
-                        <posy>470</posy>
-                        <align>center</align>
-                        <font>Font_Reg25_2</font>
-                            <label>$INFO[ListItem.Label]$INFO[ListItem.Property(User_Rating),[CR][COLOR grey],[/COLOR]]</label>
-                        <animation effect="slide" start="0,0" end="0,50" time="280" tween="back" reversible="false">Focus</animation>
-                        <animation effect="slide" start="0,50" end="0" time="200" tween="cubic" reversible="false">UnFocus</animation>
-                        <textcolor>green</textcolor>
+                    <control type="image">
+                        <width>55</width>
+                        <height>55</height>
+                        <posy>30</posy>
+                        <posx>149</posx>
+                        <texture>flags/local.png</texture>
                         <visible>!IsEmpty(ListItem.Property(DBID))</visible>
                     </control>
+                    </control>
                     <control type="textbox">
                         <posx>80</posx>
                         <width>228</width>
@@ -158,7 +150,6 @@
                             <label>$INFO[ListItem.Label]$INFO[ListItem.Property(User_Rating),[CR][COLOR grey],[/COLOR]]</label>
                         <animation effect="slide" start="0,0" end="0,50" time="280" tween="back" reversible="false">Focus</animation>
                         <animation effect="slide" start="0,50" end="0" time="200" tween="cubic" reversible="false">UnFocus</animation>
-                        <visible>IsEmpty(ListItem.Property(DBID))</visible>
                     </control>
                 </focusedlayout>
             </control>

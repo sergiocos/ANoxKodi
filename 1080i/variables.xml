@@ -109,7 +109,7 @@
         <value condition="substring(Window(home).Property(mpaa),전체)">KR_Certificate_All</value>
         <value condition="substring(Window(home).Property(mpaa),12세)">KR_Certificate_12</value>
         <value condition="substring(Window(home).Property(mpaa),15세)">KR_Certificate_15</value>
-        <value condition="substring(Window(home).Property(mpaa),�?가)">KR_Certificate_18</value>
+        <value condition="substring(Window(home).Property(mpaa),불가)">KR_Certificate_18</value>
         <value condition="substring(Window(home).Property(mpaa),제한)">KR_Certificate_R</value>
         <value condition="substring(Window(home).Property(mpaa),Livre)">MPAA_Brazil_Livre</value>
         <value condition="substring(Window(home).Property(mpaa),Brazil:10) | substring(Window(home).Property(mpaa),10 anos)">MPAA_Brazil_10</value>
@@ -154,7 +154,7 @@
         <value condition="substring(ListItem.mpaa,전체)">KR_Certificate_All</value>
         <value condition="substring(ListItem.mpaa,12세)">KR_Certificate_12</value>
         <value condition="substring(ListItem.mpaa,15세)">KR_Certificate_15</value>
-        <value condition="substring(ListItem.mpaa,�?가)">KR_Certificate_18</value>
+        <value condition="substring(ListItem.mpaa,불가)">KR_Certificate_18</value>
         <value condition="substring(ListItem.mpaa,제한)">KR_Certificate_R</value>
         <value condition="Substring(ListItem.mpaa,Livre)">MPAA_Brazil_Livre</value>
         <value condition="substring(ListItem.mpaa,Brazil:10) | substring(ListItem.mpaa,10 anos)">MPAA_Brazil_10</value>
@@ -199,7 +199,7 @@
         <value condition="substring(VideoPlayer.mpaa,전체)">KR_Certificate_All</value>
         <value condition="substring(VideoPlayer.mpaa,12세)">KR_Certificate_12</value>
         <value condition="substring(VideoPlayer.mpaa,15세)">KR_Certificate_15</value>
-        <value condition="substring(VideoPlayer.mpaa,�?가)">KR_Certificate_18</value>
+        <value condition="substring(VideoPlayer.mpaa,불가)">KR_Certificate_18</value>
         <value condition="substring(VideoPlayer.mpaa,제한)">KR_Certificate_R</value>
         <value condition="substring(VideoPlayer.mpaa,Livre)">MPAA_Brazil_Livre</value>
         <value condition="substring(VideoPlayer.mpaa,Brazil:10) | substring(VideoPlayer.mpaa,10 anos)">MPAA_Brazil_10</value>
@@ -831,6 +831,10 @@
         <value condition="SubString(Control.GetLabel(7),*)">$LOCALIZE[107]</value>
         <value>$LOCALIZE[106]</value>
     </variable>
+    <variable name="AddonHideBrokenLabelVar">
+        <value condition="SubString(Control.GetLabel(8),*)">$LOCALIZE[107]</value>
+        <value>$LOCALIZE[106]</value>
+    </variable>
     <variable name="MultiFanartVar">
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.MultiFanart)]</value>
         <value condition="!IsEmpty(Container(9000).ListItem.Icon)">$INFO[Container(9000).ListItem.Icon]</value>
@@ -885,7 +889,7 @@
     </variable>
     <variable name="PlayerTimeLabelVar">
         <value condition="Player.HasDuration">$INFO[MusicPlayer.Time,, / ]$INFO[MusicPlayer.Duration]</value>
-        <value>$INFO[MusicPlayer.Time,, / ]�?�</value>
+        <value>$INFO[MusicPlayer.Time,, / ]∞</value>
     </variable>
     <variable name="PicturesFanartVar">
         <value condition="IsEmpty(Skin.String(PicturesBackground))">special://skin/backgrounds/pictures/</value>
@@ -1574,9 +1578,9 @@
     </variable>
      <variable name="LowListSubTitleVar"><!-- sergiu: mod info lowlist -->
         <value condition="SubString(ListItem.Path,videodb://1/7)">$LOCALIZE[20457]</value>
-        <value condition="Container.Content(tvshows)">[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, ]$VAR[OneOrMoreEpisodesVar] $INFO[ListItem.Genre,• ,][/LOWERCASE]</value>
-		<value condition="Container.Content(movies)">[LOWERCASE]$INFO[ListItem.Duration,, minute] $INFO[ListItem.Genre,• ,][/LOWERCASE]</value>
-        <value condition="Container.Content(episodes)">$INFO[ListItem.Premiered ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</value>
+        <value condition="Container.Content(tvshows)">[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, ]$VAR[OneOrMoreEpisodesVar] $INFO[ListItem.Genre,â€˘ ,][/LOWERCASE]</value>
+		<value condition="Container.Content(movies)">[LOWERCASE]$INFO[ListItem.Duration,, minute] $INFO[ListItem.Genre,â€˘ ,][/LOWERCASE]</value>
+        <value condition="Container.Content(episodes)">$INFO[ListItem.Premiered ]$INFO[ListItem.Duration, â€˘ , $LOCALIZE[12391]]</value>
         <value condition="Container.Content(seasons)">[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, ]$VAR[OneOrMoreEpisodesVar][/LOWERCASE]</value>
     </variable><!-- sergiu: end mod info lowlist -->
     <!-- Global Search -->
