@@ -1578,9 +1578,9 @@
     </variable>
      <variable name="LowListSubTitleVar"><!-- sergiu: mod info lowlist -->
         <value condition="SubString(ListItem.Path,videodb://1/7)">$LOCALIZE[20457]</value>
-        <value condition="Container.Content(tvshows)">[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, ]$VAR[OneOrMoreEpisodesVar] $INFO[ListItem.Genre,â€˘ ,][/LOWERCASE]</value>
-		<value condition="Container.Content(movies)">[LOWERCASE]$INFO[ListItem.Duration,, minute] $INFO[ListItem.Genre,â€˘ ,][/LOWERCASE]</value>
-        <value condition="Container.Content(episodes)">$INFO[ListItem.Premiered ]$INFO[ListItem.Duration, â€˘ , $LOCALIZE[12391]]</value>
+        <value condition="Container.Content(tvshows)">[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, ]$VAR[OneOrMoreEpisodesVar] $INFO[ListItem.Genre,• ,][/LOWERCASE]</value>
+		<value condition="Container.Content(movies)">[LOWERCASE]$INFO[ListItem.Duration,, minute] $INFO[ListItem.Genre,• ,][/LOWERCASE]</value>
+        <value condition="Container.Content(episodes)">$INFO[ListItem.Premiered ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</value>
         <value condition="Container.Content(seasons)">[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, ]$VAR[OneOrMoreEpisodesVar][/LOWERCASE]</value>
     </variable><!-- sergiu: end mod info lowlist -->
     <!-- Global Search -->
