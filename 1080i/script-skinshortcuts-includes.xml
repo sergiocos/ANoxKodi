@@ -1938,8 +1938,6 @@
 	<include name="skinshortcuts-group-alt-trailers" />
 	<include name="skinshortcuts-group-tvguide" />
 	<include name="skinshortcuts-group-alt-tvguide" />
-	<include name="skinshortcuts-group-featured" />
-	<include name="skinshortcuts-group-alt-featured" />
 	<include name="skinshortcuts-group-favourites" />
 	<include name="skinshortcuts-group-alt-favourites" />
 	<include name="skinshortcuts-group-maps" />
