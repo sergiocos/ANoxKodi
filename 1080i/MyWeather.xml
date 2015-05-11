@@ -1225,7 +1225,6 @@
                 </control>
                 <control type="group">
                     <visible>SubString(Window.Property(Weather.CurrentView),map1)</visible>
-                    <include>SettingsFadeEffect</include>
                     <left>902</left>
                     <top>137</top>
                     <width>1316</width>
@@ -1247,7 +1246,7 @@
                         <width>916</width>
                         <height>70</height>
                         <align>right</align>
-                        <font>font24</font>
+                        <font>Font_Reg29</font>
                         <textcolor>black</textcolor>
                         <shadowcolor>white</shadowcolor>
                         <label>$INFO[ListItem.Label]</label>
@@ -1264,7 +1263,6 @@
                 </control>
                 <control type="group">
                     <visible>SubString(Window.Property(Weather.CurrentView),map2)</visible>
-                    <include>SettingsFadeEffect</include>
                     <left>902</left>
                     <top>137</top>
                     <width>1316</width>
@@ -1286,7 +1284,7 @@
                         <width>916</width>
                         <height>70</height>
                         <align>right</align>
-                        <font>font24</font>
+                        <font>Font_Reg29</font>
                         <textcolor>black</textcolor>
                         <shadowcolor>white</shadowcolor>
                         <label>$INFO[ListItem.Label]</label>
@@ -1303,7 +1301,6 @@
                 </control>
                 <control type="group">
                     <visible>SubString(Window.Property(Weather.CurrentView),map3)</visible>
-                    <include>SettingsFadeEffect</include>
                     <left>902</left>
                     <top>137</top>
                     <width>1316</width>
@@ -1325,7 +1322,7 @@
                         <width>916</width>
                         <height>70</height>
                         <align>right</align>
-                        <font>font24</font>
+                        <font>Font_Reg29</font>
                         <textcolor>black</textcolor>
                         <shadowcolor>white</shadowcolor>
                         <label>$INFO[ListItem.Label]</label>
@@ -1342,7 +1339,6 @@
                 </control>
                 <control type="group">
                     <visible>SubString(Window.Property(Weather.CurrentView),map4)</visible>
-                    <include>SettingsFadeEffect</include>
                     <left>902</left>
                     <top>137</top>
                     <width>1316</width>
@@ -1364,7 +1360,7 @@
                         <width>916</width>
                         <height>70</height>
                         <align>right</align>
-                        <font>font24</font>
+                        <font>Font_Reg29</font>
                         <textcolor>black</textcolor>
                         <shadowcolor>white</shadowcolor>
                         <label>$INFO[ListItem.Label]</label>
@@ -1381,7 +1377,6 @@
                 </control>
                 <control type="group">
                     <visible>SubString(Window.Property(Weather.CurrentView),map5)</visible>
-                    <include>SettingsFadeEffect</include>
                     <left>902</left>
                     <top>137</top>
                     <width>1316</width>
@@ -1403,7 +1398,7 @@
                         <width>916</width>
                         <height>70</height>
                         <align>right</align>
-                        <font>font24</font>
+                        <font>Font_Reg29</font>
                         <textcolor>black</textcolor>
                         <shadowcolor>white</shadowcolor>
                         <label>$INFO[ListItem.Label]</label>

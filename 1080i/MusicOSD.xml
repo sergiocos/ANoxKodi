@@ -31,7 +31,6 @@
             <onright>87</onright>
             <orientation>vertical</orientation>
             <pagecontrol>61</pagecontrol>
-            <focusposition>0</focusposition>
             <scrolltime tween="cubic" easing="inout">400</scrolltime>
             <preloaditems>2</preloaditems>
             <itemlayout height="60" width="1000">
@@ -43,7 +42,7 @@
                     <align>right</align>
                     <label>$INFO[ListItem.Duration]</label>
                     <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
-                    <font>font28</font>
+                    <font>Font_Reg29</font>
                     <textcolor>grey</textcolor>
                 </control>
                 <control type="label">
@@ -53,7 +52,7 @@
                     <height>80</height>
                     <align>left</align>
                     <label>$INFO[ListItem.Label]</label>
-                    <font>font28</font>
+                    <font>Font_Reg29</font>
                     <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
                     <textcolor>grey</textcolor>
                 </control>
@@ -71,7 +70,7 @@
                         <animation effect="fade" end="70" start="100" time="150" condition="!Control.HasFocus(8010)">Conditional</animation>
                         <label>$INFO[ListItem.Duration]</label>
                         <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
-                        <font>font28</font>
+                        <font>Font_Reg29</font>
                         <textcolor>white2</textcolor>
                     </control>
                     <control type="label">
@@ -82,7 +81,7 @@
                         <height>80</height>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
-                        <font>font28</font>
+                        <font>Font_Reg29</font>
                         <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
                         <textcolor>white2</textcolor>
                     </control>
