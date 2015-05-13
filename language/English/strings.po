@@ -286,6 +286,10 @@ msgctxt "#31066"
 msgid "Back"
 msgstr ""
 
+msgctxt "#31067"
+msgid "Smart playlist"
+msgstr ""
+
 msgctxt "#31068"
 msgid "Random albums"
 msgstr ""
@@ -296,6 +300,14 @@ msgstr ""
 
 msgctxt "#31070"
 msgid "Random add-ons"
+msgstr ""
+
+msgctxt "#31071"
+msgid "Daily Babes"
+msgstr ""
+
+msgctxt "#31072"
+msgid "Daily Babe"
 msgstr ""
 
 msgctxt "#31073"
@@ -310,6 +322,22 @@ msgctxt "#31075"
 msgid "Press SELECT to switch between now/next EPG"
 msgstr ""
 
+msgctxt "#31076"
+msgid "Upcoming Movies"
+msgstr ""
+
+msgctxt "#31077"
+msgid "Top Rated Movies"
+msgstr ""
+
+msgctxt "#31078"
+msgid "Recommended Movies"
+msgstr ""
+
+msgctxt "#31079"
+msgid "In Theaters"
+msgstr ""
+
 msgctxt "#31080"
 msgid "Director information"
 msgstr ""
@@ -322,6 +350,10 @@ msgctxt "#31082"
 msgid "Extended"
 msgstr ""
 
+msgctxt "#31083"
+msgid "In Cinema"
+msgstr ""
+
 msgctxt "#31084"
 msgid "Panels"
 msgstr ""
@@ -332,6 +364,10 @@ msgstr ""
 
 msgctxt "#31086"
 msgid "ClearART"
+msgstr ""
+
+msgctxt "#31087"
+msgid "Opening Movies"
 msgstr ""
 
 msgctxt "#31088"
