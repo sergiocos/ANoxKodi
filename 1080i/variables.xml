@@ -288,8 +288,6 @@
     </variable>
     <variable name="WeatherFanartVar">
         <value condition="Control.HasFocus(7500)">$INFO[Container(7500).ListItem.Property(Fanart)]</value>
-        <value condition="Control.HasFocus(7502)">$INFO[Container(7502).ListItem.Property(Fanart)]</value>
-        <value condition="Control.HasFocus(7503)">$INFO[Container(7503).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(7504)">$INFO[Container(7504).ListItem.Property(Fanart)]</value>
         <value condition="!IsEmpty(Weather.FanartCode)">$INFO[Weather.FanartCode,http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/]</value>
         <value>special://skin/backgrounds/weather/</value>
@@ -713,7 +711,7 @@
         <value>$LOCALIZE[20360]</value>
     </variable>
     <variable name="HomeWidgetFanartVar">
-        <value condition="[ControlGroup(5020).HasFocus | ControlGroup(5030).HasFocus] + !IsEmpty(Window(home).Property(Fanart))">$INFO[Window(home).Property(Fanart)]</value>
+        <value condition="[ControlGroup(5030).HasFocus] + !IsEmpty(Window(home).Property(Fanart))">$INFO[Window(home).Property(Fanart)]</value>
         <value condition="Control.HasFocus(5010) + !IsEmpty(Container(5010).ListItem.Art(fanart))">$INFO[Container(5010).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(5010) + Substring(Container(9000).ListItem.Property(Widget),featured) + !IsEmpty(Container(5001).ListItem.Art(fanart))">$INFO[Container(5001).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(5012) + !IsEmpty(Container(5003).ListItem.Art(fanart))">$INFO[Container(5003).ListItem.Art(fanart)]</value>
@@ -1304,7 +1302,7 @@
     </variable>
     <variable name="FeaturedWidgetLeftContentVar">
         <value condition="Substring(Control.GetLabel(4321),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies5010.Content))">$INFO[Skin.String(FeaturedMovies5010.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">plugin://script.extendedinfo?info=randomdbmovies&amp;&amp;reload=10</value>
         <value condition="Substring(Control.GetLabel(4321),featuredtv) + !IsEmpty(Skin.String(FeaturedTV5010.Content))">$INFO[Skin.String(FeaturedTV5010.Content)]</value>
         <value condition="Substring(Control.GetLabel(4321),featuredtv)">special://skin/extras/Playlists/recommendedepisodes8.xsp</value>
         <value condition="Substring(Control.GetLabel(4321),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic5010.Content))">$INFO[Skin.String(FeaturedMusic5010.Content)]</value>
@@ -1312,7 +1310,7 @@
     </variable>
     <variable name="FeaturedWidgetMiddleContentVar">
         <value condition="Substring(Control.GetLabel(4321),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies5011.Content))">$INFO[Skin.String(FeaturedMovies5011.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">special://skin/extras/Playlists/recommendedmovies8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">plugin://script.extendedinfo?info=inprogressdbmovies</value>
         <value condition="Substring(Control.GetLabel(4321),featuredtv) + !IsEmpty(Skin.String(FeaturedTV5011.Content))">$INFO[Skin.String(FeaturedTV5011.Content)]</value>
         <value condition="Substring(Control.GetLabel(4321),featuredtv)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
         <value condition="Substring(Control.GetLabel(4321),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic5011.Content))">$INFO[Skin.String(FeaturedMusic5011.Content)]</value>
@@ -1320,7 +1318,7 @@
     </variable>
     <variable name="FeaturedWidgetRightContentVar">
         <value condition="Substring(Control.GetLabel(4321),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies5012.Content))">$INFO[Skin.String(FeaturedMovies5012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">special://skin/extras/Playlists/recentmovies8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">plugin://script.extendedinfo?info=latestdbmovies</value>
         <value condition="Substring(Control.GetLabel(4321),featuredtv) + !IsEmpty(Skin.String(FeaturedTV5012.Content))">$INFO[Skin.String(FeaturedTV5012.Content)]</value>
         <value condition="Substring(Control.GetLabel(4321),featuredtv)">special://skin/extras/Playlists/recentepisodes8.xsp</value>
         <value condition="Substring(Control.GetLabel(4321),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic5012.Content))">$INFO[Skin.String(FeaturedMusic5012.Content)]</value>
