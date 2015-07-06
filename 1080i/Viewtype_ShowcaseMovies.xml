@@ -1,9 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
+    <constant name="scroll_left">-135</constant>
+    <constant name="scroll_right">135</constant>
+
+    <constant name="listitem7_posx">1635</constant>
+    <constant name="listitem6_posx">1500</constant>
+    <constant name="listitem5_posx">1365</constant>
+    <constant name="listitem4_posx">1230</constant>
+    <constant name="listitem3_posx">1095</constant>
+    <constant name="listitem2_posx">960</constant>
+    <constant name="listitem1_posx">825</constant>
+    <constant name="listitem0_posx">758</constant>
+    <constant name="listitem-1_posx">690</constant>
+    <constant name="listitem-2_posx">555</constant>
+    <constant name="listitem-3_posx">420</constant>
+    <constant name="listitem-4_posx">285</constant>
+    <constant name="listitem-5_posx">150</constant>
+    <constant name="listitem-6_posx">15</constant>
+    <constant name="listitem-7_posx">-120</constant>
+
+    <constant name="listitem7_rot_center">2100</constant>
+    <constant name="listitem6_rot_center">1965</constant>
+    <constant name="listitem5_rot_center">1830</constant>
+    <constant name="listitem4_rot_center">1695</constant>
+    <constant name="listitem3_rot_center">1560</constant>
+    <constant name="listitem2_rot_center">1425</constant>
+    <constant name="listitem1_rot_center">1290</constant>
+    <constant name="listitem-1_rot_center">540</constant>
+    <constant name="listitem-2_rot_center">405</constant>
+    <constant name="listitem-3_rot_center">270</constant>
+    <constant name="listitem-4_rot_center">135</constant>
+    <constant name="listitem-5_rot_center">0</constant>
+    <constant name="listitem-6_rot_center">-135</constant>
+    <constant name="listitem-7_rot_center">-270</constant>
+
+    <constant name="onprevious_rot_center">1223</constant>
+    <constant name="onprevious_slide">-75</constant>
+    <constant name="onnext_rot_center">608</constant>
+    <constant name="onnext_slide">75</constant>
+
+    <constant name="rotate">55</constant>
+    <constant name="neg_rotate">-55</constant>
+
+    <constant name="slide_time">200</constant>
+    <constant name="fadeout_time">200</constant>
+
+    <constant name="windowopen_anim_time">640</constant>
+
     <include name="Showcase">
         <control type="group">
             <visible>Control.IsVisible(501)</visible>
-            <animation effect="zoom" start="100" end="195" time="640" easing="inout" tween="circle" center="960,970" condition="Skin.HasSetting(showcasezoom)">Conditional</animation>
+            <animation effect="zoom" start="100" end="195" time="windowopen_anim_time" easing="inout" tween="circle" center="960,970" condition="Skin.HasSetting(showcasezoom)">Conditional</animation>
             <animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
             <animation type="Conditional" condition="Control.IsVisible(20000)" reversible="false">
                 <effect type="slide" end="30" time="60" tween="sine" />
@@ -14,223 +61,316 @@
                 <effect type="slide" end="30" time="140" tween="sine" delay="80" />
             </animation>
             <control type="group">
+                <posx>55</posx>
+                <posy>570</posy>
                 <camera x="960" y="810" />
                 <control type="group" id="6001">
-                    <posx>55</posx>
-                    <posy>570</posy>
-                    <visible>Container.OnNext + !Control.IsVisible(961)</visible>
-                    <animation effect="slide" end="-135,0" time="200" reversible="false">Hidden</animation>
+                    <visible>Container.OnNext + !Skin.HasSetting(noflow)</visible>
+                    <animation effect="slide" end="scroll_left,0" time="slide_time" reversible="false">Hidden</animation>
                     <control type="group">
-                        <posx>15</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-7).FolderPath)</visible>
                         <visible>Container.OnNext</visible>
-                        <animation effect="fade" start="100" end="0" time="200" reversible="false">Hidden</animation>
-                        <animation effect="rotatey" center="-135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-7</include>
+                        <animation effect="fade" start="100" end="0" time="fadeout_time" reversible="false">Hidden</animation>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem-6_posx" />
+                            <param name="rotate_degree" value="neg_rotate" />
+                            <param name="rotate_center" value="listitem-6_rot_center" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-7).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem-7Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-7Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility-7]" />
+                        </include>
                     </control>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem-5_posx" />
+                        <param name="rotate_degree" value="neg_rotate" />
+                        <param name="rotate_center" value="listitem-5_rot_center" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem-6Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-6Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility-6]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem-4_posx" />
+                        <param name="rotate_center" value="listitem-4_rot_center" />
+                        <param name="rotate_degree" value="neg_rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem-5Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-5Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility-5]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem-3_posx" />
+                        <param name="rotate_center" value="listitem-3_rot_center" />
+                        <param name="rotate_degree" value="neg_rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem-4Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-4Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility-4]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem-2_posx" />
+                        <param name="rotate_center" value="listitem-2_rot_center" />
+                        <param name="rotate_degree" value="neg_rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem-3Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-3Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility-3]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem-1_posx" />
+                        <param name="rotate_center" value="listitem-1_rot_center" />
+                        <param name="rotate_degree" value="neg_rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem-2Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-2Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility-2]" />
+                    </include>
                     <control type="group">
-                        <posx>150</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)</visible>
-                        <animation effect="rotatey" center="0" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-6</include>
-                    </control>
-                    <control type="group">
-                        <posx>285</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)</visible>
-                        <animation effect="rotatey" center="135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-5</include>
-                    </control>
-                    <control type="group">
-                        <posx>420</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)</visible>
-                        <animation effect="rotatey" center="270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-4</include>
-                    </control>
-                    <control type="group">
-                        <posx>555</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)</visible>
-                        <animation effect="rotatey" center="405" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-3</include>
-                    </control>
-                    <control type="group">
-                        <posx>690</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)</visible>
-                        <animation effect="rotatey" center="540" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-2</include>
-                    </control>
-                    <control type="group">
-                        <posx>1635</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)</visible>
                         <visible>!Container.OnNext</visible>
-                        <animation effect="fade" end="100" time="200" reversible="false">Visible</animation>
-                        <animation effect="rotatey" center="2100" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem6</include>
+                        <animation effect="fade" end="100" time="fadeout_time" reversible="false">Visible</animation>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem7_posx" />
+                            <param name="rotate_center" value="listitem7_rot_center" />
+                            <param name="rotate_degree" value="rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem6Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase6Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility6]" />
+                        </include>
                     </control>
-                    <control type="group">
-                        <posx>1500</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)</visible>
-                        <animation effect="rotatey" center="1965" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem5</include>
-                    </control>
-                    <control type="group">
-                        <posx>1365</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)</visible>
-                        <animation effect="rotatey" center="1830" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem4</include>
-                    </control>
-                    <control type="group">
-                        <posx>1230</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)</visible>
-                        <animation effect="rotatey" center="1695" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem3</include>
-                    </control>
-                    <control type="group">
-                        <posx>1095</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)</visible>
-                        <animation effect="rotatey" center="1560" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem2</include>
-                    </control>
-                    <control type="group">
-                        <posx>960</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)</visible>
-                        <animation effect="rotatey" center="1425" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem1</include>
-                    </control>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem6_posx" />
+                        <param name="rotate_center" value="listitem6_rot_center" />
+                        <param name="rotate_degree" value="rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem5Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase5Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility5]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem5_posx" />
+                        <param name="rotate_center" value="listitem5_rot_center" />
+                        <param name="rotate_degree" value="rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem4Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase4Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility4]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem4_posx" />
+                        <param name="rotate_center" value="listitem4_rot_center" />
+                        <param name="rotate_degree" value="rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem3Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase3Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility3]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem3_posx" />
+                        <param name="rotate_center" value="listitem3_rot_center" />
+                        <param name="rotate_degree" value="rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem2Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase2Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility2]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem2_posx" />
+                        <param name="rotate_center" value="listitem2_rot_center" />
+                        <param name="rotate_degree" value="rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem1Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase1Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility1]" />
+                    </include>
                     <control type="group">
                         <visible>Container.OnNext</visible>
-                        <animation effect="slide" end="75,0" time="200" reversible="false">Hidden</animation>
+                        <animation effect="slide" end="onnext_slide,0" time="slide_time" reversible="false">Hidden</animation>
                         <control type="group">
-                            <posx>825</posx>
                             <visible>Container.OnNext</visible>
-                            <visible>!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath)</visible>
-                            <animation effect="rotatey" center="1290" end="-55" time="200" reversible="false" tween="quadratic" easing="in">Hidden</animation>
-                            <animation effect="rotatey" center="1290" start="55" end="55" time="0" condition="true">Conditional</animation>
-                            <include>MovieShowCaseItem0</include>
+                            <animation effect="rotatey" center="listitem1_rot_center" end="neg_rotate" time="slide_time" reversible="false" tween="quadratic" easing="in">Hidden</animation>
+                            <include name="ShowCaseItem">
+                                <param name="group_posx" value="listitem1_posx" />
+                                <param name="rotate_center" value="listitem1_rot_center" />
+                                <param name="rotate_degree" value="rotate" />
+                                <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath)" />
+                                <param name="item_image" value="$VAR[ShowcaseItem0Var]" />
+                                <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase0Var]" />
+                                <param name="overlay_image" value="$VAR[OverlayVisibility0]" />
+                            </include>
                         </control>
                         <control type="group">
-                            <posx>758</posx>
-                            <visible>!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)</visible>
                             <visible>Container.OnNext</visible>
-                            <animation effect="rotatey" center="608" end="-55" time="200" reversible="false" tween="quadratic">Hidden</animation>
-                            <include>MovieShowCaseItem-1</include>
+                            <animation effect="rotatey" center="onnext_rot_center" end="neg_rotate" time="slide_time" reversible="false" tween="quadratic">Hidden</animation>
+                            <include name="ShowCaseItem">
+                                <param name="group_posx" value="listitem0_posx" />
+                                <param name="rotate_center" value="0" />
+                                <param name="rotate_degree" value="0" />
+                                <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)" />
+                                <param name="item_image" value="$VAR[ShowcaseItem-1Var]" />
+                                <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-1Var]" />
+                                <param name="overlay_image" value="$VAR[OverlayVisibility-1]" />
+                            </include>
                         </control>
                     </control>
                 </control>
                 <control type="group" id="6002">
-                    <posx>55</posx>
-                    <posy>570</posy>
-                    <visible>Container.OnPrevious + !Control.IsVisible(961)</visible>
-                    <animation effect="slide" end="135,0" time="200" reversible="false">Hidden</animation>
+                    <visible>Container.OnPrevious + !Skin.HasSetting(noflow)</visible>
+                    <animation effect="slide" end="scroll_right,0" time="slide_time" reversible="false">Hidden</animation>
                     <control type="group">
-                        <posx>1500</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(7).FolderPath)</visible>
                         <visible>Container.OnPrevious</visible>
-                        <animation effect="fade" start="100" end="0" time="200" reversible="false">Hidden</animation>
-                        <animation effect="rotatey" center="1965" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem7</include>
+                        <animation effect="fade" start="100" end="0" time="slide_time" reversible="false">Hidden</animation>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem6_posx" />
+                            <param name="rotate_center" value="listitem6_rot_center" />
+                            <param name="rotate_degree" value="rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(7).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem7Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase7Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility7]" />
+                        </include>
                     </control>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem5_posx" />
+                        <param name="rotate_center" value="listitem5_rot_center" />
+                        <param name="rotate_degree" value="rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem6Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase6Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility6]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem4_posx" />
+                        <param name="rotate_center" value="listitem4_rot_center" />
+                        <param name="rotate_degree" value="rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem5Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase5Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility5]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem3_posx" />
+                        <param name="rotate_center" value="listitem3_rot_center" />
+                        <param name="rotate_degree" value="rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem4Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase4Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility4]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem2_posx" />
+                        <param name="rotate_center" value="listitem2_rot_center" />
+                        <param name="rotate_degree" value="rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem3Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase3Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility3]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem1_posx" />
+                        <param name="rotate_center" value="listitem1_rot_center" />
+                        <param name="rotate_degree" value="rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem2Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase2Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility2]" />
+                    </include>
                     <control type="group">
-                        <posx>1365</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)</visible>
-                        <animation effect="rotatey" center="1830" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem6</include>
-                    </control>
-                    <control type="group">
-                        <posx>1230</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)</visible>
-                        <animation effect="rotatey" center="1695" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem5</include>
-                    </control>
-                    <control type="group">
-                        <posx>1095</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)</visible>
-                        <animation effect="rotatey" center="1560" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem4</include>
-                    </control>
-                    <control type="group">
-                        <posx>960</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)</visible>
-                        <animation effect="rotatey" center="1425" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem3</include>
-                    </control>
-                    <control type="group">
-                        <posx>825</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)</visible>
-                        <animation effect="rotatey" center="1290" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem2</include>
-                    </control>
-                    <control type="group">
-                        <posx>-120</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)</visible>
                         <visible>!Container.OnPrevious</visible>
-                        <animation effect="fade" end="100" time="200" reversible="false">Visible</animation>
-                        <animation effect="rotatey" center="-270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-6</include>
+                        <animation effect="fade" end="100" time="fadeout_time" reversible="false">Visible</animation>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem-7_posx" />
+                            <param name="rotate_center" value="listitem-7_rot_center" />
+                            <param name="rotate_degree" value="neg_rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem-6Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-6Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility-6]" />
+                        </include>
                     </control>
-                    <control type="group">
-                        <posx>15</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)</visible>
-                        <animation effect="rotatey" center="-135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-5</include>
-                    </control>
-                    <control type="group">
-                        <posx>150</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)</visible>
-                        <animation effect="rotatey" center="0" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-4</include>
-                    </control>
-                    <control type="group">
-                        <posx>285</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)</visible>
-                        <animation effect="rotatey" center="135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-3</include>
-                    </control>
-                    <control type="group">
-                        <posx>420</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)</visible>
-                        <animation effect="rotatey" center="270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-2</include>
-                    </control>
-                    <control type="group">
-                        <posx>555</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)</visible>
-                        <animation effect="rotatey" center="405" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <include>MovieShowCaseItem-1</include>
-                    </control>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem-6_posx" />
+                        <param name="rotate_center" value="listitem-6_rot_center" />
+                        <param name="rotate_degree" value="neg_rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem-5Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-5Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility-5]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem-5_posx" />
+                        <param name="rotate_center" value="listitem-5_rot_center" />
+                        <param name="rotate_degree" value="neg_rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem-4Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-4Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility-4]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem-4_posx" />
+                        <param name="rotate_center" value="listitem-4_rot_center" />
+                        <param name="rotate_degree" value="neg_rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem-3Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-3Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility-3]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem-3_posx" />
+                        <param name="rotate_center" value="listitem-3_rot_center" />
+                        <param name="rotate_degree" value="neg_rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem-2Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-2Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility-2]" />
+                    </include>
+                    <include name="ShowCaseItem">
+                        <param name="group_posx" value="listitem-2_posx" />
+                        <param name="rotate_center" value="listitem-2_rot_center" />
+                        <param name="rotate_degree" value="neg_rotate" />
+                        <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)" />
+                        <param name="item_image" value="$VAR[ShowcaseItem-1Var]" />
+                        <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-1Var]" />
+                        <param name="overlay_image" value="$VAR[OverlayVisibility-1]" />
+                    </include>
                     <control type="group">
                         <visible>Container.OnPrevious</visible>
-                        <animation effect="slide" end="-75,0" time="200" reversible="false">Hidden</animation>
+                        <animation effect="slide" end="onprevious_slide,0" time="slide_time" reversible="false">Hidden</animation>
                         <control type="group">
-                            <posx>690</posx>
                             <visible>Container.OnPrevious</visible>
-                            <visible>!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath)</visible>
-                            <animation effect="rotatey" center="540" end="55" time="200" reversible="false" tween="quadratic" easing="in">Hidden</animation>
-                            <animation effect="rotatey" center="540" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                            <include>MovieShowCaseItem0</include>
+                            <animation effect="rotatey" center="listitem-1_rot_center" end="rotate" time="slide_time" reversible="false" tween="quadratic" easing="in">Hidden</animation>
+                            <include name="ShowCaseItem">
+                                <param name="group_posx" value="listitem-1_posx" />
+                                <param name="rotate_center" value="listitem-1_rot_center" />
+                                <param name="rotate_degree" value="neg_rotate" />
+                                <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath)" />
+                                <param name="item_image" value="$VAR[ShowcaseItem0Var]" />
+                                <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase0Var]" />
+                                <param name="overlay_image" value="$VAR[OverlayVisibility0]" />
+                            </include>
                         </control>
                         <control type="group">
-                            <posx>758</posx>
-                            <visible>!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)</visible>
                             <visible>Container.OnPrevious</visible>
-                            <animation effect="rotatey" center="1223" end="55" time="200" reversible="false" tween="quadratic">Hidden</animation>
-                            <include>MovieShowCaseItem1</include>
+                            <animation effect="rotatey" center="onprevious_rot_center" end="rotate" time="slide_time" reversible="false" tween="quadratic">Hidden</animation>
+                            <include name="ShowCaseItem">
+                                <param name="group_posx" value="listitem0_posx" />
+                                <param name="rotate_center" value="0" />
+                                <param name="rotate_degree" value="0" />
+                                <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)" />
+                                <param name="item_image" value="$VAR[ShowcaseItem1Var]" />
+                                <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase1Var]" />
+                                <param name="overlay_image" value="$VAR[OverlayVisibility1]" />
+                            </include>
                         </control>
                     </control>
                 </control>
                 <control type="button" id="960">
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
-                    <visible>!Control.IsVisible(961)</visible>
-                    <animation effect="fade" start="100" end="0" time="640">Hidden</animation>
-                </control>
-                <control type="button" id="961">
-                    <texturefocus>-</texturefocus>
-                    <texturenofocus>-</texturenofocus>
-                    <visible>[Skin.HasSetting(noflow) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(noflowtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]</visible>
+                    <visible>!Skin.HasSetting(noflow)</visible>
+                    <animation effect="fade" start="100" end="0" time="windowopen_anim_time">Hidden</animation>
                 </control>
                 <control type="group" id="6000">
-                    <posx>55</posx>
-                    <posy>570</posy>
                     <animation type="WindowOpen" reversible="false">
                         <effect type="zoom" start="150" end="100" center="960,540" time="240" tween="cubic" />
                         <effect type="fade" end="100" time="240" />
@@ -241,151 +381,211 @@
                     </animation>
                     <visible>!Control.IsVisible(6001) + !Control.IsVisible(6002) + Control.IsVisible(960)</visible>
                     <control type="group">
-                        <posx>15</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)</visible>
                         <animation effect="slide" time="240" end="818" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="818" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="-135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="-135" end="55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-1028" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="818" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem-6_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-1028" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem-6</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem-6_posx" />
+                            <param name="rotate_center" value="listitem-6_rot_center" />
+                            <param name="rotate_degree" value="neg_rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem-6Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-6Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility-6]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>150</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)</visible>
                         <animation effect="slide" time="240" end="682" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="682" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="0" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="0" end="55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-866" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="682" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem-5_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-866" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem-5</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem-5_posx" />
+                            <param name="rotate_center" value="listitem-5_rot_center" />
+                            <param name="rotate_degree" value="neg_rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem-5Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-5Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility-5]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>285</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)</visible>
                         <animation effect="slide" time="240" end="548" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="548" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="135" end="55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-704" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="548" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem-4_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-704" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem-4</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem-4_posx" />
+                            <param name="rotate_center" value="listitem-4_rot_center" />
+                            <param name="rotate_degree" value="neg_rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem-4Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-4Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility-4]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>420</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)</visible>
                         <animation effect="slide" time="240" end="412" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="412" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="270" end="55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-543" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="412" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem-3_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-543" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem-3</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem-3_posx" />
+                            <param name="rotate_center" value="listitem-3_rot_center" />
+                            <param name="rotate_degree" value="neg_rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem-3Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-3Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility-3]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>555</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)</visible>
                         <animation effect="slide" time="240" end="278" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="278" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="405" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="405" end="55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-384" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="278" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem-2_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-384" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem-2</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem-2_posx" />
+                            <param name="rotate_center" value="listitem-2_rot_center" />
+                            <param name="rotate_degree" value="neg_rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem-2Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-2Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility-2]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>690</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)</visible>
                         <animation effect="slide" time="240" end="142" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="142" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="540" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="540" end="55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-226" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="142" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem-1_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-226" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem-1</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem-1_posx" />
+                            <param name="rotate_center" value="listitem-1_rot_center" />
+                            <param name="rotate_degree" value="neg_rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem-1Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-1Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility-1]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>1500</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-818" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-818" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="1965" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1965" end="-55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="1028" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-818" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem6_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="1028" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem6</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem6_posx" />
+                            <param name="rotate_center" value="listitem6_rot_center" />
+                            <param name="rotate_degree" value="rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem6Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase6Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility6]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>1365</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-682" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-682" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="1830" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1830" end="-55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="866" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-682" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem5_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="866" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem5</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem5_posx" />
+                            <param name="rotate_center" value="listitem5_rot_center" />
+                            <param name="rotate_degree" value="rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem5Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase5Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility5]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>1230</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-548" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-548" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="1695" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1695" end="-55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="704" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-548" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem4_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="704" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem4</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem4_posx" />
+                            <param name="rotate_center" value="listitem4_rot_center" />
+                            <param name="rotate_degree" value="rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem4Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase4Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility4]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>1095</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-412" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-412" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="1560" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1560" end="-55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="543" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-412" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem3_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="543" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem3</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem3_posx" />
+                            <param name="rotate_center" value="listitem3_rot_center" />
+                            <param name="rotate_degree" value="rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem3Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase3Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility3]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>960</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-278" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-278" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="1425" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1425" end="-55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="384" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-278" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem2_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="384" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem2</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem2_posx" />
+                            <param name="rotate_center" value="listitem2_rot_center" />
+                            <param name="rotate_degree" value="rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem2Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase2Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility2]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>825</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-142" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-142" tween="cubic">WindowOpen</animation>
-                        <animation effect="rotatey" center="1290" start="55" end="55" time="0" condition="true">Conditional</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1290" end="-55" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="226" time="640" tween="cubic" easing="inout" />
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-142" tween="cubic">WindowOpen</animation>
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
+                            <effect type="rotatey" center="listitem1_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="226" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
-                        <include>MovieShowCaseItem1</include>
+                        <include name="ShowCaseItem">
+                            <param name="group_posx" value="listitem1_posx" />
+                            <param name="rotate_center" value="listitem1_rot_center" />
+                            <param name="rotate_degree" value="rotate" />
+                            <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)" />
+                            <param name="item_image" value="$VAR[ShowcaseItem1Var]" />
+                            <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase1Var]" />
+                            <param name="overlay_image" value="$VAR[OverlayVisibility1]" />
+                        </include>
                     </control>
                     <control type="group">
-                        <posx>758</posx>
+                        <posx>listitem0_posx</posx>
                         <control type="group">
                             <visible>!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath)</visible>
                             <control type="image">
@@ -393,10 +593,7 @@
                                 <include>MovieShowcaseThumb</include>
                             </control>
                             <include>MovieShowcaseGlassOverlay</include>
-                            <control type="image">
-                                <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-                                <include>MovieShowcaseThumbReflectionMain</include>
-                            </control>
+                            <include>MovieShowcaseThumbReflectionMain</include>
                             <include>MovieShowcaseThumbReflectionDVD</include>
                             <control type="image">
                                 <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase0Var]</texture>
@@ -428,11 +625,11 @@
                 <orientation>horizontal</orientation>
                 <preloaditems>2</preloaditems>
                 <include>Animation_OpenCloseZoom_New</include>
-                <itemlayout height="600" width="294" condition="Control.IsVisible(961) + !Control.IsVisible(6000)">
+                <itemlayout height="600" width="294" condition="Skin.HasSetting(noflow) + !Control.IsVisible(6000)">
                     <control type="group">
                         <posy>30</posy>
                         <animation effect="zoom" start="100" end="90" center="147,345" time="240" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
-                        <animation effect="fade" time="0" delay="640">Visible</animation>
+                        <animation effect="fade" time="0" delay="windowopen_anim_time">Visible</animation>
                         <control type="image">
                             <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                             <include>MovieShowcaseThumb</include>
@@ -453,10 +650,10 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout height="525" width="294" condition="Control.IsVisible(961) + !Control.IsVisible(6000)">
+                <focusedlayout height="525" width="294" condition="Skin.HasSetting(noflow) + !Control.IsVisible(6000)">
                     <control type="group">
                         <posy>30</posy>
-                        <animation effect="fade" time="0" delay="640">Visible</animation>
+                        <animation effect="fade" time="0" delay="windowopen_anim_time">Visible</animation>
                         <animation effect="zoom" start="100" end="120" center="147,345" time="240" reversible="false" tween="cubic">Focus</animation>
                         <animation effect="zoom" start="120" end="100" center="147,345" time="240" reversible="false" tween="cubic">UnFocus</animation>
                         <animation effect="zoom" start="100" end="90" center="147,345" time="240" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
@@ -465,10 +662,7 @@
                             <include>MovieShowcaseThumb</include>
                         </control>
                         <include>MovieShowcaseGlassOverlay</include>
-                        <control type="image">
-                            <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-                            <include>MovieShowcaseThumbReflectionMain</include>
-                        </control>
+                        <include>MovieShowcaseThumbReflectionMain</include>
                         <include>MovieShowcaseThumbReflectionDVD</include>
                         <control type="image">
                             <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
@@ -480,12 +674,39 @@
                         </control>
                     </control>
                 </focusedlayout>
-                <itemlayout height="600" width="100" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></itemlayout>
-                <focusedlayout height="525" width="858" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></focusedlayout>
-                <itemlayout height="600" width="200" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></itemlayout>
-                <focusedlayout height="525" width="858" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></focusedlayout>
+                <itemlayout height="600" width="100" condition="![Skin.HasSetting(noflow) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></itemlayout>
+                <focusedlayout height="525" width="858" condition="![Skin.HasSetting(noflow) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></focusedlayout>
+                <itemlayout height="600" width="200" condition="![Skin.HasSetting(noflow) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></itemlayout>
+                <focusedlayout height="525" width="858" condition="![Skin.HasSetting(noflow) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></focusedlayout>
             </control>
         </control>
+    </include>
+    <include name="ShowCaseItem">
+        <!-- here -->
+        <control type="group">
+            <posx>$PARAM[group_posx]</posx>
+            <visible>$PARAM[group_visible]</visible>
+            <animation effect="rotatey" center="$PARAM[rotate_center]" start="$PARAM[rotate_degree]" end="$PARAM[rotate_degree]" time="0" condition="true">Conditional</animation>
+            <control type="image">
+                <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$PARAM[item_image]</texture>
+                <include>MovieShowcaseThumb</include>
+            </control>
+            <include>MovieShowcaseGlassOverlay</include>
+            <control type="image">
+                <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$PARAM[item_image]</texture>
+                <include>MovieShowcaseThumbReflection</include>
+            </control>
+            <control type="image">
+                <texture>$PARAM[cover_image]</texture>
+                <include>MovieShowcaseDVDCoverVars</include>
+            </control>
+            <include>MovieShowcaseThumbReflectionDVD</include>
+            <control type="image">
+                <include>WatchedOverlayShowCase</include>
+                <texture>$PARAM[overlay_image]</texture>
+            </control>
+        </control>
+        <!-- here -->
     </include>
     <include name="MovieShowcaseThumbReflectionDVD">
         <control type="image">
@@ -495,7 +716,6 @@
             <height>180</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
             <texture>thumbs/boxes/poster_glass_reflect.png</texture>
-
             <colordiffuse>d1FFFFFF</colordiffuse>
             <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
             <visible>Skin.HasSetting(usecases) + Skin.HasSetting(clearcases) + [container.content(movies) | Container.Content(musicvideos)]</visible>
@@ -506,15 +726,7 @@
         <posy>-22</posy>
         <width>324</width>
         <height>434</height>
-
         <visible>Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]</visible>
-    </include>
-    <!--Movie Showcase Variables: Main thumbs-->
-    <include name="MovieShowcaseThumbDimensions">
-        <posx>17</posx>
-        <posy>10</posy>
-        <width>262</width>
-        <height>384</height>
     </include>
     <include name="MovieShowcaseThumbReflectionDimensions">
         <posx>19</posx>
@@ -531,19 +743,19 @@
         <height>420</height>
         <align>center</align>
         <aspectratio scalediffuse="false">scale</aspectratio>
-
         <bordertexture border="18">thumbs/poster_shadow.png</bordertexture>
         <bordersize>18</bordersize>
     </include>
     <include name="MovieShowcaseThumbReflectionMain">
-        <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
-
-        <include>MovieShowcaseThumbReflectionDimensions</include>
-        <colordiffuse>52FFFFFF</colordiffuse>
+        <control type="image">
+            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+            <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+            <include>MovieShowcaseThumbReflectionDimensions</include>
+            <colordiffuse>52FFFFFF</colordiffuse>
+        </control>
     </include>
     <include name="MovieShowcaseThumbReflection">
         <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
-
         <include>MovieShowcaseThumbReflectionDimensions</include>
         <colordiffuse>d1FFFFFF</colordiffuse>
         <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
@@ -553,317 +765,18 @@
         <posy>10</posy>
         <width>90</width>
         <height>90</height>
-
         <animation effect="slide" start="0,0" end="6,-3" time="0" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
         <animation effect="slide" start="0,0" end="0,-29" time="0" condition="[container.content(movies) | Container.Content(musicvideos)] + Skin.HasSetting(usecases) + !Skin.HasSetting(clearcases)">Conditional</animation>
     </include>
-    <!--Movie Showcase Variables: Thumb glass overlays-->
+    <!-- Movie Showcase Variables: Thumb glass overlays -->
     <include name="MovieShowcaseGlassOverlay">
         <control type="image">
             <texture diffuse="thumbs/thumb_mask.png">thumbs/thumb_glass.png</texture>
-            <include>MovieShowcaseThumbDimensions</include>
+            <posx>17</posx>
+            <posy>10</posy>
+            <width>262</width>
+            <height>384</height>
             <visible>![Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]]</visible>
-        </control>
-    </include>
-    <!--Movie Showcase Items-->
-    <include name="MovieShowCaseItem-7">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-7Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-7Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-7Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility-7]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem-6">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-6Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-6Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-6Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility-6]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem-5">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-5Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-5Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-5Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility-5]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem-4">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-4Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-4Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-4Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility-4]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem-3">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-3Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-3Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-3Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility-3]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem-2">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-2Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-2Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-2Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility-2]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem-1">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-1Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-1Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-1Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility-1]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem0">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase0Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility0]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem1">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase1Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility1]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem2">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase2Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility2]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem3">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase3Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility3]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem4">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase4Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility4]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem5">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase5Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility5]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem6">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase6Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility6]</texture>
-        </control>
-    </include>
-    <include name="MovieShowCaseItem7">
-        <control type="image">
-            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
-            <include>MovieShowcaseThumb</include>
-        </control>
-        <include>MovieShowcaseGlassOverlay</include>
-        <control type="image">
-            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
-            <include>MovieShowcaseThumbReflection</include>
-        </control>
-        <control type="image">
-            <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase7Var]</texture>
-            <include>MovieShowcaseDVDCoverVars</include>
-        </control>
-        <include>MovieShowcaseThumbReflectionDVD</include>
-        <control type="image">
-            <include>WatchedOverlayShowCase</include>
-            <texture>$VAR[OverlayVisibility7]</texture>
         </control>
     </include>
 </includes>
