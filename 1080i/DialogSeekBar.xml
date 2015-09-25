@@ -46,6 +46,7 @@
                     <width>513</width>
                     <height>87</height>
                     <texture flipy="true">osd/osd_top_bar.png</texture>
+					<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     <visible>[[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek] | [[Player.Paused + Player.Caching] + !Player.Seeking] | Player.Seeking|[Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)]</visible>
                 </control>
                 <control type="label">
@@ -218,6 +219,7 @@
                         <width>1020</width>
                         <height>87</height>
                         <texture>osd/osd_progress_bar_back.png</texture>
+						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                     <control type="progress" id="20">
                         <posx>645</posx>
@@ -316,6 +318,7 @@
                         <width>513</width>
                         <height>87</height>
                         <texture>osd/osd_bottom_bar.png</texture>
+						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                     <control type="label" id="1">
                         <posx>668</posx>
@@ -355,6 +358,7 @@
                         <width>513</width>
                         <height>87</height>
                         <texture flipy="true">osd/osd_top_bar.png</texture>
+						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                         <visible>[[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek] | [[Player.Paused + Player.Caching] + !Player.Seeking] | Player.Seeking|[Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)]</visible>
                     </control>
                     <control type="label">
@@ -458,6 +462,7 @@
             <width>1920</width>
             <height>135</height>
             <texture flipy="true">osd/osd_back.png</texture>
+			<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
           </control>
           <control type="label">
             <posx>543</posx>
@@ -610,6 +615,7 @@
             <width>1920</width>
             <height>135</height>
             <texture>osd/osd_back.png</texture>
+			<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
           </control>
             <control type="group">
               <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos)</visible>
@@ -620,6 +626,18 @@
                 <effect type="slide" start="0,0" end="450,0" time="600" tween="cubic" easing="out" />
                 <effect type="fade" start="100" end="0" time="600" />
               </animation>
+			  						<control type="image">
+							<left>1578</left>
+							<top>445</top>
+							<width>300</width>
+							<height>300</height>
+							<aligny>top</aligny>
+							<aspectratio>keep</aspectratio>
+							<texture background="true" fallback="common/cdart/bd.png">$INFO[Player.Art(discart)]</texture>
+							<fadetime>300</fadetime>
+							<animation effect="rotate" end="-360" center="auto" time="19800" loop="true" reversible="false" condition="Player.Paused">Conditional</animation>
+							<visible>Player.Paused + VideoPlayer.Content(movies)</visible>
+						</control>
               <control type="image">
                 <description>Cover Image</description>
                 <posx>1575</posx>
