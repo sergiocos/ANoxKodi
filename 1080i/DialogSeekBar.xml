@@ -318,7 +318,6 @@
                         <width>513</width>
                         <height>87</height>
                         <texture>osd/osd_bottom_bar.png</texture>
-						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                     <control type="label" id="1">
                         <posx>668</posx>
@@ -358,7 +357,6 @@
                         <width>513</width>
                         <height>87</height>
                         <texture flipy="true">osd/osd_top_bar.png</texture>
-						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                         <visible>[[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek] | [[Player.Paused + Player.Caching] + !Player.Seeking] | Player.Seeking|[Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)]</visible>
                     </control>
                     <control type="label">
