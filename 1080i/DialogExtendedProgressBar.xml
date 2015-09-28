@@ -2,6 +2,8 @@
 <window>
     <defaultcontrol></defaultcontrol>
     <include>Animation_DialogPopupOpenClose</include>
+		    <onload condition="Library.IsScanningVideo">SetProperty(UpdateArt,1)</onload>
+    <onunload condition="!IsEmpty(Window.Property(UpdateArt))">XBMC.RunScript(script.artwork.downloader,silent=true)</onunload>
     <controls>
         <control type="group">
             <posx>1140</posx>

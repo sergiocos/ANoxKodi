@@ -686,6 +686,7 @@
             <posy>998</posy>
             <width>1140</width>
             <height>22</height>
+			<animation effect="fade" start="100" end="30" time="0" condition="true">Conditional</animation>
             <info>Player.ProgressCache</info>
             <visible>true</visible>
           </control>
